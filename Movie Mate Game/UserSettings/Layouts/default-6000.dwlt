@@ -1,0 +1,3795 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 0
+    y: 66
+    width: 1728
+    height: 978
+  m_ShowMode: 4
+  m_Title: Hierarchy
+  m_RootView: {fileID: 2}
+  m_MinSize: {x: 875, y: 382}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_Maximized: 1
+--- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 3}
+  - {fileID: 5}
+  - {fileID: 4}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1728
+    height: 978
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_UseTopView: 1
+  m_TopViewHeight: 36
+  m_UseBottomView: 1
+  m_BottomViewHeight: 20
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12011, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1728
+    height: 36
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_LastLoadedLayoutName: 
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12042, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 958
+    width: 1728
+    height: 20
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 6}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 36
+    width: 1728
+    height: 922
+  m_MinSize: {x: 500, y: 100}
+  m_MaxSize: {x: 40480, y: 16192}
+  vertical: 1
+  controlID: 119
+  draggingID: 0
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 7}
+  - {fileID: 12}
+  - {fileID: 13}
+  - {fileID: 14}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1728
+    height: 922
+  m_MinSize: {x: 500, y: 100}
+  m_MaxSize: {x: 40480, y: 16192}
+  vertical: 0
+  controlID: 120
+  draggingID: 0
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 8}
+  - {fileID: 11}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 512
+    height: 922
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 121
+  draggingID: 0
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 9}
+  - {fileID: 10}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 512
+    height: 652
+  m_MinSize: {x: 200, y: 50}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 122
+  draggingID: 0
+--- !u!114 &9
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SceneHierarchyWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 239
+    height: 652
+  m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
+  m_ActualView: {fileID: 16}
+  m_Panes:
+  - {fileID: 16}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SceneView
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 239
+    y: 0
+    width: 273
+    height: 652
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+  - {fileID: 17}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ProjectBrowser
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 652
+    width: 512
+    height: 270
+  m_MinSize: {x: 231, y: 276}
+  m_MaxSize: {x: 10001, y: 10026}
+  m_ActualView: {fileID: 18}
+  m_Panes:
+  - {fileID: 18}
+  - {fileID: 19}
+  - {fileID: 20}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SimulatorWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 512
+    y: 0
+    width: 407
+    height: 922
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
+  m_ActualView: {fileID: 21}
+  m_Panes:
+  - {fileID: 21}
+  - {fileID: 22}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ConsoleWindow
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.DockArea
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 919
+    y: 0
+    width: 430
+    height: 922
+  m_MinSize: {x: 102, y: 126}
+  m_MaxSize: {x: 4002, y: 4026}
+  m_ActualView: {fileID: 23}
+  m_Panes:
+  - {fileID: 23}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: InspectorWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1349
+    y: 0
+    width: 379
+    height: 922
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
+  m_ActualView: {fileID: 24}
+  m_Panes:
+  - {fileID: 24}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: View1
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Scene
+    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Scene\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 240
+    y: 24
+    width: 271
+    height: 626
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData:
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      displayed: 1
+      id: Tool Settings
+      index: 0
+      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      displayed: 1
+      id: unity-grid-and-snap-toolbar
+      index: 1
+      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":-141.0,"y":-24.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":3,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: -141, y: -24}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 3
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      displayed: 1
+      id: unity-scene-view-toolbar
+      index: 0
+      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":-269.0,"y":-24.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":3,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: -269, y: -24}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 3
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      displayed: 1
+      id: unity-scene-view-camera-mode-toolbar
+      index: 1
+      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":-182.5,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":1,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: -182.5, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 1
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      displayed: 1
+      id: unity-search-toolbar
+      index: 2
+      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 0
+      containerId: overlay-container--left
+      displayed: 1
+      id: unity-transform-toolbar
+      index: 0
+      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 24, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 0
+      containerId: overlay-container--left
+      displayed: 1
+      id: unity-component-tools
+      index: 1
+      contents: 
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 197}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 2
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 0
+      containerId: overlay-container--right
+      displayed: 1
+      id: Orientation
+      index: 0
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 24, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Light Settings
+      index: 3
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Camera
+      index: 1
+      contents: 
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Cloth Constraints
+      index: 5
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Cloth Collisions
+      index: 6
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Navmesh Display
+      index: 4
+      contents: 
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Agent Display
+      index: 5
+      contents: 
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Obstacle Display
+      index: 6
+      contents: 
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Occlusion Culling
+      index: 7
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Physics Debugger
+      index: 8
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Scene Visibility
+      index: 9
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Particles
+      index: 10
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 24, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Tilemap
+      index: 11
+      contents: 
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Tilemap Palette Helper
+      index: 12
+      contents: 
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      displayed: 0
+      id: Brush Attributes
+      index: 2
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 24, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__left
+      displayed: 0
+      id: Terrain Tools
+      index: 0
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 24, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__left
+      displayed: 0
+      id: Brush Masks
+      index: 1
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 24, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--left
+      displayed: 0
+      id: Scene View/Lighting Visualization Colors
+      index: 1
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--left
+      displayed: 1
+      id: Overlays/OverlayMenu
+      index: 0
+      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":26.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 26}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: APV Overlay
+      index: 11
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 0
+      containerId: Floating
+      displayed: 0
+      id: AINavigationOverlay
+      index: 0
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":true,"m_FloatingSnapOffset":{"x":-207.0009765625,"y":-246.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":3,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 1
+      collapsed: 0
+      snapOffset: {x: -207.00098, y: -246}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 3
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: SceneView/CamerasOverlay
+      index: 12
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 24, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/PBR Validation Settings
+      index: 13
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/TrailRenderer
+      index: 14
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 1
+      id: UnityEditor.ProBuilder.MenuActionSettingsOverlay
+      index: 16
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 24, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Visual Effect
+      index: 11
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":24.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Visual Effect Timeline Control
+      index: 12
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":24.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Visual Effect Event Tester
+      index: 13
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":24.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Visual Effect Model
+      index: 14
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":24.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Tilemap Focus
+      index: 0
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Tile Palette Clipboard
+      index: 1
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Open Tile Palette
+      index: 2
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Tile Palette Brush Pick
+      index: 4
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Path
+      index: 15
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: Scene View/Sprite Swap
+      index: 16
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    m_ContainerData:
+    - containerId: overlay-toolbar__top
+      scrollOffset: 0
+    - containerId: overlay-toolbar__left
+      scrollOffset: 0
+    - containerId: overlay-container--left
+      scrollOffset: 0
+    - containerId: overlay-container--right
+      scrollOffset: 0
+    - containerId: overlay-toolbar__right
+      scrollOffset: 0
+    - containerId: overlay-toolbar__bottom
+      scrollOffset: 0
+    - containerId: Floating
+      scrollOffset: 0
+    m_OverlaysVisible: 1
+  m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
+  m_Gizmos: 1
+  m_OverrideSceneCullingMask: 6917529027641081856
+  m_SceneIsLit: 1
+  m_SceneLighting: 1
+  m_2DMode: 1
+  m_isRotationLocked: 0
+  m_PlayAudio: 0
+  m_AudioPlay: 0
+  m_DebugDrawModesUseInteractiveLightBakingData: 0
+  m_Position:
+    m_Target: {x: 0, y: 0, z: 0}
+    speed: 2
+    m_Value: {x: 537.2797, y: 823.60156, z: 3.7013292}
+  m_RenderMode: 0
+  m_CameraMode:
+    drawMode: 0
+    name: Shaded
+    section: Shading Mode
+  m_ValidateTrueMetals: 0
+  m_DoValidateTrueMetals: 0
+  m_SceneViewState:
+    m_AlwaysRefresh: 0
+    showFog: 1
+    showSkybox: 1
+    showFlares: 1
+    showImageEffects: 1
+    showParticleSystems: 1
+    showVisualEffectGraphs: 1
+    m_FxEnabled: 1
+  m_Grid:
+    xGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 1, y: 1}
+    yGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 1, y: 1}
+    zGrid:
+      m_Fade:
+        m_Target: 1
+        speed: 2
+        m_Value: 1
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 1, y: 1}
+    m_ShowGrid: 1
+    m_GridAxis: 1
+    m_gridOpacity: 0.5
+  m_Rotation:
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
+  m_Size:
+    m_Target: 10
+    speed: 2
+    m_Value: 1024.4956
+  m_Ortho:
+    m_Target: 1
+    speed: 2
+    m_Value: 1
+  m_CameraSettings:
+    m_Speed: 1.9990004
+    m_SpeedNormalized: 0.9995
+    m_SpeedMin: 0.001
+    m_SpeedMax: 2
+    m_EasingEnabled: 1
+    m_EasingDuration: 0.4
+    m_AccelerationEnabled: 1
+    m_FieldOfViewHorizontalOrVertical: 60
+    m_NearClip: 0.03
+    m_FarClip: 10000
+    m_DynamicClip: 1
+    m_OcclusionCulling: 0
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewOrtho: 0
+  m_Viewpoint:
+    m_SceneView: {fileID: 15}
+    m_CameraOverscanSettings:
+      m_Opacity: 50
+      m_Scale: 1
+  m_ReplacementShader: {fileID: 0}
+  m_ReplacementString: 
+  m_SceneVisActive: 1
+  m_LastLockedObject: {fileID: 0}
+  m_LastDebugDrawMode:
+    drawMode: 35
+    name: Contributors / Receivers
+    section: Lighting
+  m_ViewIsLockedToObject: 0
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Hierarchy
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Hierarchy\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 24
+    width: 238
+    height: 626
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_OverlaysVisible: 1
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 9edaffff
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 9}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 1
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: 4c969a2b90040154d917609493e03593
+--- !u!114 &17
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 50, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animator
+    m_Image: {fileID: 1711060831702674872, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Animator\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 261
+    y: 102
+    width: 368.5
+    height: 522.5
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_OverlaysVisible: 1
+  m_ViewTransforms:
+    m_KeySerializationHelper: []
+    m_ValueSerializationHelper: []
+  m_PreviewAnimator: {fileID: 0}
+  m_AnimatorController: {fileID: 9100000, guid: 708ac719506b146a78e8820f7bcc6ac6, type: 2}
+  m_BreadCrumbs: []
+  stateMachineGraph: {fileID: 0}
+  stateMachineGraphGUI: {fileID: 0}
+  blendTreeGraph: {fileID: 0}
+  blendTreeGraphGUI: {fileID: 0}
+  m_AutoLiveLink: 1
+  m_MiniTool: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_CurrentEditor: 1
+  m_LayerEditor:
+    m_SelectedLayerIndex: 0
+--- !u!114 &18
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_TitleContent:
+    m_Text: Project
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Project\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 676
+    width: 511
+    height: 244
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_OverlaysVisible: 1
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SkipHidden: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Assets/Settings
+    m_Globs: []
+    m_ProductIds: 
+    m_AnyWithAssetOrigin: 0
+    m_OriginalText: 
+    m_ImportLogFlags: 0
+    m_FilterByTypeIntersection: 0
+  m_ViewMode: 1
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Assets/Settings
+  m_LastFoldersGridSize: 16
+  m_LastProjectPath: /Users/nikolas/projects/moviemate-nikolas/MovieMateGame
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: a0d00000
+    m_LastClickedID: 53408
+    m_ExpandedIDs: 
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_TrimLeadingAndTrailingWhitespace: 0
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_TrimLeadingAndTrailingWhitespace: 0
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: 42b70000fab60000b0c8000008c700000000000028cc000076bb000002b4000080e40000ce0101007ef6000010d9000012d9000084d70000aa5201003e00010078ec0000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_TrimLeadingAndTrailingWhitespace: 0
+      m_ClientGUIView: {fileID: 11}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 16
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 149
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_TitleContent:
+    m_Text: Project
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Project\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 537.5
+    width: 920
+    height: 458.5
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_OverlaysVisible: 1
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SkipHidden: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Assets
+    m_Globs: []
+    m_ProductIds: 
+    m_AnyWithAssetOrigin: 0
+    m_OriginalText: 
+    m_ImportLogFlags: 0
+    m_FilterByTypeIntersection: 0
+  m_ViewMode: 1
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Assets/Game/RegisterAccount/Prefabs
+  m_LastFoldersGridSize: 16
+  m_LastProjectPath: /Users/nikolas/projects/clawee-unity-app
+  m_LockTracker:
+    m_IsLocked: 1
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 82fa0900
+    m_LastClickedID: 653954
+    m_ExpandedIDs: 
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_TrimLeadingAndTrailingWhitespace: 0
+      m_ClientGUIView: {fileID: 11}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 9e1e0100
+    m_LastClickedID: 73374
+    m_ExpandedIDs: 
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_TrimLeadingAndTrailingWhitespace: 0
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300004464010042280100a4ba00009cba000044b90000e6f8000000000000784f0100aaea0000d6e90000a6200300ba2003003e000100
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_TrimLeadingAndTrailingWhitespace: 0
+      m_ClientGUIView: {fileID: 11}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 16
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 216.5
+--- !u!114 &20
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 50, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animation
+    m_Image: {fileID: -3237396543322336831, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Animation\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 695.5
+    width: 455
+    height: 375.5
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_OverlaysVisible: 1
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: -94224
+--- !u!114 &21
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13974, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Simulator
+    m_Image: {fileID: 3038311277492192215, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Simulator\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 513
+    y: 24
+    width: 405
+    height: 896
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_OverlaysVisible: 1
+  m_SerializedViewNames:
+  - UnityEditor.GameView
+  m_SerializedViewValues:
+  - /Users/nikolas/projects/clawee-unity-app/Library/PlayModeViewStates/7568475827a8e4a8dbc16ee7636cedce
+  m_PlayModeViewName: Device Simulator
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 1}
+  m_TargetSize: {x: 1170, y: 2532}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_EnterPlayModeBehavior: 2
+  m_UseMipMap: 0
+  m_SimulatorState:
+    controlPanelVisible: 0
+    controlPanelWidth: NaN
+    controlPanelFoldoutKeys:
+    - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
+    controlPanelFoldoutValues: 00
+    pluginNames:
+    - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
+    - UnityEngine.InputSystem.Editor.InputSystemPlugin
+    pluginStates:
+    - '{}'
+    - '{}'
+    scale: 10
+    fitToScreenEnabled: 1
+    rotationDegree: 0
+    highlightSafeAreaEnabled: 0
+    friendlyName: Apple iPad Mini 4
+    screenIndex: 0
+    networkReachability: 1
+    systemLanguage: 10
+--- !u!114 &22
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 50, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: Test framework for running Edit mode and Play mode tests in Unity.
+      Part of the com.unity.test-framework package.
+    m_TextWithWhitespace: "Test Runner\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 587
+    y: 102
+    width: 471
+    height: 896
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_OverlaysVisible: 1
+  m_Spl:
+    ID: 1361
+    splitterInitialOffset: 517
+    currentActiveSplitter: -1
+    realSizes:
+    - 463
+    - 363
+    relativeSizes:
+    - 0.56084335
+    - 0.43915665
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 826
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 0
+  m_TestListGUIs:
+  - m_Window: {fileID: 22}
+    runProgress:
+      RunGuid: 2ec157be-8db2-4f8c-924d-ea72b9395de2
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 1
+          testNames:
+          - Tests.Editor.ManageAccountControllerTests
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 1.0000002
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[MovieMateGame][suite]'
+      name: MovieMateGame
+      fullName: MovieMateGame
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    m_ResultText: ManageAccountControllerTests (22 tests) (0.035s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 3ab81884
+      m_LastClickedID: -2078754758
+      m_ExpandedIDs: dd4bdf8b1e3df8933826b5956ee8c3a65d7870a98666f8ad968989b156a167b2c46ac7bf18f512c558191dc535e5d8c6d091ffc7739666ec73bf15edcd38c5f4931deafcabfb2dfd4ba6810282db39068aa1850b3ccab40b57309910eb696e1d9081c8216b341c2289431e24d5466627bacf452bb576532fc2bf273844b032386b50133b2f9b2745ae83f645ed7f0d46e55ee753692fcf56f5fd925d0fa9d15fdd6fcc6ba4212f71283c3a72ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  - m_Window: {fileID: 22}
+    runProgress:
+      RunGuid: 2ec157be-8db2-4f8c-924d-ea72b9395de2
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 1
+          testNames:
+          - Tests.Editor.ManageAccountControllerTests
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 1.0000002
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList:
+    - id: 1190
+      uniqueId: '[Cash Clawee][suite]'
+      name: Cash Clawee
+      fullName: Cash Clawee
+      resultStatus: 0
+      duration: 18.527697
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1209
+      uniqueId: '[BroLib.Navigation.Tests.dll][suite]'
+      name: BroLib.Navigation.Tests.dll
+      fullName: /Users/nikolas/projects/clawee-unity-app/Library/ScriptAssemblies/BroLib.Navigation.Tests.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1190
+      parentUniqueId: '[Cash Clawee][suite]'
+    - id: 1210
+      uniqueId: 'BroLib.Navigation.Tests.dll/[Tests][suite]'
+      name: Tests
+      fullName: Tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1209
+      parentUniqueId: '[BroLib.Navigation.Tests.dll][suite]'
+    - id: 1211
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/[BroLib.Navigation.Tests][Tests.Playmode][suite]'
+      name: Playmode
+      fullName: Tests.Playmode
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1210
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/[Tests][suite]'
+    - id: 1191
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+      name: NavigationTests
+      fullName: Tests.Playmode.NavigationTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Navigation Manager
+      parentId: 1211
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/[BroLib.Navigation.Tests][Tests.Playmode][suite]'
+    - id: 1079
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Close_Panel]'
+      name: Navigation_Close_Panel
+      fullName: Tests.Playmode.NavigationTests.Navigation_Close_Panel
+      resultStatus: 1
+      duration: 0.7423563
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1069
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1081
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst]'
+      name: Navigation_CloseAllButFirst
+      fullName: Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst
+      resultStatus: 1
+      duration: 0.0237149
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1069
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1208
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple][suite]'
+      name: Navigation_CloseAllButFirst_Multiple
+      fullName: Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Navigation Manager
+      parentId: 1191
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1082
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_CloseAllButFirst_Multiple/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(1)]'
+      name: Navigation_CloseAllButFirst_Multiple(1)
+      fullName: Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(1)
+      resultStatus: 1
+      duration: 0.0302499
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1086
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple][suite]'
+    - id: 1083
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_CloseAllButFirst_Multiple/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(5)]'
+      name: Navigation_CloseAllButFirst_Multiple(5)
+      fullName: Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(5)
+      resultStatus: 1
+      duration: 0.0612508
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1086
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple][suite]'
+    - id: 1084
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_CloseAllButFirst_Multiple/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(30)]'
+      name: Navigation_CloseAllButFirst_Multiple(30)
+      fullName: Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(30)
+      resultStatus: 1
+      duration: 0.0299122
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1086
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple][suite]'
+    - id: 1085
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_CloseAllButFirst_Multiple/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(100)]'
+      name: Navigation_CloseAllButFirst_Multiple(100)
+      fullName: Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(100)
+      resultStatus: 1
+      duration: 0.0678937
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1086
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple][suite]'
+    - id: 1080
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_OnBackPressed_Close_Top]'
+      name: Navigation_OnBackPressed_Close_Top
+      fullName: Tests.Playmode.NavigationTests.Navigation_OnBackPressed_Close_Top
+      resultStatus: 1
+      duration: 0.0286856
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1069
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1195
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push][suite]'
+      name: Navigation_Push
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Navigation Manager
+      parentId: 1191
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1070
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_Push/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push(1)]'
+      name: Navigation_Push(1)
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push(1)
+      resultStatus: 1
+      duration: 0.0349017
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1073
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push][suite]'
+    - id: 1071
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_Push/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push(5)]'
+      name: Navigation_Push(5)
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push(5)
+      resultStatus: 1
+      duration: 0.0373743
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1073
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push][suite]'
+    - id: 1072
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_Push/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push(10)]'
+      name: Navigation_Push(10)
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push(10)
+      resultStatus: 1
+      duration: 0.0285977
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1073
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push][suite]'
+    - id: 1199
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind][suite]'
+      name: Navigation_Push_Behind
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push_Behind
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Navigation Manager
+      parentId: 1191
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1074
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_Push_Behind/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind(1)]'
+      name: Navigation_Push_Behind(1)
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push_Behind(1)
+      resultStatus: 1
+      duration: 0.0308024
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1077
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind][suite]'
+    - id: 1075
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_Push_Behind/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind(2)]'
+      name: Navigation_Push_Behind(2)
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push_Behind(2)
+      resultStatus: 1
+      duration: 0.030874
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1077
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind][suite]'
+    - id: 1076
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_Push_Behind/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind(10)]'
+      name: Navigation_Push_Behind(10)
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push_Behind(10)
+      resultStatus: 1
+      duration: 0.0359892
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1077
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind][suite]'
+    - id: 1078
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Same_Close_Front]'
+      name: Navigation_Push_Same_Close_Front
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push_Same_Close_Front
+      resultStatus: 1
+      duration: 0.0333668
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1069
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1214
+      uniqueId: '[BroLib.PoolManager.Tests.dll][suite]'
+      name: BroLib.PoolManager.Tests.dll
+      fullName: /Users/nikolas/projects/clawee-unity-app/Library/ScriptAssemblies/BroLib.PoolManager.Tests.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1190
+      parentUniqueId: '[Cash Clawee][suite]'
+    - id: 1215
+      uniqueId: 'BroLib.PoolManager.Tests.dll/[BroLib][suite]'
+      name: BroLib
+      fullName: BroLib
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1214
+      parentUniqueId: '[BroLib.PoolManager.Tests.dll][suite]'
+    - id: 1216
+      uniqueId: 'BroLib.PoolManager.Tests.dll/BroLib/[Modules][suite]'
+      name: Modules
+      fullName: BroLib.Modules
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1215
+      parentUniqueId: 'BroLib.PoolManager.Tests.dll/[BroLib][suite]'
+    - id: 1217
+      uniqueId: 'BroLib.PoolManager.Tests.dll/BroLib/Modules/[PoolManagerFolder][suite]'
+      name: PoolManagerFolder
+      fullName: BroLib.Modules.PoolManagerFolder
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1216
+      parentUniqueId: 'BroLib.PoolManager.Tests.dll/BroLib/[Modules][suite]'
+    - id: 1218
+      uniqueId: 'BroLib.PoolManager.Tests.dll/BroLib/Modules/PoolManagerFolder/[BroLib.PoolManager.Tests][BroLib.Modules.PoolManagerFolder.Tests][suite]'
+      name: Tests
+      fullName: BroLib.Modules.PoolManagerFolder.Tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1217
+      parentUniqueId: 'BroLib.PoolManager.Tests.dll/BroLib/Modules/[PoolManagerFolder][suite]'
+    - id: 1212
+      uniqueId: 'BroLib.PoolManager.Tests.dll/BroLib/Modules/PoolManagerFolder/Tests/[BroLib.PoolManager.Tests][BroLib.Modules.PoolManagerFolder.Tests.PoolManagerTests][suite]'
+      name: PoolManagerTests
+      fullName: BroLib.Modules.PoolManagerFolder.Tests.PoolManagerTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1218
+      parentUniqueId: 'BroLib.PoolManager.Tests.dll/BroLib/Modules/PoolManagerFolder/[BroLib.PoolManager.Tests][BroLib.Modules.PoolManagerFolder.Tests][suite]'
+    - id: 1120
+      uniqueId: 'BroLib.PoolManager.Tests.dll/BroLib/Modules/PoolManagerFolder/Tests/PoolManagerTests/[BroLib.PoolManager.Tests][BroLib.Modules.PoolManagerFolder.Tests.PoolManagerTests.InstantiateAndReturn_ReusesSameInstance]'
+      name: InstantiateAndReturn_ReusesSameInstance
+      fullName: BroLib.Modules.PoolManagerFolder.Tests.PoolManagerTests.InstantiateAndReturn_ReusesSameInstance
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1119
+      parentUniqueId: 'BroLib.PoolManager.Tests.dll/BroLib/Modules/PoolManagerFolder/Tests/[BroLib.PoolManager.Tests][BroLib.Modules.PoolManagerFolder.Tests.PoolManagerTests][suite]'
+    - id: 1236
+      uniqueId: '[BroLib.Store.Tests.dll][suite]'
+      name: BroLib.Store.Tests.dll
+      fullName: /Users/nikolas/projects/clawee-unity-app/Library/ScriptAssemblies/BroLib.Store.Tests.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1190
+      parentUniqueId: '[Cash Clawee][suite]'
+    - id: 1237
+      uniqueId: 'BroLib.Store.Tests.dll/[Store][suite]'
+      name: Store
+      fullName: Store
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1236
+      parentUniqueId: '[BroLib.Store.Tests.dll][suite]'
+    - id: 1238
+      uniqueId: 'BroLib.Store.Tests.dll/Store/[BroLib.Store.Tests][Store.Tests][suite]'
+      name: Tests
+      fullName: Store.Tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1237
+      parentUniqueId: 'BroLib.Store.Tests.dll/[Store][suite]'
+    - id: 1219
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests][suite]'
+      name: StoreManagerTests
+      fullName: Store.Tests.StoreManagerTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Store Manager
+      parentId: 1238
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/[BroLib.Store.Tests][Store.Tests][suite]'
+    - id: 1225
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Get_Editor_Item_Price_Default][suite]'
+      name: Get_Editor_Item_Price_Default
+      fullName: Store.Tests.StoreManagerTests.Get_Editor_Item_Price_Default
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Store Manager
+      parentId: 1219
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests][suite]'
+    - id: 1129
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/Get_Editor_Item_Price_Default/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Get_Editor_Item_Price_Default("1","$0.01")]'
+      name: Get_Editor_Item_Price_Default("1","$0.01")
+      fullName: Store.Tests.StoreManagerTests.Get_Editor_Item_Price_Default("1","$0.01")
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Store Manager
+      parentId: 1131
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Get_Editor_Item_Price_Default][suite]'
+    - id: 1130
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/Get_Editor_Item_Price_Default/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Get_Editor_Item_Price_Default("random_sku","Unavailable")]'
+      name: Get_Editor_Item_Price_Default("random_sku","Unavailable")
+      fullName: Store.Tests.StoreManagerTests.Get_Editor_Item_Price_Default("random_sku","Unavailable")
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Store Manager
+      parentId: 1131
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Get_Editor_Item_Price_Default][suite]'
+    - id: 1126
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Initialize_Ready]'
+      name: Store_Manager_Initialize_Ready
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Initialize_Ready
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Store Manager
+      parentId: 1125
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests][suite]'
+    - id: 1228
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async][suite]'
+      name: Store_Manager_Purchase_Async
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Store Manager
+      parentId: 1219
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests][suite]'
+    - id: 1132
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/Store_Manager_Purchase_Async/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async("1",Succeeded)]'
+      name: Store_Manager_Purchase_Async("1",Succeeded)
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async("1",Succeeded)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Store Manager
+      parentId: 1134
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async][suite]'
+    - id: 1133
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/Store_Manager_Purchase_Async/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async("random_sku",Failed)]'
+      name: Store_Manager_Purchase_Async("random_sku",Failed)
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async("random_sku",Failed)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Store Manager
+      parentId: 1134
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async][suite]'
+    - id: 1231
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Multiple][suite]'
+      name: Store_Manager_Purchase_Async_Multiple
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Multiple
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Store Manager
+      parentId: 1219
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests][suite]'
+    - id: 1135
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/Store_Manager_Purchase_Async_Multiple/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Multiple("1","3",Succeeded)]'
+      name: Store_Manager_Purchase_Async_Multiple("1","3",Succeeded)
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Multiple("1","3",Succeeded)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Store Manager
+      parentId: 1137
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Multiple][suite]'
+    - id: 1136
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/Store_Manager_Purchase_Async_Multiple/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Multiple("random_sku","random_sku_1",Failed)]'
+      name: Store_Manager_Purchase_Async_Multiple("random_sku","random_sku_1",Failed)
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Multiple("random_sku","random_sku_1",Failed)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Store Manager
+      parentId: 1137
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Multiple][suite]'
+    - id: 1235
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Parallel][suite]'
+      name: Store_Manager_Purchase_Async_Parallel
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Parallel
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Store Manager
+      parentId: 1219
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests][suite]'
+    - id: 1138
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/Store_Manager_Purchase_Async_Parallel/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Parallel("1","3",1)]'
+      name: Store_Manager_Purchase_Async_Parallel("1","3",1)
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Parallel("1","3",1)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Store Manager
+      parentId: 1141
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Parallel][suite]'
+    - id: 1139
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/Store_Manager_Purchase_Async_Parallel/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Parallel("1","random",1)]'
+      name: Store_Manager_Purchase_Async_Parallel("1","random",1)
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Parallel("1","random",1)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Store Manager
+      parentId: 1141
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Parallel][suite]'
+    - id: 1140
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/Store_Manager_Purchase_Async_Parallel/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Parallel("random","random",0)]'
+      name: Store_Manager_Purchase_Async_Parallel("random","random",0)
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Parallel("random","random",0)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Store Manager
+      parentId: 1141
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Async_Parallel][suite]'
+    - id: 1128
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Fail]'
+      name: Store_Manager_Purchase_Fail
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Purchase_Fail
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Store Manager
+      parentId: 1125
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests][suite]'
+    - id: 1127
+      uniqueId: 'BroLib.Store.Tests.dll/Store/Tests/StoreManagerTests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests.Store_Manager_Purchase_Success]'
+      name: Store_Manager_Purchase_Success
+      fullName: Store.Tests.StoreManagerTests.Store_Manager_Purchase_Success
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Store Manager
+      parentId: 1125
+      parentUniqueId: 'BroLib.Store.Tests.dll/Store/Tests/[BroLib.Store.Tests][Store.Tests.StoreManagerTests][suite]'
+    - id: 1249
+      uniqueId: '[Clawee.Tests.dll][suite]'
+      name: Clawee.Tests.dll
+      fullName: /Users/nikolas/projects/clawee-unity-app/Library/ScriptAssemblies/Clawee.Tests.dll
+      resultStatus: 2
+      duration: 18.527697
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1190
+      parentUniqueId: '[Cash Clawee][suite]'
+    - id: 1250
+      uniqueId: 'Clawee.Tests.dll/[Tests][suite]'
+      name: Tests
+      fullName: Tests
+      resultStatus: 2
+      duration: 18.527697
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1249
+      parentUniqueId: '[Clawee.Tests.dll][suite]'
+    - id: 1251
+      uniqueId: 'Clawee.Tests.dll/Tests/[Clawee.Tests][Tests.Playmode][suite]'
+      name: Playmode
+      fullName: Tests.Playmode
+      resultStatus: 2
+      duration: 18.527697
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1250
+      parentUniqueId: 'Clawee.Tests.dll/[Tests][suite]'
+    - id: 1239
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/[Clawee.Tests][Tests.Playmode.ShopPanelTests][suite]'
+      name: ShopPanelTests
+      fullName: Tests.Playmode.ShopPanelTests
+      resultStatus: 1
+      duration: 1.8030652
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1251
+      parentUniqueId: 'Clawee.Tests.dll/Tests/[Clawee.Tests][Tests.Playmode][suite]'
+    - id: 1149
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/ShopPanelTests/[Clawee.Tests][Tests.Playmode.ShopPanelTests.Build_AddsDivider_Only_ForTypes_WithItems]'
+      name: Build_AddsDivider_Only_ForTypes_WithItems
+      fullName: Tests.Playmode.ShopPanelTests.Build_AddsDivider_Only_ForTypes_WithItems
+      resultStatus: 1
+      duration: 1.3810701
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1145
+      parentUniqueId: 'Clawee.Tests.dll/Tests/Playmode/[Clawee.Tests][Tests.Playmode.ShopPanelTests][suite]'
+    - id: 1146
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/ShopPanelTests/[Clawee.Tests][Tests.Playmode.ShopPanelTests.ShopView_Resets_ScrollPosition]'
+      name: ShopView_Resets_ScrollPosition
+      fullName: Tests.Playmode.ShopPanelTests.ShopView_Resets_ScrollPosition
+      resultStatus: 1
+      duration: 0.3271915
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1145
+      parentUniqueId: 'Clawee.Tests.dll/Tests/Playmode/[Clawee.Tests][Tests.Playmode.ShopPanelTests][suite]'
+    - id: 1147
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/ShopPanelTests/[Clawee.Tests][Tests.Playmode.ShopPanelTests.ShowShop_AddsDivider_AndOffers_ForRegularType]'
+      name: ShowShop_AddsDivider_AndOffers_ForRegularType
+      fullName: Tests.Playmode.ShopPanelTests.ShowShop_AddsDivider_AndOffers_ForRegularType
+      resultStatus: 1
+      duration: 0.0490945
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1145
+      parentUniqueId: 'Clawee.Tests.dll/Tests/Playmode/[Clawee.Tests][Tests.Playmode.ShopPanelTests][suite]'
+    - id: 1148
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/ShopPanelTests/[Clawee.Tests][Tests.Playmode.ShopPanelTests.ShowShop_Deposit_Uses_MultiOfferParent]'
+      name: ShowShop_Deposit_Uses_MultiOfferParent
+      fullName: Tests.Playmode.ShopPanelTests.ShowShop_Deposit_Uses_MultiOfferParent
+      resultStatus: 1
+      duration: 0.045709
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1145
+      parentUniqueId: 'Clawee.Tests.dll/Tests/Playmode/[Clawee.Tests][Tests.Playmode.ShopPanelTests][suite]'
+    - id: 1244
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/[Clawee.Tests][Tests.Playmode.SplashTests][suite]'
+      name: SplashTests
+      fullName: Tests.Playmode.SplashTests
+      resultStatus: 2
+      duration: 16.724632
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1251
+      parentUniqueId: 'Clawee.Tests.dll/Tests/[Clawee.Tests][Tests.Playmode][suite]'
+    - id: 1091
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/SplashTests/[Clawee.Tests][Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View]'
+      name: SplashController_StartSequenceAsync_View
+      fullName: Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View
+      resultStatus: 1
+      duration: 5.5745053
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1090
+      parentUniqueId: 'Clawee.Tests.dll/Tests/Playmode/[Clawee.Tests][Tests.Playmode.SplashTests][suite]'
+    - id: 1248
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/SplashTests/[Clawee.Tests][Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn][suite]'
+      name: SplashController_StartSequenceAsync_View_LoggedIn
+      fullName: Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn
+      resultStatus: 2
+      duration: 11.150127
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1244
+      parentUniqueId: 'Clawee.Tests.dll/Tests/Playmode/[Clawee.Tests][Tests.Playmode.SplashTests][suite]'
+    - id: 1092
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/SplashTests/SplashController_StartSequenceAsync_View_LoggedIn/[Clawee.Tests][Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn(True,0)]'
+      name: SplashController_StartSequenceAsync_View_LoggedIn(True,0)
+      fullName: Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn(True,0)
+      resultStatus: 2
+      duration: 5.5695367
+      messages: "  Expected: True\n  But was:  False\n"
+      output: 
+      stacktrace: 'at Tests.Playmode.SplashTests+<SplashController_StartSequenceAsync_View_LoggedIn>d__6.MoveNext
+        () [0x0013a] in /Users/nikolas/projects/clawee-unity-app/Assets/Tests/Playmode/SplashTests.cs:70
+
+        at
+        UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e]
+        in ./Library/PackageCache/com.unity.test-framework@40b8da2bd3e9/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:44
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1094
+      parentUniqueId: 'Clawee.Tests.dll/Tests/Playmode/SplashTests/[Clawee.Tests][Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn][suite]'
+    - id: 1093
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/SplashTests/SplashController_StartSequenceAsync_View_LoggedIn/[Clawee.Tests][Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn(False,1)]'
+      name: SplashController_StartSequenceAsync_View_LoggedIn(False,1)
+      fullName: Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn(False,1)
+      resultStatus: 1
+      duration: 5.580591
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1094
+      parentUniqueId: 'Clawee.Tests.dll/Tests/Playmode/SplashTests/[Clawee.Tests][Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn][suite]'
+    - id: 1258
+      uniqueId: '[MachineSystem.Tests.dll][suite]'
+      name: MachineSystem.Tests.dll
+      fullName: /Users/nikolas/projects/clawee-unity-app/Library/ScriptAssemblies/MachineSystem.Tests.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1190
+      parentUniqueId: '[Cash Clawee][suite]'
+    - id: 1259
+      uniqueId: 'MachineSystem.Tests.dll/[Tests][suite]'
+      name: Tests
+      fullName: Tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1258
+      parentUniqueId: '[MachineSystem.Tests.dll][suite]'
+    - id: 1260
+      uniqueId: 'MachineSystem.Tests.dll/Tests/[MachineSystem.Tests][Tests.PlayMode][suite]'
+      name: PlayMode
+      fullName: Tests.PlayMode
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1259
+      parentUniqueId: 'MachineSystem.Tests.dll/[Tests][suite]'
+    - id: 1252
+      uniqueId: 'MachineSystem.Tests.dll/Tests/PlayMode/[MachineSystem.Tests][Tests.PlayMode.MachineTests][suite]'
+      name: MachineTests
+      fullName: Tests.PlayMode.MachineTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1260
+      parentUniqueId: 'MachineSystem.Tests.dll/Tests/[MachineSystem.Tests][Tests.PlayMode][suite]'
+    - id: 1067
+      uniqueId: 'MachineSystem.Tests.dll/Tests/PlayMode/MachineTests/[MachineSystem.Tests][Tests.PlayMode.MachineTests.Controller_Close_Works]'
+      name: Controller_Close_Works
+      fullName: Tests.PlayMode.MachineTests.Controller_Close_Works
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1062
+      parentUniqueId: 'MachineSystem.Tests.dll/Tests/PlayMode/[MachineSystem.Tests][Tests.PlayMode.MachineTests][suite]'
+    - id: 1065
+      uniqueId: 'MachineSystem.Tests.dll/Tests/PlayMode/MachineTests/[MachineSystem.Tests][Tests.PlayMode.MachineTests.Controller_Fails_With_Wrong_Config]'
+      name: Controller_Fails_With_Wrong_Config
+      fullName: Tests.PlayMode.MachineTests.Controller_Fails_With_Wrong_Config
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1062
+      parentUniqueId: 'MachineSystem.Tests.dll/Tests/PlayMode/[MachineSystem.Tests][Tests.PlayMode.MachineTests][suite]'
+    - id: 1066
+      uniqueId: 'MachineSystem.Tests.dll/Tests/PlayMode/MachineTests/[MachineSystem.Tests][Tests.PlayMode.MachineTests.Controller_Inits_Works]'
+      name: Controller_Inits_Works
+      fullName: Tests.PlayMode.MachineTests.Controller_Inits_Works
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1062
+      parentUniqueId: 'MachineSystem.Tests.dll/Tests/PlayMode/[MachineSystem.Tests][Tests.PlayMode.MachineTests][suite]'
+    - id: 1063
+      uniqueId: 'MachineSystem.Tests.dll/Tests/PlayMode/MachineTests/[MachineSystem.Tests][Tests.PlayMode.MachineTests.Controller_Ready_Works]'
+      name: Controller_Ready_Works
+      fullName: Tests.PlayMode.MachineTests.Controller_Ready_Works
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1062
+      parentUniqueId: 'MachineSystem.Tests.dll/Tests/PlayMode/[MachineSystem.Tests][Tests.PlayMode.MachineTests][suite]'
+    - id: 1064
+      uniqueId: 'MachineSystem.Tests.dll/Tests/PlayMode/MachineTests/[MachineSystem.Tests][Tests.PlayMode.MachineTests.Controller_Starts_And_Sends_And_Quits]'
+      name: Controller_Starts_And_Sends_And_Quits
+      fullName: Tests.PlayMode.MachineTests.Controller_Starts_And_Sends_And_Quits
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1062
+      parentUniqueId: 'MachineSystem.Tests.dll/Tests/PlayMode/[MachineSystem.Tests][Tests.PlayMode.MachineTests][suite]'
+    m_ResultText: ShopPanelTests (4 tests) (1.803s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: e29574ae
+      m_LastClickedID: -1368091166
+      m_ExpandedIDs: 4ce112881e819097e29574ae4e2425b2744406bbee1b490337d158253b86593432455b3441dfe936fb8cc03eae83f645e18da458ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories:
+      - Store Manager
+      - Uncategorized
+      availableCategories:
+      - Navigation Manager
+      - Store Manager
+      - Uncategorized
+    m_SelectedOption: 0
+  - m_Window: {fileID: 22}
+    runProgress:
+      RunGuid: 2ec157be-8db2-4f8c-924d-ea72b9395de2
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 1
+          testNames:
+          - Tests.Editor.ManageAccountControllerTests
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 1.0000002
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList:
+    - id: 1068
+      uniqueId: '[Cash Clawee][suite]'
+      name: Cash Clawee
+      fullName: Cash Clawee
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1087
+      uniqueId: '[BroLib.Navigation.Tests.dll][suite]'
+      name: BroLib.Navigation.Tests.dll
+      fullName: /Users/nikolas/projects/clawee-unity-app/Library/ScriptAssemblies/BroLib.Navigation.Tests.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1068
+      parentUniqueId: '[Cash Clawee][suite]'
+    - id: 1088
+      uniqueId: 'BroLib.Navigation.Tests.dll/[Tests][suite]'
+      name: Tests
+      fullName: Tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1087
+      parentUniqueId: '[BroLib.Navigation.Tests.dll][suite]'
+    - id: 1089
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/[BroLib.Navigation.Tests][Tests.Playmode][suite]'
+      name: Playmode
+      fullName: Tests.Playmode
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1088
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/[Tests][suite]'
+    - id: 1069
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+      name: NavigationTests
+      fullName: Tests.Playmode.NavigationTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Navigation Manager
+      parentId: 1089
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/[BroLib.Navigation.Tests][Tests.Playmode][suite]'
+    - id: 1079
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Close_Panel]'
+      name: Navigation_Close_Panel
+      fullName: Tests.Playmode.NavigationTests.Navigation_Close_Panel
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1069
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1081
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst]'
+      name: Navigation_CloseAllButFirst
+      fullName: Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1069
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1086
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple][suite]'
+      name: Navigation_CloseAllButFirst_Multiple
+      fullName: Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Navigation Manager
+      parentId: 1069
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1082
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_CloseAllButFirst_Multiple/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(1)]'
+      name: Navigation_CloseAllButFirst_Multiple(1)
+      fullName: Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(1)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1086
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple][suite]'
+    - id: 1083
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_CloseAllButFirst_Multiple/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(5)]'
+      name: Navigation_CloseAllButFirst_Multiple(5)
+      fullName: Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(5)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1086
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple][suite]'
+    - id: 1084
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_CloseAllButFirst_Multiple/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(30)]'
+      name: Navigation_CloseAllButFirst_Multiple(30)
+      fullName: Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(30)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1086
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple][suite]'
+    - id: 1085
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_CloseAllButFirst_Multiple/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(100)]'
+      name: Navigation_CloseAllButFirst_Multiple(100)
+      fullName: Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple(100)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1086
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_CloseAllButFirst_Multiple][suite]'
+    - id: 1080
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_OnBackPressed_Close_Top]'
+      name: Navigation_OnBackPressed_Close_Top
+      fullName: Tests.Playmode.NavigationTests.Navigation_OnBackPressed_Close_Top
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1069
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1073
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push][suite]'
+      name: Navigation_Push
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Navigation Manager
+      parentId: 1069
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1070
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_Push/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push(1)]'
+      name: Navigation_Push(1)
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push(1)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1073
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push][suite]'
+    - id: 1071
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_Push/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push(5)]'
+      name: Navigation_Push(5)
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push(5)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1073
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push][suite]'
+    - id: 1072
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_Push/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push(10)]'
+      name: Navigation_Push(10)
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push(10)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1073
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push][suite]'
+    - id: 1077
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind][suite]'
+      name: Navigation_Push_Behind
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push_Behind
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Navigation Manager
+      parentId: 1069
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1074
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_Push_Behind/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind(1)]'
+      name: Navigation_Push_Behind(1)
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push_Behind(1)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1077
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind][suite]'
+    - id: 1075
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_Push_Behind/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind(2)]'
+      name: Navigation_Push_Behind(2)
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push_Behind(2)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1077
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind][suite]'
+    - id: 1076
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/Navigation_Push_Behind/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind(10)]'
+      name: Navigation_Push_Behind(10)
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push_Behind(10)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1077
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Behind][suite]'
+    - id: 1078
+      uniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/NavigationTests/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests.Navigation_Push_Same_Close_Front]'
+      name: Navigation_Push_Same_Close_Front
+      fullName: Tests.Playmode.NavigationTests.Navigation_Push_Same_Close_Front
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Navigation Manager
+      parentId: 1069
+      parentUniqueId: 'BroLib.Navigation.Tests.dll/Tests/Playmode/[BroLib.Navigation.Tests][Tests.Playmode.NavigationTests][suite]'
+    - id: 1092
+      uniqueId: '[Clawee.Game.dll][suite]'
+      name: Clawee.Game.dll
+      fullName: /Users/nikolas/projects/clawee-unity-app/Library/ScriptAssemblies/Clawee.Game.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1068
+      parentUniqueId: '[Cash Clawee][suite]'
+    - id: 1093
+      uniqueId: 'Clawee.Game.dll/[Game][suite]'
+      name: Game
+      fullName: Game
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1092
+      parentUniqueId: '[Clawee.Game.dll][suite]'
+    - id: 1094
+      uniqueId: 'Clawee.Game.dll/Game/[Profile][suite]'
+      name: Profile
+      fullName: Game.Profile
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1093
+      parentUniqueId: 'Clawee.Game.dll/[Game][suite]'
+    - id: 1095
+      uniqueId: 'Clawee.Game.dll/Game/Profile/[Clawee.Game][Game.Profile.Tests][suite]'
+      name: Tests
+      fullName: Game.Profile.Tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1094
+      parentUniqueId: 'Clawee.Game.dll/Game/[Profile][suite]'
+    - id: 1090
+      uniqueId: 'Clawee.Game.dll/Game/Profile/Tests/[Clawee.Game][Game.Profile.Tests.ProfilePanelTests][suite]'
+      name: ProfilePanelTests
+      fullName: Game.Profile.Tests.ProfilePanelTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1095
+      parentUniqueId: 'Clawee.Game.dll/Game/Profile/[Clawee.Game][Game.Profile.Tests][suite]'
+    - id: 1091
+      uniqueId: 'Clawee.Game.dll/Game/Profile/Tests/ProfilePanelTests/[Clawee.Game][Game.Profile.Tests.ProfilePanelTests.OpenEditProfilePanel]'
+      name: OpenEditProfilePanel
+      fullName: Game.Profile.Tests.ProfilePanelTests.OpenEditProfilePanel
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1090
+      parentUniqueId: 'Clawee.Game.dll/Game/Profile/Tests/[Clawee.Game][Game.Profile.Tests.ProfilePanelTests][suite]'
+    - id: 1101
+      uniqueId: '[Clawee.Tests.dll][suite]'
+      name: Clawee.Tests.dll
+      fullName: /Users/nikolas/projects/clawee-unity-app/Library/ScriptAssemblies/Clawee.Tests.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1068
+      parentUniqueId: '[Cash Clawee][suite]'
+    - id: 1102
+      uniqueId: 'Clawee.Tests.dll/[Tests][suite]'
+      name: Tests
+      fullName: Tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1101
+      parentUniqueId: '[Clawee.Tests.dll][suite]'
+    - id: 1103
+      uniqueId: 'Clawee.Tests.dll/Tests/[Clawee.Tests][Tests.Playmode][suite]'
+      name: Playmode
+      fullName: Tests.Playmode
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1102
+      parentUniqueId: 'Clawee.Tests.dll/[Tests][suite]'
+    - id: 1096
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/[Clawee.Tests][Tests.Playmode.SplashTests][suite]'
+      name: SplashTests
+      fullName: Tests.Playmode.SplashTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1103
+      parentUniqueId: 'Clawee.Tests.dll/Tests/[Clawee.Tests][Tests.Playmode][suite]'
+    - id: 1097
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/SplashTests/[Clawee.Tests][Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View]'
+      name: SplashController_StartSequenceAsync_View
+      fullName: Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1096
+      parentUniqueId: 'Clawee.Tests.dll/Tests/Playmode/[Clawee.Tests][Tests.Playmode.SplashTests][suite]'
+    - id: 1100
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/SplashTests/[Clawee.Tests][Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn][suite]'
+      name: SplashController_StartSequenceAsync_View_LoggedIn
+      fullName: Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1096
+      parentUniqueId: 'Clawee.Tests.dll/Tests/Playmode/[Clawee.Tests][Tests.Playmode.SplashTests][suite]'
+    - id: 1098
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/SplashTests/SplashController_StartSequenceAsync_View_LoggedIn/[Clawee.Tests][Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn(True,0)]'
+      name: SplashController_StartSequenceAsync_View_LoggedIn(True,0)
+      fullName: Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn(True,0)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1100
+      parentUniqueId: 'Clawee.Tests.dll/Tests/Playmode/SplashTests/[Clawee.Tests][Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn][suite]'
+    - id: 1099
+      uniqueId: 'Clawee.Tests.dll/Tests/Playmode/SplashTests/SplashController_StartSequenceAsync_View_LoggedIn/[Clawee.Tests][Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn(False,1)]'
+      name: SplashController_StartSequenceAsync_View_LoggedIn(False,1)
+      fullName: Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn(False,1)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1100
+      parentUniqueId: 'Clawee.Tests.dll/Tests/Playmode/SplashTests/[Clawee.Tests][Tests.Playmode.SplashTests.SplashController_StartSequenceAsync_View_LoggedIn][suite]'
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: ae83f645ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_TrimLeadingAndTrailingWhitespace: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories:
+      - Navigation Manager
+      - Uncategorized
+    m_SelectedOption: 0
+--- !u!114 &23
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Console\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 920
+    y: 24
+    width: 428
+    height: 896
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_OverlaysVisible: 1
+--- !u!114 &24
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: -440750813802333266, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Inspector\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 1350
+    y: 24
+    width: 378
+    height: 896
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_OverlaysVisible: 1
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
+  m_PreviewResizer:
+    m_CachedPref: 151
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 0
+  m_GlobalObjectId: 
+  m_InspectorMode: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_PreviewWindow: {fileID: 0}
