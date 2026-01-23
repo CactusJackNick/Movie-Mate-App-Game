@@ -8,7 +8,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_EditorHideFlags: 1
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Hierarchy
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 382}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 500, y: 100}
   m_MaxSize: {x: 40480, y: 16192}
   vertical: 1
-  controlID: 119
+  controlID: 7490
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 500, y: 100}
   m_MaxSize: {x: 40480, y: 16192}
   vertical: 0
-  controlID: 120
+  controlID: 7491
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -167,12 +167,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 512
+    width: 558
     height: 922
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 121
+  controlID: 7571
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -193,12 +193,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 512
+    width: 558
     height: 652
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 122
+  controlID: 7572
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -217,7 +217,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 239
+    width: 260
     height: 652
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
@@ -241,9 +241,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 239
+    x: 260
     y: 0
-    width: 273
+    width: 298
     height: 652
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
@@ -270,7 +270,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 652
-    width: 512
+    width: 558
     height: 270
   m_MinSize: {x: 231, y: 276}
   m_MaxSize: {x: 10001, y: 10026}
@@ -296,9 +296,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 512
+    x: 558
     y: 0
-    width: 407
+    width: 448
     height: 922
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
@@ -323,9 +323,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 919
+    x: 1006
     y: 0
-    width: 430
+    width: 326
     height: 922
   m_MinSize: {x: 102, y: 126}
   m_MaxSize: {x: 4002, y: 4026}
@@ -349,9 +349,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1349
+    x: 1332
     y: 0
-    width: 379
+    width: 396
     height: 922
   m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
@@ -381,9 +381,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 240
+    x: 261
     y: 24
-    width: 271
+    width: 296
     height: 626
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -469,12 +469,12 @@ MonoBehaviour:
       displayed: 1
       id: unity-transform-toolbar
       index: 0
-      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":-247.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":1,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
-      snapOffset: {x: 24, y: 25}
+      snapOffset: {x: -247, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 1
       layout: 1
       size: {x: 0, y: 0}
       sizeOverridden: 0
@@ -1011,7 +1011,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 537.2797, y: 823.60156, z: 3.7013292}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1063,7 +1063,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 10
     speed: 2
-    m_Value: 1024.4956
+    m_Value: 10
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1120,7 +1120,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 24
-    width: 238
+    width: 259
     height: 626
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1138,7 +1138,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 9edaffff
+      m_ExpandedIDs: fefaffff90b70000ceb70000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1239,7 +1239,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 676
-    width: 511
+    width: 557
     height: 244
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1263,7 +1263,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Settings
+    - Assets/Scripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1273,15 +1273,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Settings
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: /Users/nikolas/projects/moviemate-nikolas/MovieMateGame
+  m_LastProjectPath: /Users/nikolas/projects/moviemate-nikolas/moviemate-nikolas/Movie
+    Mate Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a0d00000
-    m_LastClickedID: 53408
+    m_SelectedIDs: 04ba0000
+    m_LastClickedID: 47620
     m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1560,7 +1561,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -94224
+  m_LastSelectedObjectID: 47176
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1582,9 +1583,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Simulator\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 513
+    x: 559
     y: 24
-    width: 405
+    width: 446
     height: 896
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1605,7 +1606,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 1}
-  m_TargetSize: {x: 1170, y: 2532}
+  m_TargetSize: {x: 1440, y: 2560}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -1627,7 +1628,7 @@ MonoBehaviour:
     fitToScreenEnabled: 1
     rotationDegree: 0
     highlightSafeAreaEnabled: 0
-    friendlyName: Apple iPad Mini 4
+    friendlyName: Samsung Galaxy S7
     screenIndex: 0
     networkReachability: 1
     systemLanguage: 10
@@ -1653,9 +1654,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Test Runner\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 587
+    x: 558
     y: 102
-    width: 471
+    width: 446
     height: 896
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1669,7 +1670,7 @@ MonoBehaviour:
     m_ContainerData: []
     m_OverlaysVisible: 1
   m_Spl:
-    ID: 1361
+    ID: 24661
     splitterInitialOffset: 517
     currentActiveSplitter: -1
     realSizes:
@@ -1729,9 +1730,9 @@ MonoBehaviour:
       CurrentStageName: 
     m_NewResultList:
     - id: 1000
-      uniqueId: '[MovieMateGame][suite]'
-      name: MovieMateGame
-      fullName: MovieMateGame
+      uniqueId: '[Movie Mate Game][suite]'
+      name: Movie Mate Game
+      fullName: Movie Mate Game
       resultStatus: 0
       duration: 0
       messages: 
@@ -1750,7 +1751,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 3ab81884
       m_LastClickedID: -2078754758
-      m_ExpandedIDs: dd4bdf8b1e3df8933826b5956ee8c3a65d7870a98666f8ad968989b156a167b2c46ac7bf18f512c558191dc535e5d8c6d091ffc7739666ec73bf15edcd38c5f4931deafcabfb2dfd4ba6810282db39068aa1850b3ccab40b57309910eb696e1d9081c8216b341c2289431e24d5466627bacf452bb576532fc2bf273844b032386b50133b2f9b2745ae83f645ed7f0d46e55ee753692fcf56f5fd925d0fa9d15fdd6fcc6ba4212f71283c3a72ffffff7f
+      m_ExpandedIDs: dd4bdf8b1e3df8933826b595d9901aa66ee8c3a65d7870a98666f8ad968989b156a167b2c46ac7bf18f512c558191dc535e5d8c6d091ffc7739666ec73bf15edcd38c5f4931deafcabfb2dfd4ba6810282db39068aa1850b3ccab40b57309910eb696e1d9081c8216b341c2289431e24d5466627bacf452bb576532fc2bf273844b032386b50133b2f9b2745ae83f645ed7f0d46e55ee753692fcf56f5fd925d0fa9d15fdd6fcc6ba4212f71283c3a72ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -3729,9 +3730,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 920
+    x: 1007
     y: 24
-    width: 428
+    width: 324
     height: 896
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -3765,9 +3766,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1350
+    x: 1333
     y: 24
-    width: 378
+    width: 395
     height: 896
   m_SerializedDataModeController:
     m_DataMode: 0
