@@ -4,6 +4,7 @@ namespace DefaultNamespace
     {
         MainMenu,
         Settings,
-        Game
+        Game,
+        Genre
     }
 }

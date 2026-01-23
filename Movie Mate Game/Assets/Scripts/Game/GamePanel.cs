@@ -1,19 +1,28 @@
 using Mediator;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace DefaultNamespace.Game
 {
     public class GamePanel : ABaseUIMediatorComponent
     {
-        [SerializeField] private Button _backButton;
+        [SerializeField] private GameView _view;
+        
+        private GameController _controller;
         
         public override void Awake()
         {
             base.Awake();
-            _backButton.onClick.AddListener(ReturnToMain);
-        }
+            
+            _view.OnBackButtonPressed += ReturnToMain;
 
+            _controller = new GameController(_view, ApiService.Instance);
+        }
+        public override void Show()
+        {
+            base.Show();
+            _controller.LoadMovies();
+        }
+        
         private void ReturnToMain()
         {
             UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.MainMenu);
@@ -21,13 +30,8 @@ namespace DefaultNamespace.Game
 
         private void OnDestroy()
         {
-            _backButton.onClick.RemoveListener(ReturnToMain);
-        }
-
-        public override void Show()
-        {
-            //action 1 frame before it actually shows
-            base.Show();
+            _view.OnBackButtonPressed -= ReturnToMain;
+            _controller?.Dispose();
         }
     }
 }

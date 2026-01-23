@@ -7,7 +7,6 @@ namespace Mediator
     public class UINavigationMediator : IUINavigationMediator
     {
         private static IUINavigationMediator _instance;
-        public static IUINavigationMediator Instance => _instance ??= new UINavigationMediator();
         
         private readonly Dictionary<Panels, ABaseUIMediatorComponent> _panelsDict = new();
 
@@ -15,6 +14,8 @@ namespace Mediator
         {
             _instance = this;
         }
+        
+        public static IUINavigationMediator Instance => _instance ??= new UINavigationMediator();
         
         public void InjectToMediator(ABaseUIMediatorComponent panel)
         {
