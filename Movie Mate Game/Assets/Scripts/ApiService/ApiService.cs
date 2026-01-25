@@ -43,5 +43,27 @@ namespace DefaultNamespace
             
             return data;
         }
+
+        public async UniTask<GenresListResponse> GetGenreListAsync()
+        {
+            var url = $"{BaseURL}/genre/movie/list";
+            
+            using var request = UnityWebRequest.Get(url);
+            request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
+            request.SetRequestHeader("accept", "application/json");
+            
+            await request.SendWebRequest();
+
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError(request.error);
+                throw new Exception(request.error);
+            }
+            
+            var json = request.downloadHandler.text;
+            var data = JsonConvert.DeserializeObject<GenresListResponse>(json);
+            
+            return data;
+        }
     }
 }

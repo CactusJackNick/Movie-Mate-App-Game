@@ -6,5 +6,6 @@ namespace DefaultNamespace
     public interface IApiService
     {
         UniTask<MovieListResponse> GetPopularMoviesAsync();
+        UniTask<GenresListResponse> GetGenreListAsync();
     }
 }
