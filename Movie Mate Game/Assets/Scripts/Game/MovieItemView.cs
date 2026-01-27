@@ -22,7 +22,7 @@ namespace DefaultNamespace.Game
 
         private async UniTaskVoid GetPosterAsync(string path)
         {
-            var downloadedSprite = await ApiService.Instance.GetMovieImage(path);
+            var downloadedSprite = await ApiService.Instance.GetMovieImageAsync(path);
             _poster.sprite = downloadedSprite; 
         }
     }

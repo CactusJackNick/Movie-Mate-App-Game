@@ -1,18 +1,32 @@
 using DefaultNamespace;
+using DefaultNamespace.OptionsSelector;
 using Mediator;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Settings
 {
     public class SettingsPanel : ABaseUIMediatorComponent
     {
-        [SerializeField] private Button _backButton;
+        [SerializeField] private SettingsView _view;
+        [SerializeField] private ResolutionSelector _resolutionSelector;
+        [SerializeField] private LanguageToggle _languageToggle;
+        
+        private SettingsController _controller;
         
         public override void Awake()
         {
             base.Awake();
-            _backButton.onClick.AddListener(ReturnToMain);
+
+            _view.OnBackClicked += ReturnToMain;
+            
+            _controller = new SettingsController(_view);
+            _controller.Configure(_resolutionSelector,  _languageToggle);
+        }
+
+        public override void Show()
+        {
+            base.Show();
+            _controller.InitResButtons();
         }
 
         private void ReturnToMain()
@@ -22,7 +36,7 @@ namespace Settings
 
         private void OnDestroy()
         {
-            _backButton.onClick.RemoveListener(ReturnToMain);
+            _view.OnBackClicked -= ReturnToMain;
         }
     }
 }

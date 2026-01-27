@@ -8,7 +8,8 @@ namespace DefaultNamespace
     {
         UniTask<MovieListResponse> GetPopularMoviesAsync();
         UniTask<GenresListResponse> GetGenreListAsync();
-        UniTask<Sprite> GetMovieImage(string posterPath);
-
+        UniTask<Sprite> GetMovieImageAsync(string posterPath);
+        void SetImageResolution(string newResolution);
+        void SetLanguage(string newLanguage);
     }
 }
