@@ -25,11 +25,6 @@ namespace DefaultNamespace.Genre
             _backButton.onClick.AddListener(BackToMain);
         }
         
-        public void BackToMain()
-        {
-            OnBackClicked?.Invoke();
-        }
-
         public void DisplayGenres(List<GenreViewModel> genres)
         {
             foreach (var item in _spawnedItems)
@@ -42,9 +37,21 @@ namespace DefaultNamespace.Genre
             {
                 var newItem = Instantiate(_itemPrefab, _contentParent);
                 newItem.Setup(genreData);
+
+                newItem.OnClick += GenreButtonClicked;
                 
                 _spawnedItems.Add(newItem);
             }
+        }
+
+        private void GenreButtonClicked(int genreId)
+        {
+            OnGenreClicked?.Invoke(genreId);
+        }
+        
+        private void BackToMain()
+        {
+            OnBackClicked?.Invoke();
         }
 
         private void OnDestroy()

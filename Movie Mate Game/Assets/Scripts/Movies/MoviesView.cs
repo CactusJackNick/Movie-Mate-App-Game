@@ -1,30 +1,29 @@
 using System;
 using System.Collections.Generic;
+using DefaultNamespace.Game;
 using DefaultNamespace.Models;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DefaultNamespace.Game
+namespace DefaultNamespace
 {
-    public class GameView : MonoBehaviour, IGameView
+    public class MoviesView : MonoBehaviour, IMovieView
     {
         [SerializeField] private Button _backButton;
         
-        [Header("List Settings")]
+        [Header("Movie Settings")]
         [SerializeField] private Transform _contentParent;
         [SerializeField] private MovieItemView _itemPrefab;
+        [SerializeField] private TMP_Text _noMoviesText;
         
         private readonly List<MovieItemView> _items = new();
         
         public event Action OnBackButtonPressed;
+        
         private void Awake()
         {
             _backButton.onClick.AddListener(GoBackToMain);
-        }
-
-        public void GoBackToMain()
-        {
-            OnBackButtonPressed?.Invoke();
         }
         
         public void DisplayMovies(List<MovieData> movies)
@@ -41,6 +40,16 @@ namespace DefaultNamespace.Game
                 item.Setup(movieData);
                 _items.Add(item);
             }
+        }
+
+        public void ShowNoMoviesText(bool isActive)
+        {
+            _noMoviesText.gameObject.SetActive(isActive);
+        }
+        
+        private void GoBackToMain()
+        {
+            OnBackButtonPressed?.Invoke();
         }
         
         private void OnDestroy()

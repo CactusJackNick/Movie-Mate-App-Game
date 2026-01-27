@@ -2,17 +2,18 @@ using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using DefaultNamespace.Models;
+using Genre;
 
 namespace DefaultNamespace.Genre
 {
-    public class GenreController
+    public class GenreController : IGenreController
     {
         private readonly IGenreView _view;
         private readonly IApiService _apiService;
         private readonly GenreIconsConfig _config;
         private readonly Dictionary<int, GenreViewModel> _genreButtonsList = new();
         
-        public GenreController(IGenreView view, IApiService apiService,  GenreIconsConfig config)
+        public GenreController(IGenreView view, IApiService apiService, GenreIconsConfig config)
         {
             _view = view;
             _apiService = apiService;

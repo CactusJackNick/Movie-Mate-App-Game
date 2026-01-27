@@ -5,6 +5,7 @@ namespace DefaultNamespace
         MainMenu,
         Settings,
         Game,
-        Genre
+        Genre,
+        Movies
     }
 }
