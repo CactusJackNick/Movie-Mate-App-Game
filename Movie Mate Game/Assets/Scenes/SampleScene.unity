@@ -796,6 +796,7 @@ GameObject:
   - component: {fileID: 221430603}
   - component: {fileID: 221430602}
   - component: {fileID: 221430604}
+  - component: {fileID: 221430605}
   m_Layer: 5
   m_Name: Bubble
   m_TagString: Untagged
@@ -875,6 +876,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ToggleGroup
   m_AllowSwitchOff: 0
+--- !u!114 &221430605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221430600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b76d99c9e248fd876829dbb8e41f84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.OptionsSelector.LanguageToggle
+  _englishToggle: {fileID: 887835972}
+  _russianToggle: {fileID: 514388823}
 --- !u!1 &230158726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,7 +1833,6 @@ GameObject:
   - component: {fileID: 514388820}
   - component: {fileID: 514388818}
   - component: {fileID: 514388823}
-  - component: {fileID: 514388822}
   m_Layer: 5
   m_Name: Russian Button
   m_TagString: Untagged
@@ -1901,20 +1915,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514388816}
   m_CullTransparentMesh: 1
---- !u!114 &514388822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 514388816}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21b76d99c9e248fd876829dbb8e41f84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.OptionsSelector.LanguageToggle
-  _toggle: {fileID: 514388823}
-  _knob: {fileID: 1270621783}
 --- !u!114 &514388823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3960,7 +3960,6 @@ GameObject:
   - component: {fileID: 887835969}
   - component: {fileID: 887835967}
   - component: {fileID: 887835972}
-  - component: {fileID: 887835971}
   m_Layer: 5
   m_Name: English Button
   m_TagString: Untagged
@@ -4043,20 +4042,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887835965}
   m_CullTransparentMesh: 1
---- !u!114 &887835971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887835965}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21b76d99c9e248fd876829dbb8e41f84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.OptionsSelector.LanguageToggle
-  _toggle: {fileID: 887835972}
-  _knob: {fileID: 748755652}
 --- !u!114 &887835972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4746,6 +4731,7 @@ MonoBehaviour:
   _hideOnAwake: 1
   _view: {fileID: 773173789}
   _resolutionSelector: {fileID: 2097129238}
+  _languageToggle: {fileID: 221430605}
 --- !u!1 &1133554615
 GameObject:
   m_ObjectHideFlags: 0
