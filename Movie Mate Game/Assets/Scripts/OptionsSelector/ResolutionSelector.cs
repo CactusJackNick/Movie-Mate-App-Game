@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,8 +6,6 @@ namespace DefaultNamespace.OptionsSelector
 {
     public class ResolutionSelector : MonoBehaviour
     {
-        private const string PrefResolutionIndex = "User_Resolution_Index";
-        
         [Header("Buttons")]
         [SerializeField] private OptionsButton _buttonPrefab;
         [SerializeField] private RectTransform _optionsHolder;
@@ -18,6 +17,8 @@ namespace DefaultNamespace.OptionsSelector
         [SerializeField] private Color _activeTextColor = Color.white;
         
         private readonly Dictionary<int, OptionsButton> _buttons = new();
+        
+        public event Action<int> OnResolutionChanged; 
 
         public void SetupView()
         { 
@@ -43,17 +44,15 @@ namespace DefaultNamespace.OptionsSelector
                _buttons.Add(i, optionButton);
            }
         }
-
-        public void InitializeSavedState()
+        
+        public void SelectButtonAtIndex(int index)
         {
-            var savedIndex = PlayerPrefs.GetInt(PrefResolutionIndex);
-
-            if (savedIndex > _resolutions.Length)
+            if (index >= _resolutions.Length)
             {
-                savedIndex = 0;
+                index = 0;
             }
-
-            if (_buttons.TryGetValue(savedIndex, out var button))
+        
+            if (_buttons.TryGetValue(index, out var button))
             {
                 button.InvokeOnClick();
             }
@@ -63,7 +62,8 @@ namespace DefaultNamespace.OptionsSelector
         {              
             DisableButtons();
             button.SetActiveState(true);
-            ApplyResolutionSettings(button.Index);
+            
+            OnResolutionChanged?.Invoke(button.Index);
         }
 
         private void DisableButtons()
@@ -72,32 +72,6 @@ namespace DefaultNamespace.OptionsSelector
             {
                 button.Value.SetActiveState(false);
             }
-        }
-        
-        private void ApplyResolutionSettings(int index)
-        {
-            var resolutionSize = "w342";
-            switch (index)
-            {
-                case 0:
-                    // low
-                    resolutionSize = "w154";
-                    break;
-                case 1:
-                    // mid
-                    resolutionSize = "w342";
-                    break;
-                case 2:
-                    //high
-                    resolutionSize = "original";
-                    break;
-            }
-            
-            PlayerPrefs.SetInt(PrefResolutionIndex, index);
-            PlayerPrefs.Save();
-            
-            ApiService.Instance.SetImageResolution(resolutionSize);
-            Debug.Log($"Applying resolution {resolutionSize}");
         }
     }
 }

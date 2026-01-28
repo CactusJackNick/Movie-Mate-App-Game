@@ -50,7 +50,7 @@ namespace DefaultNamespace
         
         public async UniTask<MovieListResponse> GetPopularMoviesAsync()
         {
-            var url = $"{BaseURL}/movie/popular";
+            var url = $"{BaseURL}/movie/popular?language={_currentLang}";
             
             using var request = UnityWebRequest.Get(url);
             request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");

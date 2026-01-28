@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,9 +9,10 @@ namespace DefaultNamespace.OptionsSelector
         [SerializeField] private Toggle _englishToggle;
         [SerializeField] private Toggle _russianToggle;
 
-        private void Awake()
+        public event Action<LocalizationLanguage> OnLanguageChanged;
+        
+        public void Setup(LocalizationLanguage currentLang)
         {
-            var currentLang = LocalizationManager.Instance.CurrentLanguage;
             var isRussian = currentLang == LocalizationLanguage.Russian;
             
             _englishToggle.SetIsOnWithoutNotify(!isRussian);
@@ -24,7 +26,7 @@ namespace DefaultNamespace.OptionsSelector
         {
             if (isOn)
             {
-                SwitchLanguageSelected(LocalizationLanguage.English);
+                OnLanguageChanged?.Invoke(LocalizationLanguage.English);
             }
         }
         
@@ -32,16 +34,8 @@ namespace DefaultNamespace.OptionsSelector
         {
             if (isOn)
             {
-                SwitchLanguageSelected(LocalizationLanguage.Russian);
+                OnLanguageChanged?.Invoke(LocalizationLanguage.Russian);
             }
-        }
-
-        public void SwitchLanguageSelected(LocalizationLanguage language)
-        {
-            LocalizationManager.Instance.CurrentLanguage = language;
-
-            var currentLang = LocalizationManager.Instance.GetCurrentLanguageCode();
-            ApiService.Instance.SetLanguage(currentLang);
         }
 
         private void OnDisable()

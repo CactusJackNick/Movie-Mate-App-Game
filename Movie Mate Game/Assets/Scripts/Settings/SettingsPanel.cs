@@ -26,7 +26,7 @@ namespace Settings
         public override void Show()
         {
             base.Show();
-            _controller.InitResButtons();
+            _controller.InitializeSettings();
         }
 
         private void ReturnToMain()
