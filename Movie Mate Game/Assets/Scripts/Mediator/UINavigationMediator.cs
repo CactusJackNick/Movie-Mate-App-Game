@@ -43,7 +43,7 @@ namespace Mediator
             ShowPanel(second);
         }
 
-        public void HidePanel(Panels panelId)
+        private void HidePanel(Panels panelId)
         {
             if (_panelsDict.TryGetValue(panelId, out var panel))
             {
