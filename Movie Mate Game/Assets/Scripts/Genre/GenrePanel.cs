@@ -16,7 +16,7 @@ namespace DefaultNamespace.Genre
         {
             base.Awake();
             
-            _view.OnBackClicked += ReturnToMain;
+            _view.OnBackClicked += ReturnToGeneralSearch;
 
             _controller = new GenreController(_view, ApiService.Instance, _config);
 
@@ -28,9 +28,9 @@ namespace DefaultNamespace.Genre
             _controller.LoadGenres();
         }
         
-        private void ReturnToMain()
+        private void ReturnToGeneralSearch()
         {
-            UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.MainMenu);
+            UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.SeachPanel);
         }
 
         private void HandleGenreClicked(int genreId)
@@ -41,9 +41,8 @@ namespace DefaultNamespace.Genre
         
         private void OnDestroy()
         {
-            _view.OnBackClicked -= ReturnToMain;
+            _view.OnBackClicked -= ReturnToGeneralSearch;
             _view.OnGenreClicked -= HandleGenreClicked;
-            //_controller?.Dispose();
         }
     }
 }

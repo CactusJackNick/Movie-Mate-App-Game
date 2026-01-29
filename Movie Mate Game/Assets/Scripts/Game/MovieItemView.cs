@@ -17,12 +17,22 @@ namespace DefaultNamespace.Game
             _title.text = data.Title;
             _overview.text = data.Overview;
 
+            if (data.poster_path == null)
+            {
+                return;
+            }
             GetPosterAsync(data.poster_path).Forget();
         }
 
         private async UniTaskVoid GetPosterAsync(string path)
         {
             var downloadedSprite = await ApiService.Instance.GetMovieImageAsync(path);
+            
+            if (this == null || transform == null) 
+            {
+                return; 
+            }
+            
             _poster.sprite = downloadedSprite; 
         }
     }

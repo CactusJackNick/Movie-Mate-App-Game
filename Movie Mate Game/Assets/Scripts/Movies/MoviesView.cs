@@ -28,18 +28,32 @@ namespace DefaultNamespace
         
         public void DisplayMovies(List<MovieData> movies)
         {
-            foreach (var item in _items)
-            {
-                Destroy(item.gameObject);
-            }
-            _items.Clear();
-
+            ClearItems();
+            AddMovies(movies);
+        }
+        
+        public void AddMovies(List<MovieData> movies)
+        {
             foreach (var movieData in movies)
             {
+                if (!IsSafeFontString(movieData.Title))
+                {
+                    continue;
+                }
                 var item = Instantiate(_itemPrefab, _contentParent);
                 item.Setup(movieData);
                 _items.Add(item);
             }
+        }
+
+        public void ClearItems()
+        {
+            foreach (var item in _items)
+            {
+                Destroy(item.gameObject);
+            }
+            
+            _items.Clear();
         }
 
         public void ShowNoMoviesText(bool isActive)
@@ -55,6 +69,24 @@ namespace DefaultNamespace
         private void OnDestroy()
         {
             _backButton.onClick.RemoveListener(GoBackToMain);
+        }
+        
+        private bool IsSafeFontString(string text)
+        {
+            if (string.IsNullOrEmpty(text)) return false;
+
+            foreach (char c in text)
+            { 
+                var isLatin = (c <= 255);
+        
+                var isCyrillic = (c >= 0x0400 && c <= 0x04FF);
+
+                if (!isLatin && !isCyrillic) 
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
