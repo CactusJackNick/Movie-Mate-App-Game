@@ -11,7 +11,6 @@ namespace DefaultNamespace
         private readonly IMovieView _movieView;
         private readonly IApiService  _apiService;
         
-        
         public MoviesController(IMovieView movieView, IApiService apiService)
         {
             _movieView = movieView;
@@ -25,7 +24,7 @@ namespace DefaultNamespace
 
         private async UniTask LoadMoviesAsync(int targetId)
         {
-            var response = await _apiService.GetPopularMoviesAsync();
+            var response = await _apiService.GetPopularMoviesAsync(1); //TODO: need to update
             
             if (response == null || 
                 response.Results == null)

@@ -9,14 +9,14 @@ namespace MainMenu
     {
         [SerializeField] private Button _settingsButton;
         [SerializeField] private Button _startGameButton;
-        [SerializeField] private Button _genre;
+        [SerializeField] private Button _findMoviesButton;
 
         public override void Awake()
         {
             base.Awake();
             _startGameButton.onClick.AddListener(OpenGamePanel);
             _settingsButton.onClick.AddListener(OpenSettingsPanel);
-            _genre.onClick.AddListener(OpenGenrePanel);
+            _findMoviesButton.onClick.AddListener(OpenSearchPanel);
         }
 
         private void OpenGamePanel()
@@ -30,16 +30,16 @@ namespace MainMenu
             UINavigationMediator.Instance.ReplacePanel(_panelId,Panels.Settings);
         }
         
-        private void OpenGenrePanel()
+        private void OpenSearchPanel()
         {
-            UINavigationMediator.Instance.ReplacePanel(_panelId,Panels.Genre);
+            UINavigationMediator.Instance.ReplacePanel(_panelId,Panels.SeachPanel);
         }
 
         private void OnDestroy()
         {
             _settingsButton.onClick.RemoveListener(OpenSettingsPanel);
             _startGameButton.onClick.RemoveListener(OpenGamePanel);
-            _genre.onClick.RemoveListener(OpenGenrePanel);
+            _findMoviesButton.onClick.RemoveListener(OpenSearchPanel);
         }
     }
 }

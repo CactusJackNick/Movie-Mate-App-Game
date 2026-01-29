@@ -6,6 +6,9 @@ namespace DefaultNamespace
         Settings,
         Game,
         Genre,
-        Movies
+        Movies,
+        SeachPanel,
+        SeachByNamePanel,
+        LoadingPanel,
     }
 }

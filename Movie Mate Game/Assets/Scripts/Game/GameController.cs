@@ -1,5 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
+using DefaultNamespace.Models;
 using UnityEngine;
 
 namespace DefaultNamespace.Game
@@ -24,7 +25,7 @@ namespace DefaultNamespace.Game
         {
             try
             {
-                var listResponse = await _apiService.GetPopularMoviesAsync();
+                var listResponse = await _apiService.GetPopularMoviesAsync(1); // need to update
 
                 if (listResponse.Results is { Count: > 0 })
                 {
