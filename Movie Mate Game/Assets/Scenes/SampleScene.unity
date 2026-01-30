@@ -9847,6 +9847,7 @@ MonoBehaviour:
   _taglineText: {fileID: 1156786655}
   _genresText: {fileID: 1136995344}
   _posterImage: {fileID: 1662762745}
+  _placeholderIcon: {fileID: -6284830799918442933, guid: 79436e2700f6143a9a766219006dbc73, type: 3}
   _button: {fileID: 1055596122}
 --- !u!1001 &1553304942
 PrefabInstance:
@@ -10900,8 +10901,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7890246350005439881, guid: 6b28ff8b9f7874a9a80f97d722f7952a, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: -8228874792674824082, guid: c07e04754be174fbbb62946dee61ec7d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

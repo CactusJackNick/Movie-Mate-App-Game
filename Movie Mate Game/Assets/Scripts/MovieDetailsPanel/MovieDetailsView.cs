@@ -17,6 +17,7 @@ namespace DefaultNamespace
         [SerializeField] private TMP_Text _taglineText;
         [SerializeField] private TMP_Text _genresText;
         [SerializeField] private Image _posterImage;
+        [SerializeField] private Sprite _placeholderIcon;
 
         [Header("Navigation")]
         [SerializeField] private Button _button;
@@ -29,6 +30,11 @@ namespace DefaultNamespace
 
         public void DisplayData(DetailsSuperlistModel data, string director, string genres)
         {
+            if (_posterImage != null)
+            {
+                _posterImage.sprite = _placeholderIcon;
+            }
+            
             _titleText.text = data.Title;
             _descriptionText.text = data.Overview;
             _ratingText.text = data.Vote_Average.ToString("0.0");
@@ -44,6 +50,11 @@ namespace DefaultNamespace
         
         public void SetPoster(Sprite sprite)
         {
+            if (_posterImage == null)
+            {
+                return;
+            }
+            
             if (_posterImage != null)
             {
                 _posterImage.sprite = sprite;
