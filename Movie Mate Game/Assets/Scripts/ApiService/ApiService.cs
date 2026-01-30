@@ -181,7 +181,6 @@ namespace DefaultNamespace
             }
             
             var newSprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero);
-            
             _spriteCache[posterPath] = newSprite;
             
             return newSprite;
@@ -194,12 +193,19 @@ namespace DefaultNamespace
             using var request = UnityWebRequestTexture.GetTexture(url);
             request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
             request.SetRequestHeader("accept", "application/json");
-            
-            await request.SendWebRequest();
 
-            if (request.result != UnityWebRequest.Result.Success)
+            try
+            {
+                await request.SendWebRequest();
+            }
+            catch (Exception)
             {
                 Debug.LogWarning($"[ApiService] Image not found (404) or connection error: {url}");
+                return null;
+            }
+            
+            if (request.result != UnityWebRequest.Result.Success)
+            {
                 return null;
             }
 

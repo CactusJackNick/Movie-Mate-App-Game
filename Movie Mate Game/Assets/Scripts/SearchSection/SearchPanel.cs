@@ -13,7 +13,7 @@ namespace DefaultNamespace
             base.Awake();
             
             _view.OnBackClicked += ReturnToMain;
-            _view.OnFindMoviesClicked += OpenSeachByNamePanel;
+            _view.OnFindMoviesClicked += OpenSearchByNamePanel;
             _view.OnGenreClicked += OpenSearchByGenrePanel;
         }
 
@@ -27,7 +27,7 @@ namespace DefaultNamespace
             UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.MainMenu);
         }
 
-        private void OpenSeachByNamePanel()
+        private void OpenSearchByNamePanel()
         {
             UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.SeachByNamePanel);
         }
@@ -40,7 +40,7 @@ namespace DefaultNamespace
         private void OnDestroy()
         {
             _view.OnBackClicked -= ReturnToMain;
-            _view.OnFindMoviesClicked -= OpenSeachByNamePanel;
+            _view.OnFindMoviesClicked -= OpenSearchByNamePanel;
             _view.OnGenreClicked -= OpenSearchByGenrePanel;
         }
     }
