@@ -1,6 +1,5 @@
 using System;
 using Cysharp.Threading.Tasks;
-using DefaultNamespace.Models;
 using UnityEngine;
 
 namespace DefaultNamespace.Game

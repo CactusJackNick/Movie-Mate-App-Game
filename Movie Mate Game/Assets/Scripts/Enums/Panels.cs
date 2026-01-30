@@ -10,5 +10,6 @@ namespace DefaultNamespace
         SeachPanel,
         SeachByNamePanel,
         LoadingPanel,
+        DetailsPanel
     }
 }

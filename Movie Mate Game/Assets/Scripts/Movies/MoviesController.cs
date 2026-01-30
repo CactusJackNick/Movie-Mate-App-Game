@@ -11,6 +11,10 @@ namespace DefaultNamespace
         private readonly IMovieView _movieView;
         private readonly IApiService  _apiService;
         
+        private int _currentGenreId;
+        private int _currentPage = 1;
+        private bool _isLoading = false;
+        
         public MoviesController(IMovieView movieView, IApiService apiService)
         {
             _movieView = movieView;
@@ -19,33 +23,53 @@ namespace DefaultNamespace
 
         public void LoadFilteredMovies(int targetId)
         {
-            LoadMoviesAsync(targetId).Forget();
-        }
-
-        private async UniTask LoadMoviesAsync(int targetId)
-        {
-            var response = await _apiService.GetPopularMoviesAsync(1); //TODO: need to update
+            _currentGenreId = targetId;
+            _currentPage = 1; 
+            _isLoading = false;
             
-            if (response == null || 
-                response.Results == null)
+            _movieView.ClearItems();
+            
+            FetchMoviesAsync(isChecking: false).Forget();
+        }
+        
+        public void LoadNextPage()
+        {
+            if (_isLoading)
             {
                 return;
-            } 
-            
-            foreach (var movieData in response.Results)
-            {
-                foreach (var genreId in movieData.Genre_Ids)
-                {
-                    if(genreId == targetId)
-                    {
-                        filteredList.Add(movieData);
-                    }
+            }
 
-                    _movieView.ShowNoMoviesText(filteredList.Count <= 0);
+            _currentPage++;
+            FetchMoviesAsync(true).Forget();
+        }
+        
+        private async UniTask FetchMoviesAsync(bool isChecking)
+        {
+            _isLoading = true;
+            LoadingPanel.Instance.Show();
+            var response = await _apiService.GetMoviesByGenreAsync(_currentGenreId, _currentPage);
+
+            if (response is { Results: { Count: > 0 } })
+            {
+                if (isChecking)
+                {
+                    _movieView.AddMovies(response.Results);
+                }
+                else
+                {
+                    _movieView.DisplayMovies(response.Results);
+                }
+            }
+            else
+            {
+                if (!isChecking)
+                {
+                    _movieView.ShowNoMoviesText(true);
                 }
             }
             
-            _movieView.DisplayMovies(filteredList);
+            _isLoading = false;
+            LoadingPanel.Instance.Hide();
         }
     }
 }

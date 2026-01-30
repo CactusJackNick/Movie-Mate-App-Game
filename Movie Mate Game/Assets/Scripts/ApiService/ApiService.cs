@@ -115,6 +115,27 @@ namespace DefaultNamespace
             return data; // returns 20k
         }
 
+        public async UniTask<MovieListResponse> GetMoviesByGenreAsync(int genreId, int page)
+        {
+            var url = $"{BaseURL}/discover/movie?with_genres={genreId}&page={page}&language={_currentLang}";
+            
+            using var request = UnityWebRequest.Get(url);
+            request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
+            request.SetRequestHeader("accept", "application/json");
+            
+            await request.SendWebRequest();
+
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError(request.error);
+                throw new Exception(request.error);
+            }
+            
+            var json = request.downloadHandler.text;
+            var data = JsonConvert.DeserializeObject<MovieListResponse>(json);
+            
+            return data;
+        }
         public async UniTask<GenresListResponse> GetGenreListAsync()
         {
             var url = $"{BaseURL}/genre/movie/list?language={_currentLang}";
@@ -139,7 +160,26 @@ namespace DefaultNamespace
         
         public async UniTask<Sprite> GetMovieImageAsync(string posterPath)
         {
+            if (string.IsNullOrEmpty(posterPath)) 
+            {
+                return null;
+            }
+            
+            if (_spriteCache.TryGetValue(posterPath, out var cachedSprite))
+            {
+                if (cachedSprite != null)
+                {
+                    return cachedSprite;
+                }
+                _spriteCache.Remove(posterPath); 
+            }
+            
             var tex = await GetMovieTexture(posterPath);
+            if (tex == null)
+            {
+                return null;
+            }
+            
             var newSprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero);
             
             _spriteCache[posterPath] = newSprite;
@@ -159,12 +199,34 @@ namespace DefaultNamespace
 
             if (request.result != UnityWebRequest.Result.Success)
             {
-                Debug.LogError(request.error);
-                throw new Exception(request.error);
+                Debug.LogWarning($"[ApiService] Image not found (404) or connection error: {url}");
+                return null;
             }
 
             var texture = DownloadHandlerTexture.GetContent(request);
             return texture;
+        }
+        
+        public async UniTask<DetailsSuperlistModel> GetMovieDetailsAsync(int movieId)
+        {
+            var url = $"{BaseURL}/movie/{movieId}?language={_currentLang}&append_to_response=credits";
+
+            using var request = UnityWebRequest.Get(url);
+            request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
+            request.SetRequestHeader("accept", "application/json");
+
+            await request.SendWebRequest();
+
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"Error fetching details: {request.error}");
+                throw new Exception(request.error);
+            }
+
+            var json = request.downloadHandler.text;
+            var data = JsonConvert.DeserializeObject<DetailsSuperlistModel>(json);
+            
+            return data;
         }
         
         private async UniTask<T> ReturnResponseData<T>(string url)

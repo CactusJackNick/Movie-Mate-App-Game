@@ -1,4 +1,5 @@
 using DefaultNamespace;
+using DefaultNamespace.Models;
 using Mediator;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,7 @@ namespace SearchSection
             
             _view.OnBackButtonPressed += ReturnToSearchScreen;
             _view.OnSearchButtonPressed += OnSubmit;
+            _moviesView.DetailsButtonClicked += GoToDetailsPanel;
             
             _scrollRect.onValueChanged.AddListener(OnScroll);
         }
@@ -32,7 +34,11 @@ namespace SearchSection
         {
             base.Show();
             _scrollRect.verticalNormalizedPosition = 1f;
-            _controller.LoadInitialMovies();
+
+            if (!_controller.HasActiveSearch)
+            {
+                _controller.LoadInitialMovies();
+            }
         }
         
         private void OnScroll(Vector2 pos)
@@ -47,6 +53,14 @@ namespace SearchSection
         {
             UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.SeachPanel);
             _moviesView.ClearItems();
+        }
+
+        private void GoToDetailsPanel(MovieData data)
+        { 
+            MovieDetailsPanel.TargetMovieId =  data.Id;
+            MovieDetailsPanel.PreviousPanel = Panels.SeachByNamePanel;
+            
+            UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.DetailsPanel);
         }
         
         private void OnSubmit(string text)

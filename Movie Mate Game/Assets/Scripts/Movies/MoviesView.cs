@@ -20,6 +20,7 @@ namespace DefaultNamespace
         private readonly List<MovieItemView> _items = new();
         
         public event Action OnBackButtonPressed;
+        public event Action<MovieData> DetailsButtonClicked;
         
         private void Awake()
         {
@@ -40,9 +41,11 @@ namespace DefaultNamespace
                 {
                     continue;
                 }
+                
                 var item = Instantiate(_itemPrefab, _contentParent);
                 item.Setup(movieData);
                 _items.Add(item);
+                item.OnClick += OpenMovieDetailsPanel;
             }
         }
 
@@ -73,9 +76,12 @@ namespace DefaultNamespace
         
         private bool IsSafeFontString(string text)
         {
-            if (string.IsNullOrEmpty(text)) return false;
+            if (string.IsNullOrEmpty(text))
+            {
+                return false;
+            }
 
-            foreach (char c in text)
+            foreach (var c in text)
             { 
                 var isLatin = (c <= 255);
         
@@ -87,6 +93,12 @@ namespace DefaultNamespace
                 }
             }
             return true;
+        }
+
+        private void OpenMovieDetailsPanel(MovieData movieData)
+        {
+            DetailsButtonClicked?.Invoke(movieData);
+            Debug.Log("OpenMovieDetailsPanel");
         }
     }
 }

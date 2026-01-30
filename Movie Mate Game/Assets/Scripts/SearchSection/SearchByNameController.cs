@@ -19,6 +19,8 @@ namespace SearchSection
             _movieView = movieView;
             _apiService = apiService;
         }
+        
+        public bool HasActiveSearch => !string.IsNullOrEmpty(_currentQuery);
 
         public void Initialize(ISearchByNameView view)
         {

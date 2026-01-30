@@ -12,7 +12,7 @@ namespace DefaultNamespace.Genre
         [SerializeField] private Button _backButton;
 
         [Header("Layout Settings")]
-        [SerializeField] private Transform _contentParent; // Assign the Grid Layout Group here
+        [SerializeField] private Transform _contentParent;
         [SerializeField] private GenreButtonItem _itemPrefab; 
 
         private readonly List<GenreButtonItem> _spawnedItems = new();
