@@ -96,23 +96,26 @@ namespace DefaultNamespace
         public async UniTask<MovieListResponse> GetPopularMoviesAsync(int page)
         {
             var url = $"{BaseURL}/movie/popular?language={_currentLang}&page={page}";
-            
-            using var request = UnityWebRequest.Get(url);
-            request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
-            request.SetRequestHeader("accept", "application/json");
-            
-            await request.SendWebRequest();
 
-            if (request.result != UnityWebRequest.Result.Success)
-            {
-                Debug.LogError(request.error);
-                throw new Exception(request.error);
-            }
+            var responseData = await ReturnResponseDataAsync<MovieListResponse>(url);
+            return responseData; // returns 20k
             
-            var json = request.downloadHandler.text;
-            var data = JsonConvert.DeserializeObject<MovieListResponse>(json);
-            
-            return data; // returns 20k
+            // using var request = UnityWebRequest.Get(url);
+            // request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
+            // request.SetRequestHeader("accept", "application/json");
+            //
+            // await request.SendWebRequest();
+            //
+            // if (request.result != UnityWebRequest.Result.Success)
+            // {
+            //     Debug.LogError(request.error);
+            //     throw new Exception(request.error);
+            // }
+            //
+            // var json = request.downloadHandler.text;
+            // var data = JsonConvert.DeserializeObject<MovieListResponse>(json);
+            //
+            // return data; // returns 20k
         }
 
         public async UniTask<MovieListResponse> GetMoviesByGenreAsync(int genreId, int page)
@@ -135,7 +138,8 @@ namespace DefaultNamespace
             var data = JsonConvert.DeserializeObject<MovieListResponse>(json);
             
             return data;
-        }
+        } 
+        
         public async UniTask<GenresListResponse> GetGenreListAsync()
         {
             var url = $"{BaseURL}/genre/movie/list?language={_currentLang}";
@@ -235,7 +239,7 @@ namespace DefaultNamespace
             return data;
         }
         
-        private async UniTask<T> ReturnResponseData<T>(string url)
+        private static async UniTask<T> ReturnResponseDataAsync<T>(string url)
         {
             using var request = UnityWebRequest.Get(url);
             request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");

@@ -12,7 +12,8 @@ namespace DefaultNamespace.Models
         [JsonProperty("title")] public string Title;
         [JsonProperty("overview")] public string Overview;
         [JsonProperty("release_date")] public string Release_Date;
-        [JsonProperty("poster_path")] public string PosterPath;  
+        [JsonProperty("poster_path")] public string PosterPath;
+        [JsonProperty("backdrop_path")] public string BackdropPath;
         [JsonProperty("vote_average")] public float Vote_Average;  
         [JsonProperty("tagline")] public string Tagline;
         
@@ -38,8 +39,8 @@ namespace DefaultNamespace.Models
     [Serializable]
     public class CastMember
     {
-        [JsonProperty("name")] public string NameCast;
-        [JsonProperty("character")] public string Character;
+        [JsonProperty("name")] public string ActorName;
+        [JsonProperty("known_for_department")] public string Acting;
     }
     
     [Serializable]

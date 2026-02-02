@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using DefaultNamespace.Game;
 using DefaultNamespace.Models;
 using TMPro;
 using UnityEngine;
