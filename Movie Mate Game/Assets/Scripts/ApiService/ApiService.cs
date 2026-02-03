@@ -53,6 +53,7 @@ namespace DefaultNamespace
         {
             var url = $"{BaseURL}/search/movie?language={_currentLang}&page={page}&query={query}";
             Debug.Log($"Debug: request {url}");
+            
             using var request = UnityWebRequest.Get(url);
             request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
             request.SetRequestHeader("accept", "application/json");
@@ -65,9 +66,7 @@ namespace DefaultNamespace
                 throw new Exception(request.error);
             }
             
-            Debug.Log($"Debug: request result {request.result}");
             var json = request.downloadHandler.text;
-            Debug.Log($"Debug: request json {json}");
             return JsonConvert.DeserializeObject<MovieListResponse>(json);
         }
         

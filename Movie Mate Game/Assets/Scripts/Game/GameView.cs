@@ -19,50 +19,63 @@ namespace DefaultNamespace.Game
         [SerializeField] private Image _posterImage;
         [SerializeField] private Image _backdropImage;
         
+        [Header("InputField")]
+        [SerializeField] private TMP_InputField _inputField;
+        
         [Header("Navigation")]
         [SerializeField] private Button _backButton;
         [SerializeField] private Button _debug;
         
         [Header("List Settings")]
         [SerializeField] private Transform _contentParent;
-        [SerializeField] private MovieItemView _itemPrefab;
+        [SerializeField] private GuessItemButton _guessItemPrefab;
         
         [Header("Clue System")]
         [SerializeField] private Transform _contentClueParent;
         [SerializeField] private ClueButton _cluePrefab;
         [SerializeField] private CluePopup _cluePopup;
         
-        private readonly List<MovieItemView> _items = new();
+        private readonly List<GuessItemButton> _guessItems = new();
         private readonly List<ClueButton> _spawnedButtons = new();
         
         private int _debugCurrentClueIndex = 0;
+        
         public event Action OnBackButtonPressed;
+        
         public event Action OnDebugPressed;
+        
+        public event Action<string> OnInputPressed;
         
         private void Awake()
         {
             _backButton.onClick.AddListener(GoBackToMain);
             _debug.onClick.AddListener(DebugUnlockNext);
+            _inputField.onValueChanged.AddListener(OnInputChanged);
+            
+            _inputField.text = string.Empty;
+            _inputField.Select();
         }
 
-        // public void ShowTier1(Sprite backdrop)
-        // {
-        //     _backdropImage.sprite = backdrop;
-        //     _backdropImage.gameObject.SetActive(true);
-        // }
+        public void DisplayMovies(List<MovieData> movies)
+        {
+            ClearGuessesItems();
+            AddMovies(movies);
+        }
         
-        public void GoBackToMain()
+        public void AddMovies(List<MovieData> movies)
         {
-            OnBackButtonPressed?.Invoke();
-        }
-
-        public void DebugUnlockNext()
-        {
-            _debugCurrentClueIndex++;
-            if (_debugCurrentClueIndex < _spawnedButtons.Count)
+            foreach (var movieData in movies)
             {
-                OnDebugPressed?.Invoke();
-                UnlockClue(_debugCurrentClueIndex);
+                if (string.IsNullOrEmpty(movieData.Title) ||
+                    string.IsNullOrEmpty(movieData.poster_path)) //TODO: filter characters method
+                {
+                    continue;
+                }
+                
+                var item = Instantiate(_guessItemPrefab, _contentParent);
+                item.Setup(movieData);
+                _guessItems.Add(item);
+                item.OnClick += SubmitPlayerGuess;
             }
         }
 
@@ -75,7 +88,6 @@ namespace DefaultNamespace.Game
             _taglineText.text = data.Tagline;
             SetPoster(_posterImage.sprite);
             SetBackdrop(_backdropImage.sprite);
-            
         }
         
         public void SetPoster(Sprite poster)
@@ -93,22 +105,6 @@ namespace DefaultNamespace.Game
                 _backdropImage.sprite = backdrop;
             }
         }
-        
-        // public void DisplayMovies(List<MovieData> movies) //TODO: fix for dropdown selection
-        // {
-        //     foreach (var item in _items)
-        //     {
-        //         Destroy(item.gameObject);
-        //     }
-        //     _items.Clear();
-        //
-        //     foreach (var movieData in movies)
-        //     {
-        //         var item = Instantiate(_itemPrefab, _contentParent);
-        //         item.Setup(movieData);
-        //         _items.Add(item);
-        //     }
-        // }
 
         public void DisplayClues(List<ClueData> clues)
         {
@@ -127,6 +123,16 @@ namespace DefaultNamespace.Game
             }
         }
         
+        public void ClearGuessesItems()
+        {
+            foreach (var item in _guessItems)
+            {
+                Destroy(item.gameObject);
+            }
+            
+            _guessItems.Clear();
+        }
+        
         public void UnlockClue(int index)
         {
             if (index >= 0 && index < _spawnedButtons.Count)
@@ -135,10 +141,36 @@ namespace DefaultNamespace.Game
             }
         }
         
+        private void SubmitPlayerGuess(MovieData obj)
+        {
+            Debug.Log($"Submitting player guess: {obj.Title}");
+        }
+
+        private void OnInputChanged(string input)
+        {
+            OnInputPressed?.Invoke(input);
+        }
+        
+        private void GoBackToMain()
+        {
+            OnBackButtonPressed?.Invoke();
+        }
+
+        private void DebugUnlockNext()
+        {
+            _debugCurrentClueIndex++;
+            if (_debugCurrentClueIndex < _spawnedButtons.Count)
+            {
+                OnDebugPressed?.Invoke();
+                UnlockClue(_debugCurrentClueIndex);
+            }
+        }
+        
         private void OnDestroy()
         {
             _backButton.onClick.RemoveListener(GoBackToMain);
             _debug.onClick.RemoveListener(DebugUnlockNext);
+            _inputField.onValueChanged.RemoveListener(OnInputChanged);
         }
     }
 }

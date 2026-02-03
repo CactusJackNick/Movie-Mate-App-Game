@@ -45,8 +45,8 @@ namespace DefaultNamespace
         
         private async UniTask FetchMoviesAsync(bool isChecking)
         {
-            _isLoading = true;
             LoadingPanel.Instance.Show();
+            _isLoading = true;
             var response = await _apiService.GetMoviesByGenreAsync(_currentGenreId, _currentPage);
 
             if (response is { Results: { Count: > 0 } })

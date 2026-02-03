@@ -32,7 +32,7 @@ namespace DefaultNamespace
         {
             _title.text = data._title;
             
-            DeactivateAll();
+            DeactivateAllContainers();
         
             switch (data._displayMode)
             {
@@ -71,9 +71,11 @@ namespace DefaultNamespace
                 .SetEase(Ease.OutExpo)
                 .AsyncWaitForCompletion()
                 .AsUniTask();
+            
+            _panel.gameObject.SetActive(false);
         }
         
-        private void DeactivateAll()
+        private void DeactivateAllContainers()
         {
             _textContainer.gameObject.SetActive(false);
             _portraitContainer.gameObject.SetActive(false);
@@ -83,7 +85,6 @@ namespace DefaultNamespace
         private void Hide()
         {
             HideClueAsync().Forget();
-            _panel.gameObject.SetActive(false);
         }
 
         private void OnDestroy()

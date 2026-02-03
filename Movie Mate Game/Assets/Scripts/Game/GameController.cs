@@ -1,7 +1,10 @@
+using System;
 using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using DefaultNamespace.Models;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace DefaultNamespace.Game
 {
@@ -11,6 +14,11 @@ namespace DefaultNamespace.Game
         private readonly IApiService _apiService;
 
         private int _currentTier = 0;
+        private int _currentPage = 1;
+        private int _maxPages = 1;
+        private string _currentQuery = "";
+        private bool _isLoading;
+        private CancellationTokenSource _cts;
 
         public GameController(IGameView view, IApiService apiService)
         {
@@ -21,7 +29,23 @@ namespace DefaultNamespace.Game
         public void LoadMovies()
         { 
             LoadMovieAsync().Forget();
-            //LoadMoviesAsync().Forget();
+            StartSearch("");
+        }
+        
+        public void LoadNextPageGuesses()
+        {
+            if (_isLoading)
+            {
+                return;
+            }
+            
+            if (_currentPage >= _maxPages) 
+            {
+                return; 
+            }
+
+            _currentPage++;
+            LoadGuessMoviesAsync(_currentQuery, _currentPage).Forget();
         }
 
         private async UniTask LoadMovieAsync()
@@ -89,37 +113,37 @@ namespace DefaultNamespace.Game
         {
             var clues = new List<ClueData>
             {
-                new ClueData //clue 1
+                new() //clue 1
                 {
                     _title = "Backdrop",
                     _displayMode = ClueDisplayMode.Backdrop,
                     _imageContext = backdrop
                 },
-                new ClueData //clue 2
+                new() //clue 2
                 {
                     _title = "Year & Genres",
                     _displayMode = ClueDisplayMode.Text, 
                     _textContext = $"{date}\n{genres}"
                 },
-                new ClueData //clue 3
+                new() //clue 3
                 {
                     _title = "Director",
                     _displayMode = ClueDisplayMode.Text,
                     _textContext = $"{director}"
                 },
-                new ClueData //clue 4
+                new() //clue 4
                 {
                     _title = "Actors",
                     _displayMode = ClueDisplayMode.Text,
                     _textContext = $"{actors}"
                 },
-                new ClueData //clue 5
+                new() //clue 5
                 {
                     _title = "Quote",
                     _displayMode = ClueDisplayMode.Text,
                     _textContext = $"{tagline}"
                 },
-                new ClueData //clue 6
+                new() //clue 6
                 {
                     _title = "Poster",
                     _displayMode = ClueDisplayMode.Poster,
@@ -130,23 +154,85 @@ namespace DefaultNamespace.Game
             return clues;
         }
 
-        // private async UniTask LoadMoviesAsync() //TODO: load movies to select answer
-        // {
-        //     try
-        //     {
-        //         var listResponse = await _apiService.GetPopularMoviesAsync(1); // need to update
-        //
-        //         if (listResponse.Results is { Count: > 0 })
-        //         {
-        //             _view.DisplayMovies(listResponse.Results);
-        //         }
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         Debug.LogError($"Error loading movies: {ex.Message} ");
-        //         throw new Exception(ex.Message);
-        //     }
-        // }
+        public void StartSearch(string search)
+        {
+            _maxPages = int.MaxValue;
+            _currentQuery = search;
+            _currentPage = 1;
+            _isLoading = false;
+            
+            if (_cts != null)
+            {
+                _cts.Cancel();
+                _cts.Dispose();
+
+            }
+            
+            _cts = new CancellationTokenSource();
+            SearchWithDebounce(search, _cts.Token).Forget();
+        }
+
+        private async UniTaskVoid SearchWithDebounce(string query, CancellationToken token)
+        {
+            await UniTask.Delay(500, cancellationToken: token);
+            
+            _currentQuery = query;
+            _currentPage = 1;
+            _isLoading = false;
+
+            if (string.IsNullOrEmpty(query))
+            {
+                _view.ClearGuessesItems();
+                return;
+            }
+            
+            await LoadGuessMoviesAsync(query, _currentPage);
+        }
+        
+        private async UniTask LoadGuessMoviesAsync(string query, int page)
+        {
+            LoadingPanel.Instance.Show();
+            _isLoading =  true;
+
+            try
+            {
+                var response = await _apiService.SearchMoviesAsync(query, page);
+
+                _maxPages = response.TotalPages;
+                var validMovies = new List<MovieData>();
+
+                foreach (var movie in response.Results)
+                {
+                    if (string.IsNullOrEmpty(movie.backdrop_path) ||
+                        string.IsNullOrEmpty(movie.poster_path))
+                    {
+                        continue;
+                    }
+
+                    validMovies.Add(movie);
+                }
+
+                if (page == 1)
+                {
+                    _view.DisplayMovies(validMovies);
+                }
+                else
+                {
+                    _view.AddMovies(validMovies);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Error loading movies: {ex.Message} ");
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                _isLoading = false;
+                LoadingPanel.Instance.Hide();
+            }
+        }
 
         // private void AdvanceTier(Sprite backdropSprite)
         // {
@@ -162,6 +248,8 @@ namespace DefaultNamespace.Game
         
         private async UniTask<DetailsSuperlistModel> GetValidGameMovieAsync()
         {
+            LoadingPanel.Instance.Show();   
+            
             const int maxPageSize = 100;
             var maxAttempts = 10;
             var attempts = 0;
@@ -206,6 +294,7 @@ namespace DefaultNamespace.Game
                 }
             }
 
+            LoadingPanel.Instance.Hide();
             return null;
         }
 
@@ -258,10 +347,11 @@ namespace DefaultNamespace.Game
      
             return tempList;
         }
+
         public void Dispose()
         {
-            //this.Dispose();
+            _cts.Cancel();
+            _cts.Dispose();
         }
     }
-    
 }

@@ -7,10 +7,9 @@ using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
-    public class MovieItemView : MonoBehaviour
+    public class GuessItemButton : MonoBehaviour
     {
         [SerializeField] private TMP_Text _title;
-        [SerializeField] private TMP_Text _overview;
         [SerializeField] private Image _poster;
         [SerializeField] private Button _button;
 
@@ -19,14 +18,13 @@ namespace DefaultNamespace
 
         private void Awake()
         {
-            _button.onClick.AddListener(OpenOnClick);
+            _button.onClick.AddListener(OnClicked);
         }
 
         public void Setup(MovieData data)
         {
             _data = data;
             _title.text = data.Title;
-            _overview.text = data.Overview;
             
             GetPosterAsync(data.poster_path).Forget();
         }
@@ -50,15 +48,16 @@ namespace DefaultNamespace
                 _poster.sprite = downloadedSprite; 
             }
         }
-        
-        private void OpenOnClick()
+
+        private void OnClicked()
         {
             OnClick?.Invoke(_data);
+            Debug.Log("Guess item button clicked");
         }
 
         private void OnDestroy()
         {
-            _button.onClick.RemoveListener(OpenOnClick);
+            _button.onClick.RemoveListener(OnClicked);
         }
     }
 }

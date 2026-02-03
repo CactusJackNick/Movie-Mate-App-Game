@@ -2,7 +2,7 @@ using System;
 
 namespace DefaultNamespace.Game
 {
-    public interface IGameController : IDisposable
+    public interface IGameController
     {
         void LoadMovies();
     }

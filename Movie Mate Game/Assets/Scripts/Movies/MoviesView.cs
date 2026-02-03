@@ -36,7 +36,7 @@ namespace DefaultNamespace
         {
             foreach (var movieData in movies)
             {
-                if (!IsSafeFontString(movieData.Title))
+                if (!IsSafeLanguageFontString(movieData.Title))
                 {
                     continue;
                 }
@@ -73,7 +73,7 @@ namespace DefaultNamespace
             _backButton.onClick.RemoveListener(GoBackToMain);
         }
         
-        private bool IsSafeFontString(string text)
+        private bool IsSafeLanguageFontString(string text)
         {
             if (string.IsNullOrEmpty(text))
             {
