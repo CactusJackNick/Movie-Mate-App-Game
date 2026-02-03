@@ -97,7 +97,6 @@ namespace DefaultNamespace
         private void OpenMovieDetailsPanel(MovieData movieData)
         {
             DetailsButtonClicked?.Invoke(movieData);
-            Debug.Log("OpenMovieDetailsPanel");
         }
     }
 }

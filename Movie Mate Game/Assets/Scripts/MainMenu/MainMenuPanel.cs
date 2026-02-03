@@ -22,7 +22,6 @@ namespace MainMenu
         private void OpenGamePanel()
         {
             UINavigationMediator.Instance.ReplacePanel(_panelId,Panels.Game);
-            Debug.Log("opened game panel");
         }
 
         private void OpenSettingsPanel()

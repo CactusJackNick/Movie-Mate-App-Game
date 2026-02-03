@@ -87,50 +87,46 @@ namespace DefaultNamespace.Game
             string director, string date, string actors, string genres, 
             string tagline, Sprite backdrop, Sprite poster)
         {
-            var clues = new List<ClueData>();
-            
-            clues.Add(new ClueData //clue 1
+            var clues = new List<ClueData>
             {
-                _title = "Backdrop",
-                _displayMode = ClueDisplayMode.Backdrop,
-                _imageContext = backdrop
-            });
-            
-            clues.Add(new ClueData //clue 2
-            {
-                _title = "Year & Genres",
-                _displayMode = ClueDisplayMode.Text, 
-                _textContext = $"{date}\n{genres}"
-            });
-            
-            clues.Add(new ClueData //clue 3
-            {
-                _title = "Director",
-                _displayMode = ClueDisplayMode.Text,
-                _textContext = $"{director}"
-            });
-            
-            clues.Add(new ClueData //clue 4
-            {
-                _title = "Actors",
-                _displayMode = ClueDisplayMode.Text,
-                _textContext = $"{actors}"
-            });
-            
-            clues.Add(new ClueData //clue 5
-            {
-                _title = "Quote",
-                _displayMode = ClueDisplayMode.Text,
-                _textContext = $"{tagline}"
-            });
-            
-            clues.Add(new ClueData //clue 6
-            {
-                _title = "Poster",
-                _displayMode = ClueDisplayMode.Poster,
-                _imageContext = poster
-            });
-            
+                new ClueData //clue 1
+                {
+                    _title = "Backdrop",
+                    _displayMode = ClueDisplayMode.Backdrop,
+                    _imageContext = backdrop
+                },
+                new ClueData //clue 2
+                {
+                    _title = "Year & Genres",
+                    _displayMode = ClueDisplayMode.Text, 
+                    _textContext = $"{date}\n{genres}"
+                },
+                new ClueData //clue 3
+                {
+                    _title = "Director",
+                    _displayMode = ClueDisplayMode.Text,
+                    _textContext = $"{director}"
+                },
+                new ClueData //clue 4
+                {
+                    _title = "Actors",
+                    _displayMode = ClueDisplayMode.Text,
+                    _textContext = $"{actors}"
+                },
+                new ClueData //clue 5
+                {
+                    _title = "Quote",
+                    _displayMode = ClueDisplayMode.Text,
+                    _textContext = $"{tagline}"
+                },
+                new ClueData //clue 6
+                {
+                    _title = "Poster",
+                    _displayMode = ClueDisplayMode.Poster,
+                    _imageContext = poster
+                }
+            };
+
             return clues;
         }
 

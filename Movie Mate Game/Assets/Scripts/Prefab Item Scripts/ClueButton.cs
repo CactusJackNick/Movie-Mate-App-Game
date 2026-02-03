@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,22 +23,23 @@ namespace DefaultNamespace
             _cluePopup = popup;
             
             Locked();
+        } 
+        
+        public void Unlocked()
+        {
+            //Play spin animation
+            _isUnlocked = true;
+            _button.interactable = true;
         }
 
         private void OpenCluePanel()
         {
-            if (_isUnlocked && _cluePopup != null)
+            if (!_isUnlocked || _cluePopup == null)
             {
-                _cluePopup.ShowClue(_clueData);
-                Debug.Log("Clue Panel Opened");
+                return;
             }
-        }
-
-        public void Unlocked()
-        {
-            //Play animation
-            _isUnlocked = true;
-            _button.interactable = true;
+            _cluePopup.OpenPanelAnimationAsync().Forget();
+            _cluePopup.ShowClue(_clueData);
         }
         
         private void Locked()

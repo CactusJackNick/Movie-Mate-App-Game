@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -50,7 +52,27 @@ namespace DefaultNamespace
             
             _panel.gameObject.SetActive(true);
         }
-
+        
+        public async UniTask OpenPanelAnimationAsync()
+        {
+            await _panel.rectTransform
+                .DOScale(1f, 0.5f)
+                .SetEase(Ease.OutExpo)
+                .AsyncWaitForCompletion()
+                .AsUniTask();
+            
+            _panel.gameObject.SetActive(true);
+        }
+        
+        private async UniTask HideClueAsync()
+        {
+            await _panel.rectTransform
+                .DOScale(0f, 0.5f)
+                .SetEase(Ease.OutExpo)
+                .AsyncWaitForCompletion()
+                .AsUniTask();
+        }
+        
         private void DeactivateAll()
         {
             _textContainer.gameObject.SetActive(false);
@@ -60,6 +82,7 @@ namespace DefaultNamespace
         
         private void Hide()
         {
+            HideClueAsync().Forget();
             _panel.gameObject.SetActive(false);
         }
 
