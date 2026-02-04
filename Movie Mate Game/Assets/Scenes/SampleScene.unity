@@ -178,8 +178,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Movie Mate
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 917c059b92bb24354ba0505f3da69b4e, type: 2}
+  m_sharedMaterial: {fileID: -8142934481099047105, guid: 917c059b92bb24354ba0505f3da69b4e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2197,7 +2197,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 520924663}
   - {fileID: 679985182}
   m_Father: {fileID: 1800838945}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3239,6 +3238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e176284c4334808b32213a018a5250c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.LoadingPanel
+  _backgroundCanvasGroup: {fileID: 1190272757}
+  _panelCanvasGroup: {fileID: 1135206008}
   _panelId: 7
   _hideOnAwake: 1
 --- !u!114 &500860510
@@ -3636,7 +3637,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6304096}
-  m_Father: {fileID: 312597777}
+  m_Father: {fileID: 1908832080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -3895,6 +3896,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee1346cd03d4e229741b2d6ae017f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.Game.GameView
+  _backgroundCanvasGroup: {fileID: 1052871575}
+  _panelCanvasGroup: {fileID: 1337520409}
   _panelId: 2
   _hideOnAwake: 1
   _view: {fileID: 1337520410}
@@ -4409,7 +4412,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580972612}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -4656,7 +4659,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631625353}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -5167,6 +5170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378e1da3ddb34c72824c65d41ae56ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.Genre.GenrePanel
+  _backgroundCanvasGroup: {fileID: 1594304455}
+  _panelCanvasGroup: {fileID: 887750936}
   _panelId: 3
   _hideOnAwake: 1
   _view: {fileID: 887750937}
@@ -6109,6 +6114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72fad24dca4d44409773fb200171a5a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.MoviePanel
+  _backgroundCanvasGroup: {fileID: 1369263594}
+  _panelCanvasGroup: {fileID: 822424578}
   _panelId: 4
   _hideOnAwake: 1
   _view: {fileID: 822424576}
@@ -6246,7 +6253,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773173786}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -6417,7 +6424,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822424575}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -6971,7 +6978,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887750934}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -8147,7 +8154,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041763603}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -8336,7 +8343,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052871571}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -8522,7 +8529,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078013594}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -8717,6 +8724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c987c8ee616d459bbba4fba5c6aba07b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Settings.SettingsView
+  _backgroundCanvasGroup: {fileID: 1041763607}
+  _panelCanvasGroup: {fileID: 773173788}
   _panelId: 1
   _hideOnAwake: 1
   _view: {fileID: 773173789}
@@ -10702,7 +10711,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337520407}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -10820,7 +10829,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369263590}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -12294,7 +12303,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543855524}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -12821,7 +12830,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594304451}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -13077,6 +13086,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a103ce1ff8ab43c5a607d4a3aaa02414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.MovieDetailsPanel
+  _backgroundCanvasGroup: {fileID: 1630874151}
+  _panelCanvasGroup: {fileID: 1543855527}
   _panelId: 8
   _hideOnAwake: 1
   _view: {fileID: 1543855528}
@@ -13167,7 +13178,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630874147}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -14180,6 +14191,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1908832080}
   - {fileID: 312597777}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14200,6 +14212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868e85842eba4a01a6260fc60099b7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu.MainMenuView
+  _backgroundCanvasGroup: {fileID: 1908832078}
+  _panelCanvasGroup: {fileID: 312597778}
   _panelId: 0
   _hideOnAwake: 0
   _settingsButton: {fileID: 1443442526}
@@ -14492,6 +14506,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897684863}
   m_CullTransparentMesh: 1
+--- !u!1 &1908832077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908832080}
+  - component: {fileID: 1908832078}
+  - component: {fileID: 1908832079}
+  m_Layer: 5
+  m_Name: bg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!225 &1908832078
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908832077}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!222 &1908832079
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908832077}
+  m_CullTransparentMesh: 1
+--- !u!224 &1908832080
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908832077}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 520924663}
+  m_Father: {fileID: 1800838945}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1913299465
 GameObject:
   m_ObjectHideFlags: 0
@@ -14728,6 +14800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e3ae3fa8664bee90ea54c298f48485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.SeachPanel
+  _backgroundCanvasGroup: {fileID: 631625357}
+  _panelCanvasGroup: {fileID: 580972615}
   _panelId: 5
   _hideOnAwake: 1
   _view: {fileID: 580972613}
@@ -14911,6 +14985,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58d16816a68400992030ea7d0a08dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SearchSection.SearchByNamePanel
+  _backgroundCanvasGroup: {fileID: 2017796230}
+  _panelCanvasGroup: {fileID: 1078013597}
   _panelId: 6
   _hideOnAwake: 1
   _view: {fileID: 1078013596}
@@ -15426,7 +15502,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017796226}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
