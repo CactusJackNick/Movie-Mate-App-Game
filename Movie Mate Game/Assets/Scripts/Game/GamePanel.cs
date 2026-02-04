@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using Mediator;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,8 +20,10 @@ namespace DefaultNamespace.Game
             
             _view.OnBackButtonPressed += ReturnToMain;
             _view.OnInputPressed += OnSubmit;
+            _view.OnGuessSelected += OnPlayerGuess;
             _scrollRect.onValueChanged.AddListener(OnScroll);
         }
+
         public override void Show()
         {
             base.Show();
@@ -48,11 +51,17 @@ namespace DefaultNamespace.Game
         {
             _controller.StartSearch(text);
         }
+        
+        private void OnPlayerGuess(int movieId)
+        {
+            _controller.ProcessPlayerGuess(movieId).Forget();
+        }
 
         private void OnDestroy()
         {
             _view.OnBackButtonPressed -= ReturnToMain;
             _view.OnInputPressed -= OnSubmit;
+            _view.OnGuessSelected -= OnPlayerGuess;
             _scrollRect.onValueChanged.RemoveListener(OnScroll);
             _controller?.Dispose();
         }

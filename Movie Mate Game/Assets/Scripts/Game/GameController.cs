@@ -19,6 +19,7 @@ namespace DefaultNamespace.Game
         private string _currentQuery = "";
         private bool _isLoading;
         private CancellationTokenSource _cts;
+        private DetailsSuperlistModel _targetMovie;
 
         public GameController(IGameView view, IApiService apiService)
         {
@@ -47,16 +48,55 @@ namespace DefaultNamespace.Game
             _currentPage++;
             LoadGuessMoviesAsync(_currentQuery, _currentPage).Forget();
         }
+        
+        public void StartSearch(string search)
+        {
+            _maxPages = int.MaxValue;
+            _currentQuery = search;
+            _currentPage = 1;
+            _isLoading = false;
+            
+            if (_cts != null)
+            {
+                _cts.Cancel();
+                _cts.Dispose();
+
+            }
+            
+            _cts = new CancellationTokenSource();
+            SearchWithDebounce(search, _cts.Token).Forget();
+        }
+
+        private async UniTaskVoid SearchWithDebounce(string query, CancellationToken token)
+        {
+            await UniTask.Delay(500, cancellationToken: token);
+            
+            _currentQuery = query;
+            _currentPage = 1;
+            _isLoading = false;
+
+            if (string.IsNullOrEmpty(query))
+            {
+                _view.ClearGuessesItems();
+                return;
+            }
+            
+            await LoadGuessMoviesAsync(query, _currentPage);
+        }
 
         private async UniTask LoadMovieAsync()
         {
             LoadingPanel.Instance.Show();
+            const int startClueIndex = 0;
             
             var movie = await GetValidGameMovieAsync();
             if (movie == null)
             {
                 return;
-            }   
+            }
+
+            _targetMovie = movie;
+            
             var poster = await _apiService.GetMovieImageAsync(movie.PosterPath);
             var backdrop = await _apiService.GetMovieImageAsync(movie.BackdropPath);
 
@@ -102,7 +142,7 @@ namespace DefaultNamespace.Game
             );
            
             _view.DisplayClues(clues);
-            _view.UnlockClue(0);
+            _view.UnlockClue(startClueIndex);
             
             LoadingPanel.Instance.Hide();
         }
@@ -153,41 +193,6 @@ namespace DefaultNamespace.Game
 
             return clues;
         }
-
-        public void StartSearch(string search)
-        {
-            _maxPages = int.MaxValue;
-            _currentQuery = search;
-            _currentPage = 1;
-            _isLoading = false;
-            
-            if (_cts != null)
-            {
-                _cts.Cancel();
-                _cts.Dispose();
-
-            }
-            
-            _cts = new CancellationTokenSource();
-            SearchWithDebounce(search, _cts.Token).Forget();
-        }
-
-        private async UniTaskVoid SearchWithDebounce(string query, CancellationToken token)
-        {
-            await UniTask.Delay(500, cancellationToken: token);
-            
-            _currentQuery = query;
-            _currentPage = 1;
-            _isLoading = false;
-
-            if (string.IsNullOrEmpty(query))
-            {
-                _view.ClearGuessesItems();
-                return;
-            }
-            
-            await LoadGuessMoviesAsync(query, _currentPage);
-        }
         
         private async UniTask LoadGuessMoviesAsync(string query, int page)
         {
@@ -233,18 +238,6 @@ namespace DefaultNamespace.Game
                 LoadingPanel.Instance.Hide();
             }
         }
-
-        // private void AdvanceTier(Sprite backdropSprite)
-        // {
-        //     _currentTier++;
-        //
-        //     switch (_currentTier)
-        //     {
-        //         case 0:
-        //             _view.ShowTier1(backdropSprite);
-        //             break;
-        //     }
-        // }
         
         private async UniTask<DetailsSuperlistModel> GetValidGameMovieAsync()
         {
@@ -346,6 +339,160 @@ namespace DefaultNamespace.Game
             }
      
             return tempList;
+        }
+
+        public async UniTask ProcessPlayerGuess(int guessedMovieId)
+        {
+            var guess = await _apiService.GetMovieDetailsAsync(guessedMovieId);
+
+            var result = new GuessResultModel
+            {
+                DirectorName = GetDirectorName(guess),
+                DirectorColor = GetDirectorColor(guess, _targetMovie),
+                
+                ActorsText = GetActorsText(guess),
+                ActorsColor = GetActorsColor(guess, _targetMovie),
+                
+                GenresText = GetGenresText(guess),
+                GenresColor = GetGenresColor(guess, _targetMovie),
+                
+                YearText = GetYearText(guess),
+                YearColor = GetYearColor(guess, _targetMovie),
+                RotateYearArrow = CompareYearsToDetermineArrowRot(guess, _targetMovie)
+            };
+
+            _view.ShowFeedbackResult(result);
+            
+            if (guess.Id == _targetMovie.Id)
+            {
+                //open win panel
+            }
+            else
+            {
+                _currentTier++;
+                _view.UnlockClue(_currentTier);
+            }
+        }
+
+        private string GetDirectorName(DetailsSuperlistModel model)
+        {
+            var directorName = "";
+            foreach (var person in model.Credits.Crew)
+            {
+                if (person.Job == "Director")
+                {
+                   directorName = person.NameCrew;
+                }
+            }
+            return directorName;
+        }
+
+        private FeedbackColor GetDirectorColor(DetailsSuperlistModel guess, DetailsSuperlistModel target)
+        {
+            var guessDir = GetDirectorName(guess);
+            var targetDir = GetDirectorName(target);
+
+            return guessDir == targetDir
+                ? FeedbackColor.Green 
+                : FeedbackColor.Red;
+        }
+
+        private string GetActorsText(DetailsSuperlistModel movie)
+        {
+            var actors = new List<string>();
+            foreach (var actor in movie.Credits.Cast)
+            {
+                if (actor.Acting == "Acting")
+                {
+                    if (actors.Count >= 3)
+                    {
+                        continue;
+                    }
+                    
+                    actors.Add(actor.ActorName);
+                }
+            } 
+            
+            return string.Join("\n ", actors);
+        }
+
+        private FeedbackColor GetActorsColor(DetailsSuperlistModel guess, DetailsSuperlistModel target)
+        {
+            if (guess.Id == target.Id)
+            {
+                return FeedbackColor.Green;
+            }
+
+            foreach (var actor in guess.Credits.Cast)
+            {
+                foreach (var targetActor in target.Credits.Cast)
+                {
+                    if (actor.ActorName == targetActor.ActorName)
+                    {
+                        return FeedbackColor.Orange;
+                    }
+                }
+            }
+            
+            return FeedbackColor.Red;
+        }
+
+        private string GetGenresText(DetailsSuperlistModel movie)
+        {
+            var genres = new List<string>();
+            foreach (var genre in movie.Genres)
+            {
+                genres.Add(genre.Name);
+            }
+
+            return string.Join("\n", genres);
+        }
+
+        private FeedbackColor GetGenresColor(DetailsSuperlistModel guess, DetailsSuperlistModel target)
+        {
+            if (guess.Id == target.Id)
+            {
+                return FeedbackColor.Green;
+            }
+
+            foreach (var genre in guess.Genres)
+            {
+                foreach (var targetGenre in target.Genres)
+                {
+                    if (genre.Name == targetGenre.Name)
+                    {
+                        return FeedbackColor.Orange;
+                    }
+                }
+            }
+            
+            return FeedbackColor.Red;
+        }
+
+        private string GetYearText(DetailsSuperlistModel movie)
+        {
+            const int lengthYearToRead = 4;
+            var yearText = movie.Release_Date;
+
+            return yearText[..lengthYearToRead];
+        }
+
+        private FeedbackColor GetYearColor(DetailsSuperlistModel guess, DetailsSuperlistModel target)
+        {
+            var guessYear = GetYearText(guess);
+            var targetYear = GetYearText(target);
+            
+            return guessYear == targetYear 
+                ? FeedbackColor.Green 
+                : FeedbackColor.Red;
+        }
+
+        private bool CompareYearsToDetermineArrowRot(DetailsSuperlistModel guess, DetailsSuperlistModel target)
+        {
+            var guessYear = int.Parse(GetYearText(guess));
+            var targetYear = int.Parse(GetYearText(target));
+
+            return guessYear < targetYear;
         }
 
         public void Dispose()

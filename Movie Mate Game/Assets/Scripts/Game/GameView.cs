@@ -9,16 +9,6 @@ namespace DefaultNamespace.Game
 {
     public class GameView : MonoBehaviour, IGameView
     {
-        
-        [Header("Movie UI Elements")]
-        [SerializeField] private TMP_Text _actorsText;
-        [SerializeField] private TMP_Text _directorText;
-        [SerializeField] private TMP_Text _releaseDateText;
-        [SerializeField] private TMP_Text _taglineText;
-        [SerializeField] private TMP_Text _genresText;
-        [SerializeField] private Image _posterImage;
-        [SerializeField] private Image _backdropImage;
-        
         [Header("InputField")]
         [SerializeField] private TMP_InputField _inputField;
         
@@ -35,6 +25,11 @@ namespace DefaultNamespace.Game
         [SerializeField] private ClueButton _cluePrefab;
         [SerializeField] private CluePopup _cluePopup;
         
+        [Header("Feedback System")]
+        [SerializeField] private Transform _contentFeedbackParent;
+        [SerializeField] private FeedbackGuessItem _feedbackGuessPrefab;
+        [SerializeField] private ScrollRect _feedbackScrollRect;
+        
         private readonly List<GuessItemButton> _guessItems = new();
         private readonly List<ClueButton> _spawnedButtons = new();
         
@@ -45,6 +40,7 @@ namespace DefaultNamespace.Game
         public event Action OnDebugPressed;
         
         public event Action<string> OnInputPressed;
+        public event Action<int> OnGuessSelected;
         
         private void Awake()
         {
@@ -79,32 +75,32 @@ namespace DefaultNamespace.Game
             }
         }
 
-        public void AssignData(DetailsSuperlistModel data, string director, string actors, string genres)
-        {
-            _directorText.text = director;
-            _actorsText.text = actors;
-            _genresText.text = genres;
-            _releaseDateText.text = data.Release_Date;
-            _taglineText.text = data.Tagline;
-            SetPoster(_posterImage.sprite);
-            SetBackdrop(_backdropImage.sprite);
-        }
-        
-        public void SetPoster(Sprite poster)
-        {
-            if (_posterImage != null)
-            {
-                _posterImage.sprite = poster;
-            }
-        }
-
-        public void SetBackdrop(Sprite backdrop)
-        {
-            if (_backdropImage != null)
-            {
-                _backdropImage.sprite = backdrop;
-            }
-        }
+        // public void AssignData(DetailsSuperlistModel data, string director, string actors, string genres)
+        // {
+        //     _directorText.text = director;
+        //     _actorsText.text = actors;
+        //     _genresText.text = genres;
+        //     _releaseDateText.text = data.Release_Date;
+        //     _taglineText.text = data.Tagline;
+        //     SetPoster(_posterImage.sprite);
+        //     SetBackdrop(_backdropImage.sprite);
+        // }
+        //
+        // public void SetPoster(Sprite poster)
+        // {
+        //     if (_posterImage != null)
+        //     {
+        //         _posterImage.sprite = poster;
+        //     }
+        // }
+        //
+        // public void SetBackdrop(Sprite backdrop)
+        // {
+        //     if (_backdropImage != null)
+        //     {
+        //         _backdropImage.sprite = backdrop;
+        //     }
+        // }
 
         public void DisplayClues(List<ClueData> clues)
         {
@@ -122,7 +118,15 @@ namespace DefaultNamespace.Game
                 _spawnedButtons.Add(item);
             }
         }
-        
+
+        public void ShowFeedbackResult(GuessResultModel result)
+        {
+            var row = Instantiate(_feedbackGuessPrefab,  _contentFeedbackParent);
+            row.Setup(result);
+            
+            _feedbackScrollRect.verticalNormalizedPosition = 1f;
+        }
+
         public void ClearGuessesItems()
         {
             foreach (var item in _guessItems)
@@ -144,6 +148,9 @@ namespace DefaultNamespace.Game
         private void SubmitPlayerGuess(MovieData obj)
         {
             Debug.Log($"Submitting player guess: {obj.Title}");
+            
+            ClearGuessesItems();
+            OnGuessSelected?.Invoke(obj.Id);
         }
 
         private void OnInputChanged(string input)

@@ -13,8 +13,11 @@ namespace DefaultNamespace
         [SerializeField] private Image _poster;
         [SerializeField] private Button _button;
 
+        private int _id;
         public event Action<MovieData> OnClick;
         private MovieData _data;
+
+        public int ID => _id;
 
         private void Awake()
         {
@@ -24,6 +27,7 @@ namespace DefaultNamespace
         public void Setup(MovieData data)
         {
             _data = data;
+            _id = data.Id;
             _title.text = data.Title;
             
             GetPosterAsync(data.poster_path).Forget();
