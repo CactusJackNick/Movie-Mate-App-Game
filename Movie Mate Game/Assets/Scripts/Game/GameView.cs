@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using DefaultNamespace.Models;
 using TMPro;
 using UnityEngine;
@@ -31,6 +32,8 @@ namespace DefaultNamespace.Game
         [SerializeField] private FeedbackGuessItem _feedbackGuessPrefab;
         [SerializeField] private ScrollRect _feedbackScrollRect;
         
+        [SerializeField] private LeaveGamePopup _leaveGamePopup;
+        
         private readonly List<GuessItemButton> _guessItems = new();
         private readonly List<ClueButton> _spawnedButtons = new();
         
@@ -48,6 +51,8 @@ namespace DefaultNamespace.Game
             _debug.onClick.AddListener(DebugUnlockNext);
             _clearSearchButton.onClick.AddListener(OnClearSearch);
             _inputField.onValueChanged.AddListener(OnInputChanged);
+
+            _leaveGamePopup.OnConfirmLeave += HandleConfirmLeaveGame;
             
             _inputField.text = string.Empty;
             _inputField.Select();
@@ -160,6 +165,11 @@ namespace DefaultNamespace.Game
         }
         
         private void GoBackToMain()
+        {
+            _leaveGamePopup.OpenPanelAnimationAsync().Forget();
+        }
+
+        private void HandleConfirmLeaveGame()
         {
             OnBackButtonPressed?.Invoke();
         }
