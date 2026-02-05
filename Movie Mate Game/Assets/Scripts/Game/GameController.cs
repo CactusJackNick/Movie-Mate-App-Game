@@ -13,6 +13,7 @@ namespace DefaultNamespace.Game
         private readonly IGameView _view;
         private readonly IApiService _apiService;
         private readonly IClueFactory _clueFactory;
+        private readonly IFeedbackService _feedbackService;
         private readonly HashSet<int> _guessedIds = new();
 
         private int _currentTier = 0;
@@ -24,11 +25,12 @@ namespace DefaultNamespace.Game
         private DetailsSuperlistModel _targetMovie;
 
         public GameController(IGameView view, IApiService apiService
-        , IClueFactory clueFactory)
+        , IClueFactory clueFactory,  IFeedbackService feedbackService)
         {
             _view = view;
             _apiService = apiService;
             _clueFactory = clueFactory;
+            _feedbackService = feedbackService;
         }
 
         public void LoadMovies()
@@ -153,16 +155,7 @@ namespace DefaultNamespace.Game
             genresText = string.Join(", ", genresList);
             actorsText = string.Join(", ", actors);
             
-            // var clues = AssignDataToClues
-            // (
-            //     director: directorName,
-            //     date: date,
-            //     actors: actorsText,
-            //     genres: genresText, 
-            //     tagline: tagline,
-            //     backdrop: backdrop,
-            //     poster: poster
-            // );
+            
             var clues = _clueFactory.AssignDataToClues
             (
                 movie: movie,
@@ -174,53 +167,6 @@ namespace DefaultNamespace.Game
             _view.UnlockClue(startClueIndex);
             
             LoadingPanel.Instance.Hide();
-        }
-
-        private List<ClueData> AssignDataToClues(
-            string director, string date, string actors, string genres, 
-            string tagline, Sprite backdrop, Sprite poster)
-        {
-            var clues = new List<ClueData>
-            {
-                new() //clue 1
-                {
-                    _title = "Backdrop",
-                    _displayMode = ClueDisplayMode.Backdrop,
-                    _imageContext = backdrop
-                },
-                new() //clue 2
-                {
-                    _title = "Year & Genres",
-                    _displayMode = ClueDisplayMode.Text, 
-                    _textContext = $"{date}\n{genres}"
-                },
-                new() //clue 3
-                {
-                    _title = "Director",
-                    _displayMode = ClueDisplayMode.Text,
-                    _textContext = $"{director}"
-                },
-                new() //clue 4
-                {
-                    _title = "Actors",
-                    _displayMode = ClueDisplayMode.Text,
-                    _textContext = $"{actors}"
-                },
-                new() //clue 5
-                {
-                    _title = "Quote",
-                    _displayMode = ClueDisplayMode.Text,
-                    _textContext = $"{tagline}"
-                },
-                new() //clue 6
-                {
-                    _title = "Poster",
-                    _displayMode = ClueDisplayMode.Poster,
-                    _imageContext = poster
-                }
-            };
-
-            return clues;
         }
         
         private async UniTask LoadGuessMoviesAsync(string query, int page)
@@ -385,21 +331,7 @@ namespace DefaultNamespace.Game
             
             var guess = await _apiService.GetMovieDetailsAsync(guessedMovieId);
 
-            var result = new GuessResultModel
-            {
-                DirectorName = GetDirectorName(guess),
-                DirectorColor = GetDirectorColor(guess, _targetMovie),
-                
-                ActorsText = GetActorsText(guess),
-                ActorsColor = GetActorsColor(guess, _targetMovie),
-                
-                GenresText = GetGenresText(guess),
-                GenresColor = GetGenresColor(guess, _targetMovie),
-                
-                YearText = GetYearText(guess),
-                YearColor = GetYearColor(guess, _targetMovie),
-                RotateYearArrow = CompareYearsToDetermineArrowRot(guess, _targetMovie)
-            };
+            var result = _feedbackService.EvaluateGuess(guess, _targetMovie);
 
             _view.ShowFeedbackResult(result);
             
@@ -412,165 +344,6 @@ namespace DefaultNamespace.Game
                 _currentTier++;
                 _view.UnlockClue(_currentTier);
             }
-        }
-
-        private string GetDirectorName(DetailsSuperlistModel model)
-        {
-            var directorName = "";
-            foreach (var person in model.Credits.Crew)
-            {
-                if (person.Job == "Director")
-                {
-                   directorName = person.NameCrew;
-                }
-            }
-            return string.IsNullOrEmpty(directorName)
-                ? "N/A" 
-                : directorName;
-        }
-
-        private FeedbackColor GetDirectorColor(DetailsSuperlistModel guess, DetailsSuperlistModel target)
-        {
-            var guessDir = GetDirectorName(guess);
-            var targetDir = GetDirectorName(target);
-
-            return guessDir == targetDir
-                ? FeedbackColor.Green 
-                : FeedbackColor.Red;
-        }
-
-        private string GetActorsText(DetailsSuperlistModel movie)
-        {
-            var actors = new List<string>();
-            foreach (var actor in movie.Credits.Cast)
-            {
-                if (actor.Acting == "Acting")
-                {
-                    if (actors.Count >= 3)
-                    {
-                        continue;
-                    }
-                    
-                    actors.Add(actor.ActorName);
-                }
-            } 
-            
-            return string.Join("\n ", actors);
-        }
-
-        private FeedbackColor GetActorsColor(DetailsSuperlistModel guess, DetailsSuperlistModel target)
-        {
-            var guessActorIds = GetActorIds(guess);
-            var targetActorIds = GetActorIds(target);
-
-            if (guessActorIds.SetEquals(targetActorIds))
-            {
-                return FeedbackColor.Green;
-            }
-
-            if (guessActorIds.Overlaps(targetActorIds))
-            {
-                return FeedbackColor.Orange;
-            }
-            
-            return FeedbackColor.Red;
-        }
-
-        private HashSet<int> GetActorIds(DetailsSuperlistModel movie)
-        {
-            var actorSet  = new HashSet<int>();
-            if (movie.Credits.Cast == null)
-            {
-                return actorSet;
-            }
-            
-            foreach (var actor in movie.Credits.Cast)
-            {
-                if (actor.Acting == "Acting")
-                {
-                    if (actorSet.Count >= 3)
-                    {
-                        break;
-                    }
-
-                    actorSet.Add(actor.ActorId);
-                }
-            }
-            return actorSet;
-        }
-
-        private string GetGenresText(DetailsSuperlistModel movie)
-        {
-            var genres = new List<string>();
-            foreach (var genre in movie.Genres)
-            {
-                genres.Add(genre.Name);
-            }
-
-            return genres.Count == 0 
-                ? "N/A" 
-                : string.Join("\n", genres);
-        }
-
-        private FeedbackColor GetGenresColor(DetailsSuperlistModel guess, DetailsSuperlistModel target)
-        {
-            var guessGenreId = GetGenreIds(guess);
-            var targetGenreId = GetGenreIds(target);
-
-            if (guessGenreId.SetEquals(targetGenreId))
-            {
-                return FeedbackColor.Green;
-            }
-
-            if (guessGenreId.Overlaps(targetGenreId))
-            {
-                return FeedbackColor.Orange;
-            }
-            
-            return FeedbackColor.Red;
-        }
-
-        private HashSet<int> GetGenreIds(DetailsSuperlistModel movie)
-        {
-            var genresSet = new HashSet<int>();
-            
-            if (movie.Genres == null)
-            {
-                return genresSet;
-            }
-
-            foreach (var genre in movie.Genres)
-            {
-                genresSet.Add(genre.Id);
-            }
-            
-            return genresSet;
-        }
-
-        private string GetYearText(DetailsSuperlistModel movie)
-        {
-            const int lengthYearToRead = 4;
-            var yearText = movie.Release_Date;
-
-            return yearText[..lengthYearToRead];
-        }
-
-        private FeedbackColor GetYearColor(DetailsSuperlistModel guess, DetailsSuperlistModel target)
-        {
-            var guessYear = GetYearText(guess);
-            var targetYear = GetYearText(target);
-            
-            return guessYear == targetYear 
-                ? FeedbackColor.Green 
-                : FeedbackColor.Red;
-        }
-
-        private bool CompareYearsToDetermineArrowRot(DetailsSuperlistModel guess, DetailsSuperlistModel target)
-        {
-            var guessYear = int.Parse(GetYearText(guess));
-            var targetYear = int.Parse(GetYearText(target));
-
-            return guessYear < targetYear;
         }
 
         public void Dispose()

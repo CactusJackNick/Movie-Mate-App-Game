@@ -12,13 +12,21 @@ namespace DefaultNamespace.Game
         
         private GameController _controller;
         private ClueFactory _clueFactory;
+        private FeedbackService _feedbackService;
         
         public override void Awake()
         {
             base.Awake();
 
             _clueFactory = new ClueFactory();
-            _controller = new GameController(_view, ApiService.Instance, _clueFactory);
+            _feedbackService = new FeedbackService();
+            _controller = new GameController
+            (
+                view: _view,
+                apiService: ApiService.Instance,
+                clueFactory: _clueFactory,
+                feedbackService: _feedbackService
+            );
             
             _view.OnBackButtonPressed += ReturnToMain;
             _view.OnInputPressed += OnSubmit;
