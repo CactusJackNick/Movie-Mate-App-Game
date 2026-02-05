@@ -39,6 +39,7 @@ namespace DefaultNamespace.Models
     [Serializable]
     public class CastMember
     {
+        [JsonProperty("id")] public int ActorId;
         [JsonProperty("name")] public string ActorName;
         [JsonProperty("known_for_department")] public string Acting;
     }

@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,6 +38,33 @@ namespace DefaultNamespace
             SetupVisuals(_actorsBg, model.ActorsColor, false, false);
             SetupVisuals(_genresBg, model.GenresColor, false, false);
             SetupVisuals(_yearBg, model.YearColor, true, model.RotateYearArrow);
+            
+            SpinAndPopAnimation().Forget();
+        }
+
+        private async UniTask SpinAndPopAnimation()
+        {
+            await DoSpinAndScale(_directorBg.rectTransform);
+            await DoSpinAndScale(_actorsBg.rectTransform);
+            await DoSpinAndScale(_genresBg.rectTransform);
+            await DoSpinAndScale(_yearBg.rectTransform);
+        }
+
+        private async UniTask DoSpinAndScale(RectTransform target)
+        {
+            const float duration = 0.4f;
+
+            var scaleTask = target.DOScale(Vector3.one, duration)
+                .SetEase(Ease.OutBack) 
+                .AsyncWaitForCompletion()
+                .AsUniTask();
+            
+            var rotateTask = target.DORotate(new Vector3(0f, 360f, 0f), duration, RotateMode.LocalAxisAdd)
+                .SetEase(Ease.OutBack)
+                .AsyncWaitForCompletion()
+                .AsUniTask();
+
+            await UniTask.WhenAll(scaleTask, rotateTask);
         }
 
         private void SetupVisuals(Image bg, FeedbackColor color, bool isYearBox, bool rotateArrow)

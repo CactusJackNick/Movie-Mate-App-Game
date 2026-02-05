@@ -45,6 +45,7 @@ namespace DefaultNamespace.Game
         {
             UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.MainMenu);
             _view.ClearGuessesItems();
+            _view.ClearFeedbackItems();
         }
         
         private void OnSubmit(string text)

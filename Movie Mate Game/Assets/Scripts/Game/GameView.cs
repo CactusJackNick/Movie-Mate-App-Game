@@ -124,6 +124,16 @@ namespace DefaultNamespace.Game
             var row = Instantiate(_feedbackGuessPrefab,  _contentFeedbackParent);
             row.Setup(result);
             
+            _feedbackScrollRect.verticalNormalizedPosition = 0f;
+        }
+        
+        public void ClearFeedbackItems()
+        {
+            foreach (Transform child in _contentFeedbackParent)
+            {
+                Destroy(child.gameObject);
+            }
+            
             _feedbackScrollRect.verticalNormalizedPosition = 1f;
         }
 
@@ -150,6 +160,9 @@ namespace DefaultNamespace.Game
             Debug.Log($"Submitting player guess: {obj.Title}");
             
             ClearGuessesItems();
+
+            _inputField.SetTextWithoutNotify("");
+            
             OnGuessSelected?.Invoke(obj.Id);
         }
 

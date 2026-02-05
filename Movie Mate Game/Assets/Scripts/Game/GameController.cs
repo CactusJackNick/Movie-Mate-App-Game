@@ -12,6 +12,8 @@ namespace DefaultNamespace.Game
     {
         private readonly IGameView _view;
         private readonly IApiService _apiService;
+        
+        private readonly HashSet<int> _guessedIds = new();
 
         private int _currentTier = 0;
         private int _currentPage = 1;
@@ -83,11 +85,30 @@ namespace DefaultNamespace.Game
             
             await LoadGuessMoviesAsync(query, _currentPage);
         }
+        
+        private void ResetSearchState()
+        {
+            if (_cts != null)
+            {
+                _cts.Cancel();
+                _cts.Dispose();
+                _cts = null;
+            }
+
+            _currentQuery = "";
+            _currentPage = 1;
+            _maxPages = 1;
+            _isLoading = false;
+        }
 
         private async UniTask LoadMovieAsync()
         {
             LoadingPanel.Instance.Show();
+            
             const int startClueIndex = 0;
+            _currentTier = 0;
+            
+            _guessedIds.Clear();
             
             var movie = await GetValidGameMovieAsync();
             if (movie == null)
@@ -196,13 +217,16 @@ namespace DefaultNamespace.Game
         
         private async UniTask LoadGuessMoviesAsync(string query, int page)
         {
-            LoadingPanel.Instance.Show();
             _isLoading =  true;
 
             try
             {
                 var response = await _apiService.SearchMoviesAsync(query, page);
-
+                if (_currentQuery != query)
+                {
+                    return;
+                }
+                
                 _maxPages = response.TotalPages;
                 var validMovies = new List<MovieData>();
 
@@ -210,6 +234,11 @@ namespace DefaultNamespace.Game
                 {
                     if (string.IsNullOrEmpty(movie.backdrop_path) ||
                         string.IsNullOrEmpty(movie.poster_path))
+                    {
+                        continue;
+                    }
+
+                    if (_guessedIds.Contains(movie.Id))
                     {
                         continue;
                     }
@@ -234,8 +263,7 @@ namespace DefaultNamespace.Game
             }
             finally
             {
-                _isLoading = false;
-                LoadingPanel.Instance.Hide();
+                _isLoading = false; 
             }
         }
         
@@ -343,6 +371,10 @@ namespace DefaultNamespace.Game
 
         public async UniTask ProcessPlayerGuess(int guessedMovieId)
         {
+            ResetSearchState();
+            
+            _guessedIds.Add(guessedMovieId);
+            
             var guess = await _apiService.GetMovieDetailsAsync(guessedMovieId);
 
             var result = new GuessResultModel
@@ -384,7 +416,9 @@ namespace DefaultNamespace.Game
                    directorName = person.NameCrew;
                 }
             }
-            return directorName;
+            return string.IsNullOrEmpty(directorName)
+                ? "N/A" 
+                : directorName;
         }
 
         private FeedbackColor GetDirectorColor(DetailsSuperlistModel guess, DetailsSuperlistModel target)
@@ -418,23 +452,43 @@ namespace DefaultNamespace.Game
 
         private FeedbackColor GetActorsColor(DetailsSuperlistModel guess, DetailsSuperlistModel target)
         {
-            if (guess.Id == target.Id)
+            var guessActorIds = GetActorIds(guess);
+            var targetActorIds = GetActorIds(target);
+
+            if (guessActorIds.SetEquals(targetActorIds))
             {
                 return FeedbackColor.Green;
             }
 
-            foreach (var actor in guess.Credits.Cast)
+            if (guessActorIds.Overlaps(targetActorIds))
             {
-                foreach (var targetActor in target.Credits.Cast)
-                {
-                    if (actor.ActorName == targetActor.ActorName)
-                    {
-                        return FeedbackColor.Orange;
-                    }
-                }
+                return FeedbackColor.Orange;
             }
             
             return FeedbackColor.Red;
+        }
+
+        private HashSet<int> GetActorIds(DetailsSuperlistModel movie)
+        {
+            var actorSet  = new HashSet<int>();
+            if (movie.Credits.Cast == null)
+            {
+                return actorSet;
+            }
+            
+            foreach (var actor in movie.Credits.Cast)
+            {
+                if (actor.Acting == "Acting")
+                {
+                    if (actorSet.Count >= 3)
+                    {
+                        break;
+                    }
+
+                    actorSet.Add(actor.ActorId);
+                }
+            }
+            return actorSet;
         }
 
         private string GetGenresText(DetailsSuperlistModel movie)
@@ -445,28 +499,44 @@ namespace DefaultNamespace.Game
                 genres.Add(genre.Name);
             }
 
-            return string.Join("\n", genres);
+            return genres.Count == 0 
+                ? "N/A" 
+                : string.Join("\n", genres);
         }
 
         private FeedbackColor GetGenresColor(DetailsSuperlistModel guess, DetailsSuperlistModel target)
         {
-            if (guess.Id == target.Id)
+            var guessGenreId = GetGenreIds(guess);
+            var targetGenreId = GetGenreIds(target);
+
+            if (guessGenreId.SetEquals(targetGenreId))
             {
                 return FeedbackColor.Green;
             }
 
-            foreach (var genre in guess.Genres)
+            if (guessGenreId.Overlaps(targetGenreId))
             {
-                foreach (var targetGenre in target.Genres)
-                {
-                    if (genre.Name == targetGenre.Name)
-                    {
-                        return FeedbackColor.Orange;
-                    }
-                }
+                return FeedbackColor.Orange;
             }
             
             return FeedbackColor.Red;
+        }
+
+        private HashSet<int> GetGenreIds(DetailsSuperlistModel movie)
+        {
+            var genresSet = new HashSet<int>();
+            
+            if (movie.Genres == null)
+            {
+                return genresSet;
+            }
+
+            foreach (var genre in movie.Genres)
+            {
+                genresSet.Add(genre.Id);
+            }
+            
+            return genresSet;
         }
 
         private string GetYearText(DetailsSuperlistModel movie)

@@ -26,10 +26,14 @@ namespace DefaultNamespace
         private void Awake()
         {
             _closeButton.onClick.AddListener(Hide);
+            
+            _panel.gameObject.SetActive(false);
+            _panel.rectTransform.localScale = Vector3.zero;
         }
 
         public void ShowClue(ClueData data)
         {
+            _panel.rectTransform.DOKill();
             _title.text = data._title;
             
             DeactivateAllContainers();
@@ -50,22 +54,30 @@ namespace DefaultNamespace
                     break;
             }
             
-            _panel.gameObject.SetActive(true);
+            OpenPanelAnimationAsync().Forget();
         }
         
         public async UniTask OpenPanelAnimationAsync()
         {
+            _panel.gameObject.SetActive(true);
+            _panel.rectTransform.localScale = Vector3.zero;
+            
             await _panel.rectTransform
                 .DOScale(1f, 0.5f)
-                .SetEase(Ease.OutExpo)
+                .SetEase(Ease.OutBack)
                 .AsyncWaitForCompletion()
                 .AsUniTask();
-            
-            _panel.gameObject.SetActive(true);
+        }
+        
+        private void Hide()
+        {
+            HideClueAsync().Forget();
         }
         
         private async UniTask HideClueAsync()
         {
+            _panel.rectTransform.DOKill();
+            
             await _panel.rectTransform
                 .DOScale(0f, 0.5f)
                 .SetEase(Ease.OutExpo)
@@ -81,14 +93,14 @@ namespace DefaultNamespace
             _portraitContainer.gameObject.SetActive(false);
             _backdropContainer.gameObject.SetActive(false);
         }
-        
-        private void Hide()
-        {
-            HideClueAsync().Forget();
-        }
 
         private void OnDestroy()
         {
+            if (_panel != null)
+            {
+                _panel.rectTransform.DOKill();
+            }
+            
             _closeButton.onClick.RemoveListener(Hide);
         }
     }
