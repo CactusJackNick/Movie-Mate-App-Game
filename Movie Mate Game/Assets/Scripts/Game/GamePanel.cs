@@ -37,6 +37,7 @@ namespace DefaultNamespace.Game
             _view.OnBackButtonPressed += ReturnToMain;
             _view.OnInputPressed += OnSubmit;
             _view.OnGuessSelected += OnPlayerGuess;
+            _view.OnClearTextPressed += ClearSearchBar;
             _scrollRect.onValueChanged.AddListener(OnScroll);
         }
 
@@ -68,6 +69,11 @@ namespace DefaultNamespace.Game
         {
             _controller.StartSearch(text);
         }
+
+        private void ClearSearchBar()
+        {
+            _searchController.ResetSearchState();
+        }
         
         private void OnPlayerGuess(int movieId)
         {
@@ -79,6 +85,7 @@ namespace DefaultNamespace.Game
             _view.OnBackButtonPressed -= ReturnToMain;
             _view.OnInputPressed -= OnSubmit;
             _view.OnGuessSelected -= OnPlayerGuess;
+            _view.OnClearTextPressed -= ClearSearchBar;
             _scrollRect.onValueChanged.RemoveListener(OnScroll);
             _controller?.Dispose();
         }

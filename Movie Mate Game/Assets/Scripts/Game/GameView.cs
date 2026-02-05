@@ -15,6 +15,7 @@ namespace DefaultNamespace.Game
         [Header("Navigation")]
         [SerializeField] private Button _backButton;
         [SerializeField] private Button _debug;
+        [SerializeField] private Button _clearSearchButton;
         
         [Header("List Settings")]
         [SerializeField] private Transform _contentParent;
@@ -36,9 +37,8 @@ namespace DefaultNamespace.Game
         private int _debugCurrentClueIndex = 0;
         
         public event Action OnBackButtonPressed;
-        
         public event Action OnDebugPressed;
-        
+        public event Action OnClearTextPressed;
         public event Action<string> OnInputPressed;
         public event Action<int> OnGuessSelected;
         
@@ -46,6 +46,7 @@ namespace DefaultNamespace.Game
         {
             _backButton.onClick.AddListener(GoBackToMain);
             _debug.onClick.AddListener(DebugUnlockNext);
+            _clearSearchButton.onClick.AddListener(OnClearSearch);
             _inputField.onValueChanged.AddListener(OnInputChanged);
             
             _inputField.text = string.Empty;
@@ -74,34 +75,7 @@ namespace DefaultNamespace.Game
                 item.OnClick += SubmitPlayerGuess;
             }
         }
-
-        // public void AssignData(DetailsSuperlistModel data, string director, string actors, string genres)
-        // {
-        //     _directorText.text = director;
-        //     _actorsText.text = actors;
-        //     _genresText.text = genres;
-        //     _releaseDateText.text = data.Release_Date;
-        //     _taglineText.text = data.Tagline;
-        //     SetPoster(_posterImage.sprite);
-        //     SetBackdrop(_backdropImage.sprite);
-        // }
-        //
-        // public void SetPoster(Sprite poster)
-        // {
-        //     if (_posterImage != null)
-        //     {
-        //         _posterImage.sprite = poster;
-        //     }
-        // }
-        //
-        // public void SetBackdrop(Sprite backdrop)
-        // {
-        //     if (_backdropImage != null)
-        //     {
-        //         _backdropImage.sprite = backdrop;
-        //     }
-        // }
-
+        
         public void DisplayClues(List<ClueData> clues)
         {
             _debugCurrentClueIndex = 0;
@@ -161,13 +135,27 @@ namespace DefaultNamespace.Game
             
             ClearGuessesItems();
 
-            _inputField.SetTextWithoutNotify("");
+            _inputField.SetTextWithoutNotify(string.Empty);
+            
+            _clearSearchButton.gameObject.SetActive(false);
             
             OnGuessSelected?.Invoke(obj.Id);
         }
 
+        private void OnClearSearch()
+        {
+            _inputField.SetTextWithoutNotify(string.Empty);
+            _clearSearchButton.gameObject.SetActive(false);
+            ClearGuessesItems();
+            _inputField.Select();
+            
+            OnClearTextPressed?.Invoke();
+        }
+
         private void OnInputChanged(string input)
         {
+            _clearSearchButton.gameObject.SetActive(!string.IsNullOrEmpty(input));
+
             OnInputPressed?.Invoke(input);
         }
         
@@ -190,6 +178,7 @@ namespace DefaultNamespace.Game
         {
             _backButton.onClick.RemoveListener(GoBackToMain);
             _debug.onClick.RemoveListener(DebugUnlockNext);
+            _clearSearchButton.onClick.RemoveListener(OnClearSearch);
             _inputField.onValueChanged.RemoveListener(OnInputChanged);
         }
     }
