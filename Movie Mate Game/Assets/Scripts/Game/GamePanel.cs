@@ -13,6 +13,8 @@ namespace DefaultNamespace.Game
         private GameController _controller;
         private ClueFactory _clueFactory;
         private FeedbackService _feedbackService;
+        private SearchController _searchController;
+        private MoviePickingService _moviePickingService;
         
         public override void Awake()
         {
@@ -20,12 +22,16 @@ namespace DefaultNamespace.Game
 
             _clueFactory = new ClueFactory();
             _feedbackService = new FeedbackService();
+            _searchController = new SearchController(_view, ApiService.Instance);
+            _moviePickingService = new MoviePickingService(ApiService.Instance);
             _controller = new GameController
             (
                 view: _view,
                 apiService: ApiService.Instance,
                 clueFactory: _clueFactory,
-                feedbackService: _feedbackService
+                feedbackService: _feedbackService,
+                searchController: _searchController,
+                moviePickService: _moviePickingService
             );
             
             _view.OnBackButtonPressed += ReturnToMain;
