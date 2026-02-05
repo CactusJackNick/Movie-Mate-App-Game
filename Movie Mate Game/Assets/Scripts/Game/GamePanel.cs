@@ -11,12 +11,14 @@ namespace DefaultNamespace.Game
         [SerializeField] private ScrollRect _scrollRect;
         
         private GameController _controller;
+        private ClueFactory _clueFactory;
         
         public override void Awake()
         {
             base.Awake();
 
-            _controller = new GameController(_view, ApiService.Instance);
+            _clueFactory = new ClueFactory();
+            _controller = new GameController(_view, ApiService.Instance, _clueFactory);
             
             _view.OnBackButtonPressed += ReturnToMain;
             _view.OnInputPressed += OnSubmit;

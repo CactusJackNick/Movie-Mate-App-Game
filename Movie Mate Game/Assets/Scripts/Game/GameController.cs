@@ -12,7 +12,7 @@ namespace DefaultNamespace.Game
     {
         private readonly IGameView _view;
         private readonly IApiService _apiService;
-        
+        private readonly IClueFactory _clueFactory;
         private readonly HashSet<int> _guessedIds = new();
 
         private int _currentTier = 0;
@@ -23,10 +23,12 @@ namespace DefaultNamespace.Game
         private CancellationTokenSource _cts;
         private DetailsSuperlistModel _targetMovie;
 
-        public GameController(IGameView view, IApiService apiService)
+        public GameController(IGameView view, IApiService apiService
+        , IClueFactory clueFactory)
         {
             _view = view;
             _apiService = apiService;
+            _clueFactory = clueFactory;
         }
 
         public void LoadMovies()
@@ -151,13 +153,19 @@ namespace DefaultNamespace.Game
             genresText = string.Join(", ", genresList);
             actorsText = string.Join(", ", actors);
             
-            var clues = AssignDataToClues
+            // var clues = AssignDataToClues
+            // (
+            //     director: directorName,
+            //     date: date,
+            //     actors: actorsText,
+            //     genres: genresText, 
+            //     tagline: tagline,
+            //     backdrop: backdrop,
+            //     poster: poster
+            // );
+            var clues = _clueFactory.AssignDataToClues
             (
-                director: directorName,
-                date: date,
-                actors: actorsText,
-                genres: genresText, 
-                tagline: tagline,
+                movie: movie,
                 backdrop: backdrop,
                 poster: poster
             );
