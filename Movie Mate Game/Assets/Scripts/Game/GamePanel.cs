@@ -63,6 +63,8 @@ namespace DefaultNamespace.Game
             UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.MainMenu);
             _view.ClearGuessesItems();
             _view.ClearFeedbackItems();
+            
+            Resources.UnloadUnusedAssets();
         }
         
         private void OnSubmit(string text)

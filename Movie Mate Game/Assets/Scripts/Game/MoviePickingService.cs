@@ -16,6 +16,8 @@ namespace DefaultNamespace.Game
         
         public async UniTask<DetailsSuperlistModel> GetValidGameMovieAsync()
         {
+            LoadingPanel.Instance.Show();
+            
             const int maxPageSize = 100;
             var maxAttempts = 10;
             var attempts = 0;
@@ -60,6 +62,7 @@ namespace DefaultNamespace.Game
                 }
             }
             
+            LoadingPanel.Instance.Hide();
             return null;
         }
         
