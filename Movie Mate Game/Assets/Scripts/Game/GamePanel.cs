@@ -9,6 +9,7 @@ namespace DefaultNamespace.Game
     {
         [SerializeField] private GameView _view;
         [SerializeField] private ScrollRect _scrollRect;
+        [SerializeField] private ResultsView _resultsView; 
         
         private GameController _controller;
         private ClueFactory _clueFactory;
@@ -31,7 +32,8 @@ namespace DefaultNamespace.Game
                 clueFactory: _clueFactory,
                 feedbackService: _feedbackService,
                 searchController: _searchController,
-                moviePickService: _moviePickingService
+                moviePickService: _moviePickingService,
+                resultsView: _resultsView
             );
             
             _view.OnBackButtonPressed += ReturnToMain;
@@ -39,7 +41,12 @@ namespace DefaultNamespace.Game
             _view.OnGuessSelected += OnPlayerGuess;
             _view.OnClearTextPressed += ClearSearchBar;
             _scrollRect.onValueChanged.AddListener(OnScroll);
+
+            _resultsView.OnNewGameButtonPressed += OnRestartGame;
+            _resultsView.OnExitButtonPressed += ReturnToMain;
         }
+
+        
 
         public override void Show()
         {
@@ -60,11 +67,29 @@ namespace DefaultNamespace.Game
         
         private void ReturnToMain()
         {
+            _resultsView.Hide();
+            _view.SetInputStatus(true);
+            
             UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.MainMenu);
+            
             _view.ClearGuessesItems();
             _view.ClearFeedbackItems();
             
             Resources.UnloadUnusedAssets();
+        }
+        
+        private void OnRestartGame()
+        {
+            _resultsView.Hide();
+            _view.SetInputStatus(true);
+            
+            _view.ClearGuessesItems();
+            _view.ClearFeedbackItems();
+            ClearSearchBar();
+            
+            Resources.UnloadUnusedAssets();
+            _controller.LoadMovies();
+            _scrollRect.verticalNormalizedPosition = 1f;
         }
         
         private void OnSubmit(string text)
@@ -89,6 +114,8 @@ namespace DefaultNamespace.Game
             _view.OnGuessSelected -= OnPlayerGuess;
             _view.OnClearTextPressed -= ClearSearchBar;
             _scrollRect.onValueChanged.RemoveListener(OnScroll);
+            _resultsView.OnNewGameButtonPressed -= OnRestartGame;
+            _resultsView.OnExitButtonPressed -= ReturnToMain;
             _controller?.Dispose();
         }
     }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using DefaultNamespace.Models;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +13,6 @@ namespace DefaultNamespace
         [Header("Movie Settings")]
         [SerializeField] private Transform _contentParent;
         [SerializeField] private MovieItemView _itemPrefab;
-        [SerializeField] private TMP_Text _noMoviesText;
         
         private readonly List<MovieItemView> _items = new();
         
@@ -56,11 +54,6 @@ namespace DefaultNamespace
             }
             
             _items.Clear();
-        }
-
-        public void ShowNoMoviesText(bool isActive)
-        {
-            _noMoviesText.gameObject.SetActive(isActive);
         }
         
         private void GoBackToMain()

@@ -60,13 +60,6 @@ namespace DefaultNamespace
                     _movieView.DisplayMovies(response.Results);
                 }
             }
-            else
-            {
-                if (!isChecking)
-                {
-                    _movieView.ShowNoMoviesText(true);
-                }
-            }
             
             _isLoading = false;
             LoadingPanel.Instance.Hide();

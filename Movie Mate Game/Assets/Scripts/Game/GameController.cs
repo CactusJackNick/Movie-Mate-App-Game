@@ -13,6 +13,7 @@ namespace DefaultNamespace.Game
         private readonly IFeedbackService _feedbackService;
         private readonly ISearchController _searchController;
         private readonly IMoviePickService _moviePickService;
+        private readonly IResultsView _resultsView;
         private readonly HashSet<int> _guessedIds = new();
 
         private DetailsSuperlistModel _targetMovie;
@@ -20,7 +21,7 @@ namespace DefaultNamespace.Game
 
         public GameController(IGameView view, IApiService apiService
         , IClueFactory clueFactory, IFeedbackService feedbackService,
-        ISearchController searchController, IMoviePickService moviePickService)
+        ISearchController searchController, IMoviePickService moviePickService, IResultsView resultsView)
         {
             _view = view;
             _apiService = apiService;
@@ -28,6 +29,7 @@ namespace DefaultNamespace.Game
             _feedbackService = feedbackService;
             _searchController = searchController;
             _moviePickService = moviePickService;
+            _resultsView = resultsView;
             
             searchController.SetFilter(_guessedIds);
         }
@@ -65,8 +67,14 @@ namespace DefaultNamespace.Game
             
             if (guess.Id == _targetMovie.Id)
             {
-                //open win panel
-                Debug.Log("WIN!!");
+                _view.SetInputStatus(false);
+                _resultsView.ShowResultsAsync(true, null).Forget();
+            }
+            else if (_currentTier >= 5)
+            {
+                _view.SetInputStatus(false);
+                await UniTask.Delay(1500);
+                _resultsView.ShowResultsAsync(false, _targetMovie.Title).Forget();
             }
             else
             {
@@ -105,108 +113,6 @@ namespace DefaultNamespace.Game
             
             LoadingPanel.Instance.Hide();
         }
-        
-        // private async UniTask<DetailsSuperlistModel> GetValidGameMovieAsync()
-        // {
-        //     LoadingPanel.Instance.Show();   
-        //     
-        //     const int maxPageSize = 100;
-        //     var maxAttempts = 10;
-        //     var attempts = 0;
-        //
-        //     while (attempts < maxAttempts)
-        //     {
-        //         attempts++;
-        //         var randomPageNumber = Random.Range(1, maxPageSize);
-        //         var listResponse = await _apiService.GetPopularMoviesAsync(randomPageNumber);
-        //
-        //         if (listResponse.Results == null || listResponse.Results.Count == 0)
-        //         {
-        //             continue;
-        //         }
-        //         
-        //         var candidates = ShuffleListRandomly(listResponse.Results);
-        //
-        //         foreach (var candidate in candidates)
-        //         {
-        //             if (string.IsNullOrEmpty(candidate.backdrop_path))
-        //             {
-        //                 continue;
-        //             }
-        //
-        //             if (string.IsNullOrEmpty(candidate.poster_path))
-        //             {
-        //                 continue;
-        //             }
-        //
-        //             if (candidate.Genre_Ids == null || candidate.Genre_Ids.Count == 0)
-        //             {
-        //                 continue;
-        //             }
-        //
-        //             var details = await _apiService.GetMovieDetailsAsync(candidate.Id);
-        //
-        //             if (ValidateMovie(details))
-        //             {
-        //                 Debug.Log($"Found valid game movie: {details.Title}");
-        //                 return details;
-        //             }
-        //         }
-        //     }
-        //
-        //     LoadingPanel.Instance.Hide();
-        //     return null;
-        // }
-
-        // private bool ValidateMovie(DetailsSuperlistModel movie)
-        // {
-        //     if (string.IsNullOrEmpty(movie.Tagline))
-        //     {
-        //         return false;
-        //     }
-        //
-        //     var hasDirector = false;
-        //     foreach (var person in movie.Credits.Crew)
-        //     {
-        //         if (person.Job == "Director")
-        //         {
-        //             hasDirector = true;
-        //         }
-        //     }
-        //    
-        //     if (!hasDirector)
-        //     {
-        //         return false;
-        //     }
-        //
-        //     if (movie.Credits.Cast == null || movie.Credits.Cast.Count < 3)
-        //     {
-        //         return false;
-        //     }
-        //     
-        //     return true;
-        // }
-        //
-        // private List<MovieData> ShuffleListRandomly(List<MovieData> inputList)
-        // {    
-        //     //take any list of DetailsSuperlistModel and return it with Fischer-Yates shuffle
-        //     var i = 0;
-        //     var t = inputList.Count;
-        //     MovieData p;
-        //     var tempList = new List<MovieData>();
-        //     tempList.AddRange(inputList);
-        //
-        //     while (i < t)
-        //     {
-        //         var r = Random.Range(i, tempList.Count);
-        //         p = tempList[i];
-        //         tempList[i] = tempList[r];
-        //         tempList[r] = p;
-        //         i++;
-        //     }
-        //
-        //     return tempList;
-        // }
 
         public void Dispose()
         {

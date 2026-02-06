@@ -125,7 +125,12 @@ namespace DefaultNamespace.Game
             
             _guessItems.Clear();
         }
-        
+
+        public void SetInputStatus(bool isEnabled)
+        {
+            _inputField.interactable = isEnabled;
+        }
+
         public void UnlockClue(int index)
         {
             if (index >= 0 && index < _spawnedButtons.Count)
