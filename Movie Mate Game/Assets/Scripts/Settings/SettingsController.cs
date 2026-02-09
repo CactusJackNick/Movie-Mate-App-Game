@@ -58,16 +58,16 @@ namespace Settings
         
         private void ApplyResolutionSettings(int index)
         {
-            var resolutionSize = "w342";
+            var resolutionSize = "w300";
             switch (index)
             {
                 case 0:
                     // low
-                    resolutionSize = "w154";
+                    resolutionSize = "w300";
                     break;
                 case 1:
                     // mid
-                    resolutionSize = "w342";
+                    resolutionSize = "w500";
                     break;
                 case 2:
                     // high

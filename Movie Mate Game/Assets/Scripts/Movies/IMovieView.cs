@@ -6,7 +6,6 @@ namespace DefaultNamespace
     public interface IMovieView
     {
         void DisplayMovies(List<MovieData> movies);
-        void ShowNoMoviesText(bool isActive);
         void AddMovies(List<MovieData> movies);
         void ClearItems();
     }

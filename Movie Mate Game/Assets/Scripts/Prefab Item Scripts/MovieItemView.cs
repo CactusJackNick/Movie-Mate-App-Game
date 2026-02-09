@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DefaultNamespace.Game
+namespace DefaultNamespace
 {
     public class MovieItemView : MonoBehaviour
     {
@@ -17,6 +17,11 @@ namespace DefaultNamespace.Game
         public event Action<MovieData> OnClick;
         private MovieData _data;
 
+        private void Awake()
+        {
+            _button.onClick.AddListener(OpenOnClick);
+        }
+
         public void Setup(MovieData data)
         {
             _data = data;
@@ -24,7 +29,6 @@ namespace DefaultNamespace.Game
             _overview.text = data.Overview;
             
             GetPosterAsync(data.poster_path).Forget();
-            InvokeThisButton();
         }
 
         private async UniTaskVoid GetPosterAsync(string path)
@@ -47,15 +51,14 @@ namespace DefaultNamespace.Game
             }
         }
         
-        private void InvokeThisButton()
-        {
-            _button.onClick.RemoveAllListeners();
-            _button.onClick.AddListener(OpenOnClick);
-        }
-
         private void OpenOnClick()
         {
             OnClick?.Invoke(_data);
+        }
+
+        private void OnDestroy()
+        {
+            _button.onClick.RemoveListener(OpenOnClick);
         }
     }
 }

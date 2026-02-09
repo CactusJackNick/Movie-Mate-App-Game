@@ -12,7 +12,7 @@ namespace DefaultNamespace
     {
         private static IApiService _instance;
         
-        private const string BaseURL = "https://api.themoviedb.org/3";
+        private const string BASE_URL = "https://api.themoviedb.org/3";
         private const string BEARER_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmOTMxNzQ1ZmY5Y2QyZjkzNmI1YWJmN2RkZmY3YzIxMyIsIm5iZiI6MTc2OTEwOTUyMC42MzY5OTk4LCJzdWIiOiI2OTcyNzgxMGM4MzMwOWU4OTQ4OTM5NzAiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.zPgF6CKua7OmFgvU_NPfiuDc9s6542V5N-DyuW52DcA";
 
         private string _currentRes = "w342";
@@ -51,8 +51,9 @@ namespace DefaultNamespace
         
         public async UniTask<MovieListResponse> SearchMoviesAsync(string query, int page)
         {
-            var url = $"{BaseURL}/search/movie?language={_currentLang}&page={page}&query={query}";
+            var url = $"{BASE_URL}/search/movie?language={_currentLang}&page={page}&query={query}";
             Debug.Log($"Debug: request {url}");
+            
             using var request = UnityWebRequest.Get(url);
             request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
             request.SetRequestHeader("accept", "application/json");
@@ -65,15 +66,13 @@ namespace DefaultNamespace
                 throw new Exception(request.error);
             }
             
-            Debug.Log($"Debug: request result {request.result}");
             var json = request.downloadHandler.text;
-            Debug.Log($"Debug: request json {json}");
             return JsonConvert.DeserializeObject<MovieListResponse>(json);
         }
         
         public async UniTask<MovieListResponse> GetDiscoverMoviesAsync(int page)
         {
-            var url = $"{BaseURL}/discover/movie?language={_currentLang}&page={page}";
+            var url = $"{BASE_URL}/discover/movie?language={_currentLang}&page={page}";
             
             using var request = UnityWebRequest.Get(url);
             request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
@@ -95,29 +94,32 @@ namespace DefaultNamespace
         
         public async UniTask<MovieListResponse> GetPopularMoviesAsync(int page)
         {
-            var url = $"{BaseURL}/movie/popular?language={_currentLang}&page={page}";
-            
-            using var request = UnityWebRequest.Get(url);
-            request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
-            request.SetRequestHeader("accept", "application/json");
-            
-            await request.SendWebRequest();
+            var url = $"{BASE_URL}/movie/popular?language={_currentLang}&page={page}";
 
-            if (request.result != UnityWebRequest.Result.Success)
-            {
-                Debug.LogError(request.error);
-                throw new Exception(request.error);
-            }
+            var responseData = await ReturnResponseDataAsync<MovieListResponse>(url);
+            return responseData; // returns 20k
             
-            var json = request.downloadHandler.text;
-            var data = JsonConvert.DeserializeObject<MovieListResponse>(json);
-            
-            return data; // returns 20k
+            // using var request = UnityWebRequest.Get(url);
+            // request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
+            // request.SetRequestHeader("accept", "application/json");
+            //
+            // await request.SendWebRequest();
+            //
+            // if (request.result != UnityWebRequest.Result.Success)
+            // {
+            //     Debug.LogError(request.error);
+            //     throw new Exception(request.error);
+            // }
+            //
+            // var json = request.downloadHandler.text;
+            // var data = JsonConvert.DeserializeObject<MovieListResponse>(json);
+            //
+            // return data; // returns 20k
         }
 
         public async UniTask<MovieListResponse> GetMoviesByGenreAsync(int genreId, int page)
         {
-            var url = $"{BaseURL}/discover/movie?with_genres={genreId}&page={page}&language={_currentLang}";
+            var url = $"{BASE_URL}/discover/movie?with_genres={genreId}&page={page}&language={_currentLang}";
             
             using var request = UnityWebRequest.Get(url);
             request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
@@ -135,10 +137,11 @@ namespace DefaultNamespace
             var data = JsonConvert.DeserializeObject<MovieListResponse>(json);
             
             return data;
-        }
+        } 
+        
         public async UniTask<GenresListResponse> GetGenreListAsync()
         {
-            var url = $"{BaseURL}/genre/movie/list?language={_currentLang}";
+            var url = $"{BASE_URL}/genre/movie/list?language={_currentLang}";
             
             using var request = UnityWebRequest.Get(url);
             request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
@@ -215,7 +218,7 @@ namespace DefaultNamespace
         
         public async UniTask<DetailsSuperlistModel> GetMovieDetailsAsync(int movieId)
         {
-            var url = $"{BaseURL}/movie/{movieId}?language={_currentLang}&append_to_response=credits";
+            var url = $"{BASE_URL}/movie/{movieId}?language={_currentLang}&append_to_response=credits";
 
             using var request = UnityWebRequest.Get(url);
             request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
@@ -235,7 +238,7 @@ namespace DefaultNamespace
             return data;
         }
         
-        private async UniTask<T> ReturnResponseData<T>(string url)
+        private static async UniTask<T> ReturnResponseDataAsync<T>(string url)
         {
             using var request = UnityWebRequest.Get(url);
             request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");

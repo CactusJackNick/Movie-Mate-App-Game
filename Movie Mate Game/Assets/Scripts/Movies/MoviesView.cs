@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using DefaultNamespace.Game;
 using DefaultNamespace.Models;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +13,6 @@ namespace DefaultNamespace
         [Header("Movie Settings")]
         [SerializeField] private Transform _contentParent;
         [SerializeField] private MovieItemView _itemPrefab;
-        [SerializeField] private TMP_Text _noMoviesText;
         
         private readonly List<MovieItemView> _items = new();
         
@@ -37,7 +34,7 @@ namespace DefaultNamespace
         {
             foreach (var movieData in movies)
             {
-                if (!IsSafeFontString(movieData.Title))
+                if (!IsSafeLanguageFontString(movieData.Title))
                 {
                     continue;
                 }
@@ -58,11 +55,6 @@ namespace DefaultNamespace
             
             _items.Clear();
         }
-
-        public void ShowNoMoviesText(bool isActive)
-        {
-            _noMoviesText.gameObject.SetActive(isActive);
-        }
         
         private void GoBackToMain()
         {
@@ -74,7 +66,7 @@ namespace DefaultNamespace
             _backButton.onClick.RemoveListener(GoBackToMain);
         }
         
-        private bool IsSafeFontString(string text)
+        private bool IsSafeLanguageFontString(string text)
         {
             if (string.IsNullOrEmpty(text))
             {
@@ -98,7 +90,6 @@ namespace DefaultNamespace
         private void OpenMovieDetailsPanel(MovieData movieData)
         {
             DetailsButtonClicked?.Invoke(movieData);
-            Debug.Log("OpenMovieDetailsPanel");
         }
     }
 }

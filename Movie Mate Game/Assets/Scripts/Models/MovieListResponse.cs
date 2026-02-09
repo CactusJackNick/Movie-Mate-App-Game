@@ -9,5 +9,6 @@ namespace DefaultNamespace.Models
     {
         [JsonProperty("page")] private int Page;
         [JsonProperty("results")] public List<MovieData> Results;
+        [JsonProperty("total_pages")] public int TotalPages;
     }
 }
