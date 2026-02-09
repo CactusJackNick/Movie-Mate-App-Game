@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DefaultNamespace.Genre;
 using DefaultNamespace.Models;
 using Mediator;
@@ -17,10 +18,10 @@ namespace DefaultNamespace
         {
             base.Awake();
             
-            _controller = new MoviesController(_view, ApiService.Instance);
+            _controller = new MoviesController(_view, ApiService.Instance, LoadingPanel.Instance);
             
-            _view.OnBackButtonPressed += ReturnToGenresScreen;
-            _view.DetailsButtonClicked += OpenDetails;
+            _controller.OnCloseButtonRequested += ReturnToGenresScreen;
+            _controller.OnDetailsRequested += OpenDetails;
             _scrollRect.onValueChanged.AddListener(OnScroll);
         }
 
@@ -32,14 +33,14 @@ namespace DefaultNamespace
             
             var idsToLoad = GenrePanel.SelectedGenreId;
             
-            _controller.LoadFilteredMovies(idsToLoad);
+            _controller.LoadFilteredMovies(idsToLoad).Forget();
         }
         
         private void OnScroll(Vector2 pos)
         {
             if (pos.y < 0.1)
             {
-                _controller.LoadNextPage();
+                _controller.LoadNextPage().Forget();
             }
         }
         
@@ -60,8 +61,13 @@ namespace DefaultNamespace
 
         private void OnDestroy()
         {
-            _view.OnBackButtonPressed -= ReturnToGenresScreen;
-            _view.DetailsButtonClicked -= OpenDetails;
+            if (_controller is null)
+            {
+                return;
+            }
+            _controller.OnCloseButtonRequested -= ReturnToGenresScreen;
+            _controller.OnDetailsRequested -= OpenDetails;
+            _controller.Dispose();
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace DefaultNamespace
 {
-    public class LoadingPanel : ABaseUIMediatorComponent
+    public class LoadingPanel : ABaseUIMediatorComponent, ILoadingPanel
     {
         private static LoadingPanel _instance;
 

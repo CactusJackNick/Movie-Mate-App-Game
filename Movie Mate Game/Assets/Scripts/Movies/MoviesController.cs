@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DefaultNamespace.Models;
@@ -9,19 +10,27 @@ namespace DefaultNamespace
         public List<MovieData> filteredList = new();
         
         private readonly IMovieView _movieView;
-        private readonly IApiService  _apiService;
+        private readonly IApiService _apiService;
+        private readonly ILoadingPanel _loadingPanel;
         
         private int _currentGenreId;
         private int _currentPage = 1;
         private bool _isLoading = false;
         
-        public MoviesController(IMovieView movieView, IApiService apiService)
+        public MoviesController(IMovieView movieView, IApiService apiService, ILoadingPanel loadingPanel)
         {
             _movieView = movieView;
             _apiService = apiService;
+            _loadingPanel = loadingPanel;
+
+            _movieView.OnBackButtonPressed += HandleCloseRequested;
+            _movieView.DetailsButtonClicked += HandelDetailsClicked;
         }
 
-        public void LoadFilteredMovies(int targetId)
+        public event Action OnCloseButtonRequested;
+        public event Action<MovieData> OnDetailsRequested;
+
+        public async UniTask LoadFilteredMovies(int targetId)
         {
             _currentGenreId = targetId;
             _currentPage = 1; 
@@ -29,10 +38,10 @@ namespace DefaultNamespace
             
             _movieView.ClearItems();
             
-            FetchMoviesAsync(isChecking: false).Forget();
+            await FetchMoviesAsync(isChecking: false);
         }
         
-        public void LoadNextPage()
+        public async UniTask LoadNextPage()
         {
             if (_isLoading)
             {
@@ -40,12 +49,12 @@ namespace DefaultNamespace
             }
 
             _currentPage++;
-            FetchMoviesAsync(true).Forget();
+            await FetchMoviesAsync(isChecking: true);
         }
         
         private async UniTask FetchMoviesAsync(bool isChecking)
         {
-            LoadingPanel.Instance.Show();
+            _loadingPanel.Show();
             _isLoading = true;
             var response = await _apiService.GetMoviesByGenreAsync(_currentGenreId, _currentPage);
 
@@ -62,7 +71,23 @@ namespace DefaultNamespace
             }
             
             _isLoading = false;
-            LoadingPanel.Instance.Hide();
+            _loadingPanel.Hide();
+        }
+        
+        private void HandelDetailsClicked(MovieData data)
+        {
+            OnDetailsRequested?.Invoke(data);
+        }
+        
+        private void HandleCloseRequested()
+        {
+            OnCloseButtonRequested?.Invoke();
+        }
+        
+        public void Dispose()
+        {
+            _movieView.DetailsButtonClicked -= HandelDetailsClicked;
+            _movieView.OnBackButtonPressed -= HandleCloseRequested;
         }
     }
 }
