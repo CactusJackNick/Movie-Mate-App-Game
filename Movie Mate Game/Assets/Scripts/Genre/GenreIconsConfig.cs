@@ -6,7 +6,7 @@ namespace DefaultNamespace.Genre
     [CreateAssetMenu(menuName = "GenreConfigs", fileName = "GenreIconsConfig")]
     public class GenreIconsConfig :  ScriptableObject
     {
-        [SerializeField] private List<GenreIconMapping> _icons;
+        [SerializeField] private List<GenreIconMapping> _icons = new();
 
         public Sprite GetIconFromId(int id)
         {

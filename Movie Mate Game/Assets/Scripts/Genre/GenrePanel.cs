@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using Mediator;
 using UnityEngine;
 
@@ -18,14 +19,20 @@ namespace DefaultNamespace.Genre
             
             _view.OnBackClicked += ReturnToGeneralSearch;
 
-            _controller = new GenreController(_view, ApiService.Instance, _config);
+            _controller = new GenreController
+            (
+                view: _view,
+                apiService: ApiService.Instance,
+                config: _config,
+                localizationService: LocalizationManager.Instance
+            );
 
             _view.OnGenreClicked += HandleGenreClicked;
         }
         public override void Show()
         {
             base.Show();
-            _controller.LoadGenres();
+            _controller.LoadGenresAsync().Forget();
         }
         
         private void ReturnToGeneralSearch()

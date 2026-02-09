@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using UnityEngine;
 
 public enum LocalizationLanguage
@@ -6,7 +7,7 @@ public enum LocalizationLanguage
     Russian
 }
 
-public class LocalizationManager
+public class LocalizationManager : ILocalizationService
 {
     private static LocalizationManager _instance;
     public static LocalizationManager Instance => _instance ??= new LocalizationManager();

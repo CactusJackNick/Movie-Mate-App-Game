@@ -11,23 +11,21 @@ namespace DefaultNamespace.Genre
         private readonly IGenreView _view;
         private readonly IApiService _apiService;
         private readonly GenreIconsConfig _config;
+        private readonly ILocalizationService _localizationService;
         private readonly Dictionary<int, GenreViewModel> _genreButtonsList = new();
         
         private string _lastLoadedLanguage = "";
         
-        public GenreController(IGenreView view, IApiService apiService, GenreIconsConfig config)
+        public GenreController(IGenreView view, IApiService apiService, 
+            GenreIconsConfig config, ILocalizationService localizationService)
         {
             _view = view;
             _apiService = apiService;
             _config = config;
+            _localizationService = localizationService;
         }
 
-        public void LoadGenres()
-        {
-            LoadGenresAsync().Forget();
-        }
-
-        private async UniTask LoadGenresAsync()
+        public async UniTask LoadGenresAsync()
         {
             CheckCurrentLanguage();
             
@@ -53,7 +51,7 @@ namespace DefaultNamespace.Genre
 
         private void CheckCurrentLanguage()
         {
-            var currentLanguage = LocalizationManager.Instance.GetCurrentLanguageCode();
+            var currentLanguage = _localizationService.GetCurrentLanguageCode();
 
             if (_lastLoadedLanguage is null ||
                 _lastLoadedLanguage != currentLanguage)

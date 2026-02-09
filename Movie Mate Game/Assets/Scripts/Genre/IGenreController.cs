@@ -1,7 +1,9 @@
+using Cysharp.Threading.Tasks;
+
 namespace Genre
 {
     public interface IGenreController
     {
-        void LoadGenres();
+        UniTask LoadGenresAsync();
     }
 }
