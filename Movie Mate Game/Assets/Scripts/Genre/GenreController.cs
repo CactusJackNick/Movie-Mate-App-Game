@@ -25,9 +25,11 @@ namespace DefaultNamespace.Genre
             _config = config;
             _localizationService = localizationService;
 
+            _view.OnBackClicked += RequestGoBack;
             _view.OnGenreClicked += HandleGenreClicked;
         }
-        
+
+        public event Action OnCloseRequested;
         public event Action<int> OnGenreSelected;        
 
         public async UniTask LoadGenresAsync()
@@ -54,6 +56,11 @@ namespace DefaultNamespace.Genre
             _view.DisplayGenres(_genreButtonsList.Values.ToList());
         }
 
+        private void RequestGoBack()
+        {
+            OnCloseRequested?.Invoke();
+        }
+        
         private void HandleGenreClicked(int genreId)
         {
             OnGenreSelected?.Invoke(genreId);
@@ -73,6 +80,7 @@ namespace DefaultNamespace.Genre
 
         public void Dispose()
         {
+            _view.OnBackClicked -= RequestGoBack;
             _view.OnGenreClicked -= HandleGenreClicked;
         }
     }

@@ -17,6 +17,8 @@ public class GenreControllerTest
     private GenreIconsConfig _config;
     private ILocalizationService _localizationService;
     
+    private bool _closeRequestedCalled;
+    
     [SetUp]
     public void SetUp()
     {
@@ -103,16 +105,37 @@ public class GenreControllerTest
         var sut = new GenreController(_view, _apiService, _config, _localizationService);
         
         // Act
-        sut.OnGenreSelected += HandleCloseRequested;
+        sut.OnGenreSelected += HandleGenreRequested;
         _view.OnGenreClicked += Raise.Event<Action<int>>(eventID);
         
         // Assert
         Assert.AreEqual(controllerId, eventID);
         return;
         
-        void HandleCloseRequested(int genreId)
+        void HandleGenreRequested(int genreId)
         {
             controllerId = genreId;
+        }
+    }
+    
+    [Test]
+    public void OnBackClicked_RaisesOnCloseRequested()
+    {
+        // Arrange
+        var sut = new GenreController(_view, _apiService, _config, _localizationService);
+        _closeRequestedCalled =  false;
+        
+        // Act
+        sut.OnCloseRequested += HandleCloseRequested;
+        _view.OnBackClicked += Raise.Event<Action>();
+        
+        // Assert
+        Assert.IsTrue(_closeRequestedCalled);
+        return;
+        
+        void HandleCloseRequested()
+        {
+            _closeRequestedCalled =  true;
         }
     }
 }

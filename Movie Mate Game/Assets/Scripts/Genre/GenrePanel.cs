@@ -25,7 +25,7 @@ namespace DefaultNamespace.Genre
                 localizationService: LocalizationManager.Instance
             );
             
-            _view.OnBackClicked += ReturnToGeneralSearch;
+            _controller.OnCloseRequested += ReturnToGeneralSearch;
             _controller.OnGenreSelected += OnGenreSelected;
         }
         public override void Show()
@@ -47,13 +47,14 @@ namespace DefaultNamespace.Genre
         
         private void OnDestroy()
         {
-            if (_controller != null)
+            if (_controller is null)
             {
-                _controller.OnGenreSelected -= OnGenreSelected;
-                _controller.Dispose();
-            }
+                return;
+            } 
             
-            _view.OnBackClicked -= ReturnToGeneralSearch;
+            _controller.OnGenreSelected -= OnGenreSelected;
+            _controller.OnCloseRequested -= ReturnToGeneralSearch;
+            _controller.Dispose();
         }
     }
 }
