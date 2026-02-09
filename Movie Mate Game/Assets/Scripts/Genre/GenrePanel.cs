@@ -17,8 +17,6 @@ namespace DefaultNamespace.Genre
         {
             base.Awake();
             
-            _view.OnBackClicked += ReturnToGeneralSearch;
-
             _controller = new GenreController
             (
                 view: _view,
@@ -26,8 +24,9 @@ namespace DefaultNamespace.Genre
                 config: _config,
                 localizationService: LocalizationManager.Instance
             );
-
-            _view.OnGenreClicked += HandleGenreClicked;
+            
+            _view.OnBackClicked += ReturnToGeneralSearch;
+            _controller.OnGenreSelected += OnGenreSelected;
         }
         public override void Show()
         {
@@ -40,7 +39,7 @@ namespace DefaultNamespace.Genre
             UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.SeachPanel);
         }
 
-        private void HandleGenreClicked(int genreId)
+        private void OnGenreSelected(int genreId)
         {
             SelectedGenreId = genreId;
             UINavigationMediator.Instance.ReplacePanel(Panels.Genre, Panels.Movies);
@@ -48,8 +47,13 @@ namespace DefaultNamespace.Genre
         
         private void OnDestroy()
         {
+            if (_controller != null)
+            {
+                _controller.OnGenreSelected -= OnGenreSelected;
+                _controller.Dispose();
+            }
+            
             _view.OnBackClicked -= ReturnToGeneralSearch;
-            _view.OnGenreClicked -= HandleGenreClicked;
         }
     }
 }

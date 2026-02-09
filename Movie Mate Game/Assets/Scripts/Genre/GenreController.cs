@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
@@ -23,7 +24,11 @@ namespace DefaultNamespace.Genre
             _apiService = apiService;
             _config = config;
             _localizationService = localizationService;
+
+            _view.OnGenreClicked += HandleGenreClicked;
         }
+        
+        public event Action<int> OnGenreSelected;        
 
         public async UniTask LoadGenresAsync()
         {
@@ -49,6 +54,11 @@ namespace DefaultNamespace.Genre
             _view.DisplayGenres(_genreButtonsList.Values.ToList());
         }
 
+        private void HandleGenreClicked(int genreId)
+        {
+            OnGenreSelected?.Invoke(genreId);
+        }
+
         private void CheckCurrentLanguage()
         {
             var currentLanguage = _localizationService.GetCurrentLanguageCode();
@@ -59,6 +69,11 @@ namespace DefaultNamespace.Genre
                 _lastLoadedLanguage = currentLanguage;
                 _genreButtonsList.Clear();
             }
+        }
+
+        public void Dispose()
+        {
+            _view.OnGenreClicked -= HandleGenreClicked;
         }
     }
 }

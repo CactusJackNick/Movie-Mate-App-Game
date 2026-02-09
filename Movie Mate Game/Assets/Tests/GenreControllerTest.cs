@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
@@ -7,6 +8,7 @@ using DefaultNamespace.Models;
 using NSubstitute;
 using NUnit.Framework;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class GenreControllerTest
 {
@@ -89,5 +91,28 @@ public class GenreControllerTest
                   list[0].Id == 101 &&
                   list[1].Name == "Comedy"
         ));
+    }
+
+
+    [Test]
+    public void OnGenreClicked_RelativeGenre_ShowsMoviesFromGenre()
+    {
+        // Arrange
+        const int eventID = 101;
+        var controllerId = 0;
+        var sut = new GenreController(_view, _apiService, _config, _localizationService);
+        
+        // Act
+        sut.OnGenreSelected += HandleCloseRequested;
+        _view.OnGenreClicked += Raise.Event<Action<int>>(eventID);
+        
+        // Assert
+        Assert.AreEqual(controllerId, eventID);
+        return;
+        
+        void HandleCloseRequested(int genreId)
+        {
+            controllerId = genreId;
+        }
     }
 }
