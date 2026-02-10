@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
@@ -88,11 +89,11 @@ namespace Tests
             };
             
             _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
-                .Returns(UniTask.FromResult(
-                    new MovieListResponse
-                    {
-                        Results = mockData
-                    }));
+                    .Returns(UniTask.FromResult(
+                        new MovieListResponse
+                        {
+                            Results = mockData
+                        }));
 
             await sut.LoadFilteredMovies(Arg.Any<int>()); 
 
@@ -104,7 +105,7 @@ namespace Tests
         }
         
         [Test]
-        public async Task LoadFilteredMovies_DuringCall_ShowsAndHidesLoading()
+        public async Task LoadFilteredMovies_DuringCall_ShowsAndHidesLoadingPanel()
         {
             // Arrange
             var sut = new MoviesController(_view, _apiService, _loadingPanel);
@@ -122,6 +123,54 @@ namespace Tests
                 _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>());
                 _loadingPanel.Hide();
             });
+        }
+
+        [Test]
+        public void OnDetailsRequested_Raises_View_OnDetailsButtonClicked()
+        {
+            // Arrange
+            var sut  = new MoviesController(_view, _apiService, _loadingPanel);
+            MovieData capturedMovie = null;
+            
+            var movieObj = new MovieData()
+            {
+                Id = 100
+            };
+            
+            // Act
+            sut.OnDetailsRequested += HandleDetailsRequested;
+            _view.DetailsButtonClicked += Raise.Event<Action<MovieData>>(movieObj);
+            
+            //Assert
+            Assert.IsNotNull(capturedMovie);
+            Assert.AreEqual(movieObj, capturedMovie);
+            return;
+            
+            void HandleDetailsRequested(MovieData obj)
+            {
+                capturedMovie = obj;
+            }
+        }
+
+        [Test]
+        public void OnCloseRequested_View_RaisesOnBackButtonPressed()
+        {
+            // Arrange
+            var sut  = new MoviesController(_view, _apiService, _loadingPanel);
+            var closeRequestedCalled =  false;
+
+            // Act
+            sut.OnCloseButtonRequested += HandleCloseRequested;
+            _view.OnBackButtonPressed += Raise.Event<Action>();
+            
+            //Assert
+            Assert.IsTrue(closeRequestedCalled);
+            return;
+        
+            void HandleCloseRequested()
+            {
+                closeRequestedCalled =  true;
+            }
         }
     }
 }
