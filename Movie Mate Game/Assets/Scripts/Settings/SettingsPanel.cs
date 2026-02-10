@@ -16,11 +16,17 @@ namespace Settings
         public override void Awake()
         {
             base.Awake();
-
-            _view.OnBackClicked += ReturnToMain;
             
-            _controller = new SettingsController(_view);
-            _controller.Configure(_resolutionSelector,  _languageToggle);
+            _controller = new SettingsController
+                (
+                    _view,
+                    _languageToggle,
+                    _resolutionSelector,
+                    ApiService.Instance,
+                    LocalizationManager.Instance
+                );
+            
+            _controller.OnGoBackRequested += ReturnToMain;
         }
 
         public override void Show()
@@ -36,7 +42,12 @@ namespace Settings
 
         private void OnDestroy()
         {
-            _view.OnBackClicked -= ReturnToMain;
+            if (_controller is null)
+            {
+                return;
+            }
+            _controller.OnGoBackRequested -= ReturnToMain;
+            _controller.Dispose();
         }
     }
 }

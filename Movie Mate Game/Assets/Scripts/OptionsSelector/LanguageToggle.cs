@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace DefaultNamespace.OptionsSelector
 {
-    public class LanguageToggle : MonoBehaviour
+    public class LanguageToggle : MonoBehaviour, ILanguageToggle
     {
         [SerializeField] private Toggle _englishToggle;
         [SerializeField] private Toggle _russianToggle;

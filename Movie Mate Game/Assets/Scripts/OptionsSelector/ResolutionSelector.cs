@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DefaultNamespace.OptionsSelector
 {
-    public class ResolutionSelector : MonoBehaviour
+    public class ResolutionSelector : MonoBehaviour, IResolutionSelector
     {
         [Header("Buttons")]
         [SerializeField] private OptionsButton _buttonPrefab;
