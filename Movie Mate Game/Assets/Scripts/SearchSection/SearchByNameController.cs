@@ -1,6 +1,9 @@
+using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using DefaultNamespace;
 using DefaultNamespace.Models;
+using UnityEngine;
 
 namespace SearchSection
 {
@@ -8,23 +11,33 @@ namespace SearchSection
     {
         private readonly IMovieView _movieView;
         private readonly IApiService _apiService;
-
-        private ISearchByNameView _view;
+        private readonly ILoadingPanel _loadingPanel;
+        private readonly ISearchByNameView _view;
+        
         private string _currentQuery = "";
         private int _currentPage = 1;
         private bool _isLoading;
+        private CancellationTokenSource _cts;
 
-        public SearchByNameController(IMovieView movieView, IApiService apiService)
+        public SearchByNameController(ISearchByNameView view, IMovieView movieView,
+            IApiService apiService, ILoadingPanel loadingPanel)
         {
+            _view = view;
             _movieView = movieView;
             _apiService = apiService;
+            _loadingPanel = loadingPanel;
+
+            _view.OnBackButtonPressed += HandleBackRequest;
+            _view.OnSearchButtonPressed += HandleSearchRequest;
         }
+
+        public event Action OnBackRequested;
+        public event Action<string> OnSearchButtonRequested;
         
         public bool HasActiveSearch => !string.IsNullOrEmpty(_currentQuery);
 
-        public void Initialize(ISearchByNameView view)
+        public void Initialize()
         {
-            _view = view;
             _view.SetupViewInitialState();
         }
 
@@ -39,7 +52,14 @@ namespace SearchSection
             _currentPage = 1;
             _isLoading = false;
 
-            PopulateMovies(_currentQuery, _currentPage).Forget();
+            if (_cts is not null)
+            {
+                _cts.Cancel();
+                _cts.Dispose();
+            }
+            
+            _cts =  new CancellationTokenSource();
+            SearchWithDebounce(search, _cts.Token).Forget();
         }
 
         public void LoadNextPage()
@@ -53,36 +73,72 @@ namespace SearchSection
             PopulateMovies(_currentQuery, _currentPage).Forget();
         }
 
+        private async UniTaskVoid SearchWithDebounce(string query, CancellationToken token)
+        {
+            const int debounceTime = 500;
+            await UniTask.Delay(debounceTime, cancellationToken: token);
+            var page = 1;
+            await PopulateMovies(query, page);
+        }
+
         private async UniTask PopulateMovies(string query, int page)
         {
-            LoadingPanel.Instance.Show();
             _isLoading = true;
+            _loadingPanel.Show();
 
-            MovieListResponse response;
+            try
+            {
+                MovieListResponse response;
 
-            if (!string.IsNullOrEmpty(query))
-            {
-                response = await _apiService.SearchMoviesAsync(query, page);
-            }
-            else
-            {
-                response = await _apiService.GetPopularMoviesAsync(page);
-            }
-
-            if (response is { Results: not null })
-            {
-                if (page == 1)
+                if (!string.IsNullOrEmpty(query))
                 {
-                    _movieView.DisplayMovies(response.Results);
+                    response = await _apiService.SearchMoviesAsync(query, page);
                 }
                 else
                 {
-                    _movieView.AddMovies(response.Results);
+                    response = await _apiService.GetPopularMoviesAsync(page);
+                }
+
+                if (response is { Results: not null })
+                {
+                    if (page == 1)
+                    {
+                        _movieView.DisplayMovies(response.Results);
+                    }
+                    else
+                    {
+                        _movieView.AddMovies(response.Results);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex.Message);
+            }
+            finally
+            {
+                _isLoading = false;
+                _loadingPanel.Hide();
+            }
+        }
+        
+        private void HandleBackRequest()
+        {
+            OnBackRequested?.Invoke();
+            _movieView.ClearItems();
+        }
+        
+        private void HandleSearchRequest(string obj)
+        {
+            OnSearchButtonRequested?.Invoke(obj);
+        }
 
-            _isLoading = false;
-            LoadingPanel.Instance.Hide();
+        public void Dispose()
+        {
+            _cts?.Cancel();
+            _cts?.Dispose();
+            _view.OnBackButtonPressed -= HandleBackRequest;
+            _view.OnSearchButtonPressed -= HandleSearchRequest;
         }
     }
 }

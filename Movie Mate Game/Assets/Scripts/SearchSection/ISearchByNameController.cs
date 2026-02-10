@@ -1,8 +1,13 @@
+using System;
+
 namespace SearchSection
 {
-    public interface ISearchByNameController
+    public interface ISearchByNameController : IDisposable
     {
-        void Initialize(ISearchByNameView view);
+        event Action OnBackRequested;
+        event Action<string> OnSearchButtonRequested;
+        
+        void Initialize();
         void LoadInitialMovies();
         void StartSearch(string search);
         void LoadNextPage();

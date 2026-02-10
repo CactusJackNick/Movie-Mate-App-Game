@@ -19,12 +19,17 @@ namespace SearchSection
         public override void Awake()
         {
             base.Awake();
+            _controller = new SearchByNameController
+            (
+                _view,
+                _moviesView,
+                ApiService.Instance,
+                LoadingPanel.Instance
+            );
+            _controller.Initialize();
             
-            _controller = new SearchByNameController(_moviesView, ApiService.Instance);
-            _controller.Initialize(_view);
-            
-            _view.OnBackButtonPressed += ReturnToSearchScreen;
-            _view.OnSearchButtonPressed += OnSubmit;
+            _controller.OnBackRequested += ReturnToSearchScreen;
+            _controller.OnSearchButtonRequested += OnSubmit;
             _moviesView.DetailsButtonClicked += GoToDetailsPanel;
             
             _scrollRect.onValueChanged.AddListener(OnScroll);
@@ -70,8 +75,10 @@ namespace SearchSection
 
         private void OnDestroy()
         {
-            _view.OnSearchButtonPressed -= OnSubmit;
-            _view.OnBackButtonPressed -= ReturnToSearchScreen;
+            _controller.OnBackRequested -= ReturnToSearchScreen;
+            _controller.OnSearchButtonRequested -= OnSubmit;
+            _moviesView.DetailsButtonClicked -= GoToDetailsPanel;
+            _controller?.Dispose();
         }
     }
 }

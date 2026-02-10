@@ -14,7 +14,7 @@ namespace DefaultNamespace.Game
         private GameController _controller;
         private ClueFactory _clueFactory;
         private FeedbackService _feedbackService;
-        private SearchController _searchController;
+        private SearchGameController _searchGameController;
         private MoviePickingService _moviePickingService;
         
         public override void Awake()
@@ -23,7 +23,7 @@ namespace DefaultNamespace.Game
 
             _clueFactory = new ClueFactory();
             _feedbackService = new FeedbackService();
-            _searchController = new SearchController(_view, ApiService.Instance);
+            _searchGameController = new SearchGameController(_view, ApiService.Instance);
             _moviePickingService = new MoviePickingService(ApiService.Instance);
             _controller = new GameController
             (
@@ -31,7 +31,7 @@ namespace DefaultNamespace.Game
                 apiService: ApiService.Instance,
                 clueFactory: _clueFactory,
                 feedbackService: _feedbackService,
-                searchController: _searchController,
+                searchController: _searchGameController,
                 moviePickService: _moviePickingService,
                 resultsView: _resultsView
             );
@@ -99,7 +99,7 @@ namespace DefaultNamespace.Game
 
         private void ClearSearchBar()
         {
-            _searchController.ResetSearchState();
+            _searchGameController.ResetSearchState();
         }
         
         private void OnPlayerGuess(int movieId)

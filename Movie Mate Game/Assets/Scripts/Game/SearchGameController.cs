@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace DefaultNamespace.Game
 {
-    public class SearchController : ISearchController, IDisposable
+    public class SearchGameController : ISearchController, IDisposable
     {
         private readonly IGameView _view;
         private readonly IApiService _apiService;
@@ -19,7 +19,7 @@ namespace DefaultNamespace.Game
         private CancellationTokenSource _cts;
         private HashSet<int> _guessedIds;
         
-        public SearchController(IGameView view, IApiService apiService)
+        public SearchGameController(IGameView view, IApiService apiService)
         {
             _view = view;
             _apiService = apiService;
@@ -134,6 +134,7 @@ namespace DefaultNamespace.Game
         public void Dispose()
         {
             _cts?.Cancel();
+            _cts?.Dispose();
         }
     }
 }
