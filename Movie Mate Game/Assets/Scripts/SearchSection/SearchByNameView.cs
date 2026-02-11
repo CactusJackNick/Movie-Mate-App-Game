@@ -22,7 +22,6 @@ namespace SearchSection
         public void SetupViewInitialState()
         {
             _inputField.text = "";
-            _inputField.Select();
         }
         
         private void GoBackToGenericSearch()

@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using DefaultNamespace;
+using DefaultNamespace.Models;
 using NSubstitute;
 using NUnit.Framework;
 using SearchSection;
@@ -75,9 +77,17 @@ namespace Tests
             const int pageCounter = 2;
             const string query = "";
             sut.Initialize();
-            sut.StartSearch(query);
+            
+            var response = new MovieListResponse 
+            { 
+                TotalPages = 2, 
+                Results = new List<MovieData>() 
+            };
+            _api.GetPopularMoviesAsync(1).Returns(UniTask.FromResult(response));
             
             // Act
+            sut.StartSearch(query);
+            await UniTask.Delay(DebounceTime);
             sut.LoadNextPage();
             await UniTask.Delay(DebounceTime);
             
@@ -135,6 +145,30 @@ namespace Tests
             {
                 closeRequestedCalled = true;
             }
+        }
+        
+        [Test]
+        public async Task LoadNextPage_WhenOnLastPage_DoesNotCallApi()
+        {
+            // Arrange
+            var sut = new SearchByNameController(_view, _mockMovieView, _api, _loadingPanel);
+            var response = new MovieListResponse()
+            {
+                TotalPages = 1,
+                Results = new List<MovieData>()
+            };
+            _ = _api.SearchMoviesAsync(Arg.Any<string>(), 1)
+                .Returns(UniTask.FromResult(response));
+
+            sut.StartSearch("Jeff Bezos");
+            await Task.Delay(600);
+
+            // Act
+            sut.LoadNextPage();
+            await Task.Yield();
+
+            // Assert
+            _ = _api.DidNotReceive().SearchMoviesAsync(Arg.Any<string>(), 2);
         }
     }
 }

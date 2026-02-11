@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using DefaultNamespace;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ namespace Mediator
         private static IUINavigationMediator _instance;
         
         private readonly Dictionary<Panels, ABaseUIMediatorComponent> _panelsDict = new();
+        
+        private GameObject _globalBlocker;
 
         private UINavigationMediator()
         {
@@ -24,36 +27,27 @@ namespace Mediator
                 Debug.LogWarning("PanelId " + panel.PanelId + " already exists in panels");
             }
         }
-        
-        public void ShowPanel(Panels panelId)
-        {
-            if (_panelsDict.TryGetValue(panelId, out var panel))
-            {
-                panel.Show();
-            }
-            else
-            {
-                Debug.LogWarning("Panel not found for Show: " + panelId);
-            }
-        }
 
-        public void ReplacePanel(Panels first, Panels second)
+        public async UniTask ReplacePanel(Panels first, Panels second)
         {
-            HidePanel(first);
-            ShowPanel(second);
-        }
-
-        private void HidePanel(Panels panelId)
-        {
-            if (_panelsDict.TryGetValue(panelId, out var panel))
+            _globalBlocker.SetActive(true);
+            
+            if (_panelsDict.TryGetValue(second, out var nextPanel))
             {
-                panel.Hide();
+                nextPanel.Show(); 
             }
-            else
+            
+            if (_panelsDict.TryGetValue(first, out var currentPanel))
             {
-                Debug.LogWarning("Panel not found for Hide: " + panelId);
-            } 
+                await currentPanel.CloseAsync();
+            }
+
+            _globalBlocker.SetActive(false);
         }
         
+        public void SetGlobalBlocker(GameObject blocker)
+        {
+            _globalBlocker = blocker;
+        }
     }
 }

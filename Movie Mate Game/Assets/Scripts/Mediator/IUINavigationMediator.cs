@@ -1,10 +1,13 @@
+using Cysharp.Threading.Tasks;
 using DefaultNamespace;
+using UnityEngine;
 
 namespace Mediator
 {
     public interface IUINavigationMediator
     {
+        void SetGlobalBlocker(GameObject blocker);
         void InjectToMediator(ABaseUIMediatorComponent panel);
-        void ReplacePanel(Panels first, Panels second);
+        UniTask ReplacePanel(Panels first, Panels second);
     }
 }

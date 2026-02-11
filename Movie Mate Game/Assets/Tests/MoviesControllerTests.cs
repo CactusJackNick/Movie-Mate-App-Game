@@ -64,7 +64,7 @@ namespace Tests
                 Results = mockData
             };
 
-            _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
+            await _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
                 .Returns(UniTask.FromResult(response));
 
             // Act
@@ -88,7 +88,7 @@ namespace Tests
                 
             };
             
-            _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
+            await _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
                     .Returns(UniTask.FromResult(
                         new MovieListResponse
                         {
@@ -110,7 +110,7 @@ namespace Tests
             // Arrange
             var sut = new MoviesController(_view, _apiService, _loadingPanel);
             
-            _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
+            await _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
                 .Returns(UniTask.FromResult(new MovieListResponse()));
 
             // Act

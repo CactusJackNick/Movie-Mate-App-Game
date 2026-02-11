@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DefaultNamespace.Models;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,9 +35,16 @@ namespace DefaultNamespace.Game
         
         [SerializeField] private LeaveGamePopup _leaveGamePopup;
         
+        [Header("Mobile UX")]
+        [SerializeField] private RectTransform _movingContainer;
+        
         private readonly List<GuessItemButton> _guessItems = new();
         private readonly List<ClueButton> _spawnedButtons = new();
         
+        private readonly float _shiftY = 20f;
+        private readonly float _animationDuration = 0.25f;
+        private Vector2 _initialPos;
+        private bool _isKeyboardActive;
         private int _debugCurrentClueIndex = 0;
         
         public event Action OnBackButtonPressed;
@@ -55,7 +63,19 @@ namespace DefaultNamespace.Game
             _leaveGamePopup.OnConfirmLeave += HandleConfirmLeaveGame;
             
             _inputField.text = string.Empty;
-            _inputField.Select();
+            _initialPos = _movingContainer.anchoredPosition;
+        }
+
+        private void Update()
+        {
+            if (TouchScreenKeyboard.visible && !_isKeyboardActive)
+            { 
+                OnKeyboardOpen();
+            }
+            else if (!TouchScreenKeyboard.visible && _isKeyboardActive)
+            {
+                OnKeyboardClose();
+            }
         }
 
         public void DisplayMovies(List<MovieData> movies)
@@ -187,6 +207,20 @@ namespace DefaultNamespace.Game
                 OnDebugPressed?.Invoke();
                 UnlockClue(_debugCurrentClueIndex);
             }
+        }
+
+        private void OnKeyboardOpen()
+        {
+            _movingContainer.DOKill();
+            _isKeyboardActive = true;
+            _movingContainer.DOAnchorPos(new Vector2(_initialPos.x, _initialPos.y + _shiftY), _animationDuration);
+        }
+
+        private void OnKeyboardClose()
+        {
+            _movingContainer.DOKill();
+            _isKeyboardActive = false;
+            _movingContainer.DOAnchorPos(_initialPos, _animationDuration);
         }
         
         private void OnDestroy()

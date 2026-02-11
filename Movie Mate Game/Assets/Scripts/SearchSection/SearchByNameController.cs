@@ -16,6 +16,7 @@ namespace SearchSection
         
         private string _currentQuery = "";
         private int _currentPage = 1;
+        private int _totalPages = 1;
         private bool _isLoading;
         private CancellationTokenSource _cts;
 
@@ -64,7 +65,7 @@ namespace SearchSection
 
         public void LoadNextPage()
         {
-            if (_isLoading)
+            if (_isLoading || _currentPage >= _totalPages)
             {
                 return;
             }
@@ -83,6 +84,11 @@ namespace SearchSection
 
         private async UniTask PopulateMovies(string query, int page)
         {
+            if (page > _totalPages)
+            {
+                return;
+            }
+            
             _isLoading = true;
             _loadingPanel.Show();
 
@@ -101,6 +107,8 @@ namespace SearchSection
 
                 if (response is { Results: not null })
                 {
+                    _totalPages =  response.TotalPages;
+                    
                     if (page == 1)
                     {
                         _movieView.DisplayMovies(response.Results);

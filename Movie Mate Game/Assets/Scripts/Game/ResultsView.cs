@@ -31,6 +31,7 @@ namespace DefaultNamespace.Game
             _newGameButton.onClick.AddListener(OnNewGameStarted);
             _exitButton.onClick.AddListener(OnExitGame);
             
+            gameObject.SetActive(false);
             _resultsContainer.localPosition = new Vector3(_resultsContainer.rect.width * 1.3f, 0, 0);
         }
 
@@ -62,9 +63,9 @@ namespace DefaultNamespace.Game
             
             gameObject.SetActive(false);
         }
-        
 
-        public void SetupContent(bool hasWon, string movieGuessName)
+
+        private void SetupContent(bool hasWon, string movieGuessName)
         {
             _trophyImage.gameObject.SetActive(false);
             _movieGuessNameText.gameObject.SetActive(false);
