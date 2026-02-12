@@ -25,8 +25,7 @@ namespace SearchSection
             (
                 _view,
                 _moviesView,
-                ApiService.Instance,
-                LoadingPanel.Instance
+                ApiService.Instance
             );
             _controller.Initialize();
             
@@ -39,12 +38,13 @@ namespace SearchSection
         public override void Show()
         {
             base.Show();
-            if (!_isReturningFromDetails)
+            if (_isReturningFromDetails)
             {
-                _scrollRect.verticalNormalizedPosition = 1f;
+                _isReturningFromDetails = false;
+                return;
             }
             
-            _isReturningFromDetails = false;
+            _scrollRect.verticalNormalizedPosition = 1f;
 
             if (!_controller.HasActiveSearch)
             {

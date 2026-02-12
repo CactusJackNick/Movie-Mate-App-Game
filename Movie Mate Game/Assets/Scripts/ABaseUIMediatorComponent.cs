@@ -66,7 +66,8 @@ namespace DefaultNamespace
                 return;
             }
             
-            await _animationTarget.DOAnchorPos(new Vector2(Screen.width, 0), 1f)
+            var animationDistance = _animationTarget.rect.width;
+            await _animationTarget.DOAnchorPos(new Vector2(animationDistance, 0), 0.5f)
                 .SetEase(Ease.InQuad)
                 .AsyncWaitForCompletion()
                 .AsUniTask();

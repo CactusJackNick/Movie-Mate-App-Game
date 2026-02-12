@@ -116,7 +116,7 @@ namespace DefaultNamespace.Game
             var list = new List<MovieData>();
             foreach (var data in input)
             {
-                if (string.IsNullOrEmpty(data.backdrop_path) || string.IsNullOrEmpty(data.poster_path))
+                if (string.IsNullOrEmpty(data.Backdrop_Path) || string.IsNullOrEmpty(data.Poster_path))
                 {
                     continue;
                 }

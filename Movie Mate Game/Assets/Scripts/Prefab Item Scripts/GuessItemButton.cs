@@ -30,7 +30,7 @@ namespace DefaultNamespace
             _id = data.Id;
             _title.text = data.Title;
             
-            GetPosterAsync(data.poster_path).Forget();
+            GetPosterAsync(data.Poster_path).Forget();
         }
 
         private async UniTaskVoid GetPosterAsync(string path)

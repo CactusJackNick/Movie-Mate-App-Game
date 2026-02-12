@@ -16,15 +16,15 @@ namespace DefaultNamespace
         {
             base.Awake();
             
-            _controller = new MovieDetailsController(_view, ApiService.Instance);
+            _controller = new MovieDetailsController(_view, ApiService.Instance, LoadingPanel.Instance);
 
             _controller.OnBackButtonRequested += GoBack;
         }
 
         public override void Show()
         {
-            _view.ClearView();
             base.Show();
+            _view.ClearView();
             _controller.LoadMovieInfo(TargetMovieId);
         }
 

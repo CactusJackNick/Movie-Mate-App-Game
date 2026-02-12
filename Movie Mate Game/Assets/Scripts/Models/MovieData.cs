@@ -9,11 +9,11 @@ namespace DefaultNamespace.Models
     {
         [JsonProperty("id")] public int Id;
         [JsonProperty("title")] public string Title;
-        [JsonProperty("original_title")] public string Original_title;
         [JsonProperty("overview")] public string Overview;
-        [JsonProperty("release_date")] public string release_date;
-        [JsonProperty("poster_path")] public string poster_path;  
-        [JsonProperty("backdrop_path")] public string backdrop_path;
+        //[JsonProperty("release_date")] public string Release_date;
+        [JsonProperty("poster_path")] public string Poster_path;  
+        [JsonProperty("backdrop_path")] public string Backdrop_Path;
+        [JsonProperty("vote_average")] public float Vote_average;
         [JsonProperty("genre_ids")] public List<int> Genre_Ids;
     }
 }

@@ -15,7 +15,6 @@ namespace Tests
         private ISearchByNameView _view;
         private IMovieView _mockMovieView;
         private IApiService _api;
-        private ILoadingPanel _loadingPanel;
 
         private const int DebounceTime = 600;
 
@@ -25,7 +24,6 @@ namespace Tests
             _view = Substitute.For<ISearchByNameView>();
             _mockMovieView = Substitute.For<IMovieView>();
             _api = Substitute.For<IApiService>();
-            _loadingPanel = Substitute.For<ILoadingPanel>();
         }
 
         [TearDown]
@@ -33,7 +31,6 @@ namespace Tests
         {
             _view = null;
             _mockMovieView = null;
-            _loadingPanel = null;
             _api = null;
         }
 
@@ -41,7 +38,7 @@ namespace Tests
         public async Task StartSearch_WithQuery_ApiService_Calls_SearchMoviesAsync()
         {
             // Arrange
-            var sut = new SearchByNameController(_view, _mockMovieView, _api, _loadingPanel);
+            var sut = new SearchByNameController(_view, _mockMovieView, _api);
             const string query = "Inception";
             sut.Initialize();
             
@@ -57,7 +54,7 @@ namespace Tests
         public async Task StartSearch_WithoutQuery_ApiService_Calls_GetPopularMoviesAsync()
         {
             // Arrange
-            var sut = new SearchByNameController(_view, _mockMovieView, _api, _loadingPanel);
+            var sut = new SearchByNameController(_view, _mockMovieView, _api);
             const string query = "";
             sut.Initialize();
             
@@ -73,7 +70,7 @@ namespace Tests
         public async Task LoadNextPage_IncrementsPageCounter()
         {
             // Arrange
-            var sut = new SearchByNameController(_view, _mockMovieView, _api, _loadingPanel);
+            var sut = new SearchByNameController(_view, _mockMovieView, _api);
             const int pageCounter = 2;
             const string query = "";
             sut.Initialize();
@@ -100,7 +97,7 @@ namespace Tests
         public async Task OnSearchButtonRequested_Controller_WithDefinedQuery_StartsNewSearch()
         {
             // Arrange
-            var sut = new SearchByNameController(_view, _mockMovieView, _api, _loadingPanel);
+            var sut = new SearchByNameController(_view, _mockMovieView, _api);
             const string search = "Inception";
             string receivedQuery = null;
             sut.Initialize();
@@ -128,7 +125,7 @@ namespace Tests
         public void OnBackRequested_Controller_Raises_OnBackButtonPressed()
         {
             // Arrange
-            var sut = new SearchByNameController(_view, _mockMovieView, _api, _loadingPanel);
+            var sut = new SearchByNameController(_view, _mockMovieView, _api);
             var closeRequestedCalled =  false;
             sut.Initialize();
             
@@ -151,7 +148,7 @@ namespace Tests
         public async Task LoadNextPage_WhenOnLastPage_DoesNotCallApi()
         {
             // Arrange
-            var sut = new SearchByNameController(_view, _mockMovieView, _api, _loadingPanel);
+            var sut = new SearchByNameController(_view, _mockMovieView, _api);
             var response = new MovieListResponse()
             {
                 TotalPages = 1,

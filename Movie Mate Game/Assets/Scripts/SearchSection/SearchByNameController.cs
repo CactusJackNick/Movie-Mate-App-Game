@@ -11,7 +11,6 @@ namespace SearchSection
     {
         private readonly IMovieView _movieView;
         private readonly IApiService _apiService;
-        private readonly ILoadingPanel _loadingPanel;
         private readonly ISearchByNameView _view;
         
         private string _currentQuery = "";
@@ -21,12 +20,11 @@ namespace SearchSection
         private CancellationTokenSource _cts;
 
         public SearchByNameController(ISearchByNameView view, IMovieView movieView,
-            IApiService apiService, ILoadingPanel loadingPanel)
+            IApiService apiService)
         {
             _view = view;
             _movieView = movieView;
             _apiService = apiService;
-            _loadingPanel = loadingPanel;
 
             _view.OnBackButtonPressed += HandleBackRequest;
             _view.OnSearchButtonPressed += HandleSearchRequest;
@@ -90,7 +88,7 @@ namespace SearchSection
             }
             
             _isLoading = true;
-            _loadingPanel.Show();
+            _view.SetLoadingSpinnerState(true);
 
             try
             {
@@ -126,7 +124,7 @@ namespace SearchSection
             finally
             {
                 _isLoading = false;
-                _loadingPanel.Hide();
+                _view.SetLoadingSpinnerState(false);
             }
         }
         

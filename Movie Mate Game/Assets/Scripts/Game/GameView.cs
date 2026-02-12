@@ -89,7 +89,7 @@ namespace DefaultNamespace.Game
             foreach (var movieData in movies)
             {
                 if (string.IsNullOrEmpty(movieData.Title) ||
-                    string.IsNullOrEmpty(movieData.poster_path)) //TODO: filter characters method
+                    string.IsNullOrEmpty(movieData.Poster_path)) //TODO: filter characters method
                 {
                     continue;
                 }

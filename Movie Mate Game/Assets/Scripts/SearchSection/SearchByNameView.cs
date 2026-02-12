@@ -10,6 +10,7 @@ namespace SearchSection
         [SerializeField] private Button _backButton;
         [SerializeField] private Button _clearTextButton;
         [SerializeField] private TMP_InputField _inputField;
+        [SerializeField] private Image _loadingSpinner;
         
         public event Action OnBackButtonPressed;
         public event Action<string> OnSearchButtonPressed;
@@ -25,6 +26,11 @@ namespace SearchSection
         {
             _inputField.text = "";
             _clearTextButton.gameObject.SetActive(false);
+        }
+
+        public void SetLoadingSpinnerState(bool isActive)
+        {
+            _loadingSpinner.gameObject.SetActive(isActive);
         }
         
         private void GoBackToGenericSearch()

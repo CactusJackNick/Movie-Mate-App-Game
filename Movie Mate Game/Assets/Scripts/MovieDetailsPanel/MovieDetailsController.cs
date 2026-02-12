@@ -8,11 +8,13 @@ namespace DefaultNamespace
     {
         private readonly IMovieDetailsView _view;
         private readonly IApiService _api;
+        private readonly ILoadingPanel _loadingPanel;
 
-        public MovieDetailsController(IMovieDetailsView view, IApiService api)
+        public MovieDetailsController(IMovieDetailsView view, IApiService api, ILoadingPanel loadingPanel)
         {
             _view = view;
             _api = api;
+            _loadingPanel = loadingPanel;
 
             _view.backButtonPressed += OnBackButtonRequest;
         }
@@ -25,7 +27,7 @@ namespace DefaultNamespace
 
         private async UniTask LoadDetailsAsync(int movieId)
         {
-            LoadingPanel.Instance.Show();
+            _loadingPanel.Show();
             
             var details = await _api.GetMovieDetailsAsync(movieId);
 
@@ -67,7 +69,7 @@ namespace DefaultNamespace
                 _view.SetPoster(sprite);
             }
             
-            LoadingPanel.Instance.Hide();
+            _loadingPanel.Hide();
         }
 
         private void OnBackButtonRequest()

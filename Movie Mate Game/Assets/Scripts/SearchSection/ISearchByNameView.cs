@@ -8,5 +8,6 @@ namespace SearchSection
         event Action<string> OnSearchButtonPressed;
         
         void SetupViewInitialState();
+        void SetLoadingSpinnerState(bool isActive);
     }
 }

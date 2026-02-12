@@ -37,12 +37,12 @@ namespace DefaultNamespace.Game
 
                 foreach (var candidate in candidates)
                 {
-                    if (string.IsNullOrEmpty(candidate.backdrop_path))
+                    if (string.IsNullOrEmpty(candidate.Backdrop_Path))
                     {
                         continue;
                     }
 
-                    if (string.IsNullOrEmpty(candidate.poster_path))
+                    if (string.IsNullOrEmpty(candidate.Poster_path))
                     {
                         continue;
                     }
