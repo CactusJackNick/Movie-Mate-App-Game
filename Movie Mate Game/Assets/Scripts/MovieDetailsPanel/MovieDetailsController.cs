@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 
@@ -12,7 +13,10 @@ namespace DefaultNamespace
         {
             _view = view;
             _api = api;
+
+            _view.backButtonPressed += OnBackButtonRequest;
         }
+        public event Action OnBackButtonRequested;
 
         public void LoadMovieInfo(int movieId)
         {
@@ -64,6 +68,16 @@ namespace DefaultNamespace
             }
             
             LoadingPanel.Instance.Hide();
+        }
+
+        private void OnBackButtonRequest()
+        {
+            OnBackButtonRequested?.Invoke();
+        }
+
+        public void Dispose()
+        {
+            _view.backButtonPressed -= OnBackButtonRequest;
         }
     }
 }

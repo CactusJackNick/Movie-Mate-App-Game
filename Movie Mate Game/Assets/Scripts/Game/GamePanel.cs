@@ -37,7 +37,7 @@ namespace DefaultNamespace.Game
             );
             
             _view.OnBackButtonPressed += ReturnToMain;
-            _view.OnInputPressed += OnSubmit;
+            _view.OnInputPressed += OnInputChanged;
             _view.OnGuessSelected += OnPlayerGuess;
             _view.OnClearTextPressed += ClearSearchBar;
             _scrollRect.onValueChanged.AddListener(OnScroll);
@@ -92,7 +92,7 @@ namespace DefaultNamespace.Game
             _scrollRect.verticalNormalizedPosition = 1f;
         }
         
-        private void OnSubmit(string text)
+        private void OnInputChanged(string text)
         {
             _controller.StartSearch(text);
         }
@@ -110,7 +110,7 @@ namespace DefaultNamespace.Game
         private void OnDestroy()
         {
             _view.OnBackButtonPressed -= ReturnToMain;
-            _view.OnInputPressed -= OnSubmit;
+            _view.OnInputPressed -= OnInputChanged;
             _view.OnGuessSelected -= OnPlayerGuess;
             _view.OnClearTextPressed -= ClearSearchBar;
             _scrollRect.onValueChanged.RemoveListener(OnScroll);

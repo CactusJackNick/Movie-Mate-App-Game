@@ -8,6 +8,7 @@ namespace SearchSection
 {
     public class SearchByNamePanel : ABaseUIMediatorComponent
     {
+        [Header("Views")]
         [SerializeField] private SearchByNameView _view;
         [SerializeField] private MoviesView  _moviesView;
         
@@ -15,6 +16,7 @@ namespace SearchSection
         [SerializeField] private ScrollRect _scrollRect; 
         
         private SearchByNameController _controller;
+        private bool _isReturningFromDetails;
         
         public override void Awake()
         {
@@ -31,14 +33,18 @@ namespace SearchSection
             _controller.OnBackRequested += ReturnToSearchScreen;
             _controller.OnSearchButtonRequested += OnSubmit;
             _moviesView.DetailsButtonClicked += GoToDetailsPanel;
-            
             _scrollRect.onValueChanged.AddListener(OnScroll);
         }
         
         public override void Show()
         {
             base.Show();
-            _scrollRect.verticalNormalizedPosition = 1f;
+            if (!_isReturningFromDetails)
+            {
+                _scrollRect.verticalNormalizedPosition = 1f;
+            }
+            
+            _isReturningFromDetails = false;
 
             if (!_controller.HasActiveSearch)
             {
@@ -65,11 +71,13 @@ namespace SearchSection
             MovieDetailsPanel.TargetMovieId =  data.Id;
             MovieDetailsPanel.PreviousPanel = Panels.SeachByNamePanel;
             
+            _isReturningFromDetails =  true;
             UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.DetailsPanel);
         }
         
         private void OnSubmit(string text)
         {
+            _scrollRect.verticalNormalizedPosition = 1f;
             _controller.StartSearch(text);
         }
 

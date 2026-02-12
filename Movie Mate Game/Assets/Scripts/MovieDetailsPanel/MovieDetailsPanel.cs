@@ -16,13 +16,14 @@ namespace DefaultNamespace
         {
             base.Awake();
             
-            _view.backButtonPressed += GoBack;
-
             _controller = new MovieDetailsController(_view, ApiService.Instance);
+
+            _controller.OnBackButtonRequested += GoBack;
         }
 
         public override void Show()
         {
+            _view.ClearView();
             base.Show();
             _controller.LoadMovieInfo(TargetMovieId);
         }
@@ -34,7 +35,8 @@ namespace DefaultNamespace
 
         private void OnDestroy()
         {
-            _view.backButtonPressed -= GoBack;
+            _controller.OnBackButtonRequested -= GoBack;
+            _controller?.Dispose();
         }
     }
 }

@@ -8,6 +8,7 @@ namespace SearchSection
     public class SearchByNameView : MonoBehaviour, ISearchByNameView
     { 
         [SerializeField] private Button _backButton;
+        [SerializeField] private Button _clearTextButton;
         [SerializeField] private TMP_InputField _inputField;
         
         public event Action OnBackButtonPressed;
@@ -16,29 +17,39 @@ namespace SearchSection
         private void Awake()
         {
             _backButton.onClick.AddListener(GoBackToGenericSearch);
-            _inputField.onValueChanged.AddListener(OnSubmit);
+            _inputField.onValueChanged.AddListener(OnInputChanged);
+            _clearTextButton.onClick.AddListener(OnClearText);
         }
 
         public void SetupViewInitialState()
         {
             _inputField.text = "";
+            _clearTextButton.gameObject.SetActive(false);
         }
         
         private void GoBackToGenericSearch()
         {
-            OnBackButtonPressed?.Invoke();
             _inputField.text = "";
+            OnBackButtonPressed?.Invoke();
         }
 
-        private void OnSubmit(string text)
+        private void OnInputChanged(string text)
         {
+            _clearTextButton.gameObject.SetActive(!string.IsNullOrEmpty(text));
             OnSearchButtonPressed?.Invoke(text);
+        }
+
+        private void OnClearText()
+        {
+            _inputField.text = "";
+            _inputField.Select();
         }
         
         private void OnDestroy()
         {
             _backButton.onClick.RemoveListener(GoBackToGenericSearch);
-            _inputField.onValueChanged.RemoveListener(OnSubmit);
+            _inputField.onValueChanged.RemoveListener(OnInputChanged);
+            _clearTextButton.onClick.RemoveListener(OnClearText);
         }
     }
 }

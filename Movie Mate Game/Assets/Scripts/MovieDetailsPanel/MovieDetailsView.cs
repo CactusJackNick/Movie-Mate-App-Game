@@ -60,6 +60,22 @@ namespace DefaultNamespace
                 _posterImage.sprite = sprite;
             }
         }
+        
+        public void ClearView()
+        {
+            _titleText.text = "";
+            _descriptionText.text = "";
+            _ratingText.text = "";
+            _directorText.text = "";
+            _releaseDateText.text = "";
+            _taglineText.text = "";
+            _genresText.text = "";
+    
+            if (_posterImage != null)
+            {
+                _posterImage.sprite = _placeholderIcon;
+            }
+        }
 
         private void InvokeBackButtonPressed()
         {
