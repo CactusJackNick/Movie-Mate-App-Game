@@ -28,48 +28,57 @@ namespace DefaultNamespace
         private async UniTask LoadDetailsAsync(int movieId)
         {
             _loadingPanel.Show();
-            
-            var details = await _api.GetMovieDetailsAsync(movieId);
 
-            if (details == null)
+            try
             {
-                return;
-            }
-
-            var directorName = "Unknown";
-            if (details.Credits.Crew != null)
-            {
-                foreach (var person in details.Credits.Crew)
+                var details = await _api.GetMovieDetailsAsync(movieId);
+                if (details == null)
                 {
-                    if (person.Job == "Director")
+                    return;
+                }
+
+                var directorName = "Unknown";
+                if (details.Credits.Crew != null)
+                {
+                    foreach (var person in details.Credits.Crew)
                     {
-                        directorName = person.NameCrew;
-                        break;
+                        if (person.Job == "Director")
+                        {
+                            directorName = person.NameCrew;
+                            break;
+                        }
                     }
                 }
-            }
 
-            var genresText = "";
-            var genresList = new List<string>();
-            if (details.Genres is { Count: > 0 })
-            {
-                foreach (var genre in details.Genres)
+                var genresText = "";
+                var genresList = new List<string>();
+                if (details.Genres is { Count: > 0 })
                 {
-                    genresList.Add(genre.Name);
-                } 
-                
-                genresText = string.Join(", ", genresList);
-            }
-            
-            _view.DisplayData(details, directorName, genresText);
+                    foreach (var genre in details.Genres)
+                    {
+                        genresList.Add(genre.Name);
+                    }
 
-            if (!string.IsNullOrEmpty(details.PosterPath))
-            {
-                var sprite = await _api.GetMovieImageAsync(details.PosterPath);
-                _view.SetPoster(sprite);
+                    genresText = string.Join(", ", genresList);
+                }
+
+                _view.DisplayData(details, directorName, genresText);
+
+                if (!string.IsNullOrEmpty(details.PosterPath))
+                {
+                    var sprite = await _api.GetMovieImageAsync(details.PosterPath);
+                    _view.SetPoster(sprite);
+                }
             }
-            
-            _loadingPanel.Hide();
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);;
+            }
+
+            finally
+            {
+                _loadingPanel.Hide();
+            }
         }
 
         private void OnBackButtonRequest()
