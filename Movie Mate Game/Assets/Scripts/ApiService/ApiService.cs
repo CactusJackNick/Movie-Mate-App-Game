@@ -52,113 +52,33 @@ namespace DefaultNamespace
         public async UniTask<MovieListResponse> SearchMoviesAsync(string query, int page)
         {
             var url = $"{BASE_URL}/search/movie?language={_currentLang}&page={page}&query={query}";
-            Debug.Log($"Debug: request {url}");
-            
-            using var request = UnityWebRequest.Get(url);
-            request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
-            request.SetRequestHeader("accept", "application/json");
-    
-            await request.SendWebRequest();
-
-            if (request.result != UnityWebRequest.Result.Success)
-            {
-                Debug.LogError(request.error);
-                throw new Exception(request.error);
-            }
-            
-            var json = request.downloadHandler.text;
-            return JsonConvert.DeserializeObject<MovieListResponse>(json);
+            return await SendResponseDataAsync<MovieListResponse>(url);
         }
         
         public async UniTask<MovieListResponse> GetDiscoverMoviesAsync(int page)
         {
             var url = $"{BASE_URL}/discover/movie?language={_currentLang}&page={page}";
-            
-            using var request = UnityWebRequest.Get(url);
-            request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
-            request.SetRequestHeader("accept", "application/json");
-            
-            await request.SendWebRequest();
-
-            if (request.result != UnityWebRequest.Result.Success)
-            {
-                Debug.LogError(request.error);
-                throw new Exception(request.error);
-            }
-            
-            var json = request.downloadHandler.text;
-            var data = JsonConvert.DeserializeObject<MovieListResponse>(json);
-            
-            return data; // returns 40k
+            return await SendResponseDataAsync<MovieListResponse>(url); // Returns 40k
         }
         
         public async UniTask<MovieListResponse> GetPopularMoviesAsync(int page)
         {
             var url = $"{BASE_URL}/movie/popular?language={_currentLang}&page={page}";
 
-            var responseData = await ReturnResponseDataAsync<MovieListResponse>(url);
+            var responseData = await SendResponseDataAsync<MovieListResponse>(url);
             return responseData; // returns 20k
-            
-            // using var request = UnityWebRequest.Get(url);
-            // request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
-            // request.SetRequestHeader("accept", "application/json");
-            //
-            // await request.SendWebRequest();
-            //
-            // if (request.result != UnityWebRequest.Result.Success)
-            // {
-            //     Debug.LogError(request.error);
-            //     throw new Exception(request.error);
-            // }
-            //
-            // var json = request.downloadHandler.text;
-            // var data = JsonConvert.DeserializeObject<MovieListResponse>(json);
-            //
-            // return data; // returns 20k
         }
 
         public async UniTask<MovieListResponse> GetMoviesByGenreAsync(int genreId, int page)
         {
             var url = $"{BASE_URL}/discover/movie?with_genres={genreId}&page={page}&language={_currentLang}";
-            
-            using var request = UnityWebRequest.Get(url);
-            request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
-            request.SetRequestHeader("accept", "application/json");
-            
-            await request.SendWebRequest();
-
-            if (request.result != UnityWebRequest.Result.Success)
-            {
-                Debug.LogError(request.error);
-                throw new Exception(request.error);
-            }
-            
-            var json = request.downloadHandler.text;
-            var data = JsonConvert.DeserializeObject<MovieListResponse>(json);
-            
-            return data;
+            return await SendResponseDataAsync<MovieListResponse>(url);
         } 
         
         public async UniTask<GenresListResponse> GetGenreListAsync()
         {
             var url = $"{BASE_URL}/genre/movie/list?language={_currentLang}";
-            
-            using var request = UnityWebRequest.Get(url);
-            request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
-            request.SetRequestHeader("accept", "application/json");
-            
-            await request.SendWebRequest();
-
-            if (request.result != UnityWebRequest.Result.Success)
-            {
-                Debug.LogError(request.error);
-                throw new Exception(request.error);
-            }
-            
-            var json = request.downloadHandler.text;
-            var data = JsonConvert.DeserializeObject<GenresListResponse>(json);
-            
-            return data;
+            return await SendResponseDataAsync<GenresListResponse>(url);
         }
         
         public async UniTask<Sprite> GetMovieImageAsync(string posterPath)
@@ -219,26 +139,10 @@ namespace DefaultNamespace
         public async UniTask<DetailsSuperlistModel> GetMovieDetailsAsync(int movieId)
         {
             var url = $"{BASE_URL}/movie/{movieId}?language={_currentLang}&append_to_response=credits";
-
-            using var request = UnityWebRequest.Get(url);
-            request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
-            request.SetRequestHeader("accept", "application/json");
-
-            await request.SendWebRequest();
-
-            if (request.result != UnityWebRequest.Result.Success)
-            {
-                Debug.LogError($"Error fetching details: {request.error}");
-                throw new Exception(request.error);
-            }
-
-            var json = request.downloadHandler.text;
-            var data = JsonConvert.DeserializeObject<DetailsSuperlistModel>(json);
-            
-            return data;
+            return await SendResponseDataAsync<DetailsSuperlistModel>(url);
         }
         
-        private static async UniTask<T> ReturnResponseDataAsync<T>(string url)
+        private static async UniTask<T> SendResponseDataAsync<T>(string url)
         {
             using var request = UnityWebRequest.Get(url);
             request.SetRequestHeader("Authorization", $"Bearer {BEARER_TOKEN}");
