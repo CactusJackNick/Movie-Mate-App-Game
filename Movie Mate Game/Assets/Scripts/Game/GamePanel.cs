@@ -1,4 +1,3 @@
-using Cysharp.Threading.Tasks;
 using Mediator;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,21 +32,15 @@ namespace DefaultNamespace.Game
                 feedbackService: _feedbackService,
                 searchController: _searchGameController,
                 moviePickService: _moviePickingService,
-                resultsView: _resultsView
+                resultsView: _resultsView,
+                loadingPanel: LoadingPanel.Instance
             );
             
-            _view.OnBackButtonPressed += ReturnToMain;
-            _view.OnInputPressed += OnInputChanged;
-            _view.OnGuessSelected += OnPlayerGuess;
-            _view.OnClearTextPressed += ClearSearchBar;
+            _controller.OnBackButtonRequested += ReturnToMain;
             _scrollRect.onValueChanged.AddListener(OnScroll);
-
-            _resultsView.OnNewGameButtonPressed += OnRestartGame;
             _resultsView.OnExitButtonPressed += ReturnToMain;
         }
-
         
-
         public override void Show()
         {
             base.Show();
@@ -77,45 +70,12 @@ namespace DefaultNamespace.Game
             
             Resources.UnloadUnusedAssets();
         }
-        
-        private void OnRestartGame()
-        {
-            _resultsView.Hide();
-            _view.SetInputStatus(true);
-            
-            _view.ClearGuessesItems();
-            _view.ClearFeedbackItems();
-            ClearSearchBar();
-            
-            Resources.UnloadUnusedAssets();
-            _controller.LoadMovies();
-            _scrollRect.verticalNormalizedPosition = 1f;
-        }
-        
-        private void OnInputChanged(string text)
-        {
-            _controller.StartSearch(text);
-        }
-
-        private void ClearSearchBar()
-        {
-            _searchGameController.ResetSearchState();
-        }
-        
-        private void OnPlayerGuess(int movieId)
-        {
-            _controller.ProcessPlayerGuess(movieId).Forget();
-        }
 
         private void OnDestroy()
         {
-            _view.OnBackButtonPressed -= ReturnToMain;
-            _view.OnInputPressed -= OnInputChanged;
-            _view.OnGuessSelected -= OnPlayerGuess;
-            _view.OnClearTextPressed -= ClearSearchBar;
-            _scrollRect.onValueChanged.RemoveListener(OnScroll);
-            _resultsView.OnNewGameButtonPressed -= OnRestartGame;
+            _controller.OnBackButtonRequested -= ReturnToMain;
             _resultsView.OnExitButtonPressed -= ReturnToMain;
+            _scrollRect.onValueChanged.RemoveListener(OnScroll);
             _controller?.Dispose();
         }
     }

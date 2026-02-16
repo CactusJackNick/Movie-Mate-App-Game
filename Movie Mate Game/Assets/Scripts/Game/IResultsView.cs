@@ -8,5 +8,6 @@ namespace DefaultNamespace.Game
         event Action OnNewGameButtonPressed;
         event Action OnExitButtonPressed;
         UniTask ShowResultsAsync(bool hasWon, string targetMovie);
+        void Hide();
     }
 }

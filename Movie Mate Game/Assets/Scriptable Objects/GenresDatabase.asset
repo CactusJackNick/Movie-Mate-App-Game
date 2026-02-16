@@ -14,42 +14,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.Genre.GenreIconsConfig
   _icons:
   - Id: 28
-    Icon: {fileID: -2443122451703809864, guid: aeed753685d0c4711bb94c6a6e8673ad, type: 3}
+    Icon: {fileID: 21300000, guid: aeed753685d0c4711bb94c6a6e8673ad, type: 3}
   - Id: 12
-    Icon: {fileID: -3902640532536483472, guid: 473b8b7c449da4e6c8af69d15ae24587, type: 3}
+    Icon: {fileID: 21300000, guid: 473b8b7c449da4e6c8af69d15ae24587, type: 3}
   - Id: 16
-    Icon: {fileID: 0}
+    Icon: {fileID: 7150950342070647473, guid: 757b788b5c3d84ffb94caefa89a5fed5, type: 3}
   - Id: 35
     Icon: {fileID: 351195152185164426, guid: 5e7d7ceef88774fa580c0d67ca791ce0, type: 3}
   - Id: 80
     Icon: {fileID: 3286474246723790269, guid: b8f46dc634e0f41a2aebea8d7dff68a0, type: 3}
   - Id: 99
-    Icon: {fileID: 4608035979824258677, guid: 781b464222f0a4f18b5a28872ea05540, type: 3}
+    Icon: {fileID: -1369352705032846846, guid: 781b464222f0a4f18b5a28872ea05540, type: 3}
   - Id: 18
     Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
-  - Id: 18
-    Icon: {fileID: 4135935576862596342, guid: 0e6b6769ab1544189a361df121d31ba3, type: 3}
+  - Id: 10751
+    Icon: {fileID: 21300000, guid: 149e9cc7620ed4f759578b7bd08fbf03, type: 3}
+  - Id: 14
+    Icon: {fileID: 21300000, guid: f23dc150b3e734b88bb3687df29bb2d7, type: 3}
+  - Id: 36
+    Icon: {fileID: -3864724637893733499, guid: 742edd61425bc48fcb213ff9356b1a55, type: 3}
+  - Id: 27
+    Icon: {fileID: 21300000, guid: baa8ff06a399f49f5ae5646e598c3c70, type: 3}
+  - Id: 10402
+    Icon: {fileID: 21300000, guid: b39c3374e44174b26853dd7fabf52457, type: 3}
+  - Id: 9648
+    Icon: {fileID: 21300000, guid: 61f8f3bf0c9b94dad8fb36b6f8fd667b, type: 3}
+  - Id: 10749
+    Icon: {fileID: 21300000, guid: 4fb99e3006768406087dea0e86e74c01, type: 3}
+  - Id: 878
+    Icon: {fileID: 21300000, guid: abdee355643ca4cae8e52eae6c7ffe49, type: 3}
+  - Id: 10770
+    Icon: {fileID: 21300000, guid: f3524851e7c304fd299fe17b0379b914, type: 3}
+  - Id: 53
+    Icon: {fileID: 21300000, guid: 619dd8a1b4b034624a15c56356ec1b54, type: 3}
+  - Id: 10752
+    Icon: {fileID: 21300000, guid: 37de9c35259154639b0ea15433a65421, type: 3}
+  - Id: 37
+    Icon: {fileID: 21300000, guid: 80e8af37232fc446a92b97c09d7f04d3, type: 3}

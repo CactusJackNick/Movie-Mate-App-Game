@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DefaultNamespace.Models;
@@ -14,14 +15,16 @@ namespace DefaultNamespace.Game
         private readonly ISearchController _searchController;
         private readonly IMoviePickService _moviePickService;
         private readonly IResultsView _resultsView;
+        private readonly ILoadingPanel _loadingPanel;
         private readonly HashSet<int> _guessedIds = new();
 
         private DetailsSuperlistModel _targetMovie;
         private int _currentTier = 0;
 
         public GameController(IGameView view, IApiService apiService
-        , IClueFactory clueFactory, IFeedbackService feedbackService,
-        ISearchController searchController, IMoviePickService moviePickService, IResultsView resultsView)
+        ,IClueFactory clueFactory, IFeedbackService feedbackService,
+        ISearchController searchController, IMoviePickService moviePickService,
+        IResultsView resultsView, ILoadingPanel loadingPanel)
         {
             _view = view;
             _apiService = apiService;
@@ -30,9 +33,20 @@ namespace DefaultNamespace.Game
             _searchController = searchController;
             _moviePickService = moviePickService;
             _resultsView = resultsView;
+            _loadingPanel = loadingPanel;
             
             searchController.SetFilter(_guessedIds);
+            
+            _view.OnBackButtonPressed += HandleBackRequest;
+            _view.OnInputPressed += StartSearch;
+            _view.OnGuessSelected += OnPlayerGuess;
+            _view.OnClearTextPressed += _searchController.ResetSearchState;
+            
+            _resultsView.OnNewGameButtonPressed += RestartGame;
+            _resultsView.OnExitButtonPressed += HandleBackRequest;
         }
+        
+        public event Action OnBackButtonRequested;
 
         public void LoadMovies()
         { 
@@ -85,7 +99,7 @@ namespace DefaultNamespace.Game
 
         private async UniTask LoadTargetMovieAsync()
         {
-            LoadingPanel.Instance.Show();
+            _loadingPanel.Show();
             
             const int startClueIndex = 0;
             _currentTier = 0;
@@ -111,11 +125,38 @@ namespace DefaultNamespace.Game
             _view.DisplayClues(clues);
             _view.UnlockClue(startClueIndex);
             
-            LoadingPanel.Instance.Hide();
+            _loadingPanel.Hide();
+        }
+
+        private void RestartGame()
+        {
+            _resultsView.Hide();
+            _view.SetInputStatus(true);
+            
+            _view.ClearGuessesItems();
+            _view.ClearFeedbackItems();
+            
+            Resources.UnloadUnusedAssets();
+            LoadMovies();
+        }
+        private void HandleBackRequest()
+        {
+            OnBackButtonRequested?.Invoke();
+        }
+
+        private void OnPlayerGuess(int guessedMovieId)
+        {
+            ProcessPlayerGuess(guessedMovieId).Forget();
         }
 
         public void Dispose()
         {
+            _view.OnBackButtonPressed -= HandleBackRequest;
+            _view.OnInputPressed -= StartSearch;
+            _view.OnGuessSelected -= OnPlayerGuess;
+            _view.OnClearTextPressed -= _searchController.ResetSearchState;
+            _resultsView.OnNewGameButtonPressed -= RestartGame;
+            _resultsView.OnExitButtonPressed -= HandleBackRequest;
            _searchController.Dispose();
         }
     }

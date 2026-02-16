@@ -1,28 +1,25 @@
 fileFormatVersion: 2
-guid: 5bf21381ccd104e49b18911216e72384
+guid: df8b99a42354e46239dec9a54361d6bd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7950695377637790347
-    second: fin..._0
+      213: -8730901024615626352
+    second: Fiction_0
   - first:
-      213: -4576278707391782386
-    second: fin..._1
+      213: -6914507923153236674
+    second: Fiction_1
   - first:
-      213: -1133634587854992280
-    second: fin..._2
+      213: 1774415677259988201
+    second: Fiction_2
   - first:
-      213: 1789499230118792792
-    second: fin..._3
+      213: 7984448495439180955
+    second: Fiction_3
   - first:
-      213: -6785722274358375583
-    second: fin..._4
+      213: -8836458421425858497
+    second: Fiction_4
   - first:
-      213: 5869849471946006914
-    second: fin..._5
-  - first:
-      213: 1565862521278115763
-    second: fin..._6
+      213: 4204434653180623827
+    second: Fiction_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -157,155 +154,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fin..._0
+      name: Fiction_0
       rect:
         serializedVersion: 2
         x: 0
+        y: 175
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09901b2c6cb95d680800000000000000
+      internalID: -8730901024615626352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fiction_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 155
+        width: 106
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3dc3d3bdabba00a0800000000000000
+      internalID: -6914507923153236674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fiction_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 160
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ec37fe38adff9810800000000000000
+      internalID: 1774415677259988201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fiction_3
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1
+        width: 42
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b94fd0a6a957ece60800000000000000
+      internalID: 7984448495439180955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fiction_4
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 46
+        width: 70
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f38176e12e79e5580800000000000000
+      internalID: -8836458421425858497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fiction_5
+      rect:
+        serializedVersion: 2
+        x: 94
         y: 0
-        width: 545
-        height: 194
+        width: 48
+        height: 73
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 57d2f8abda479a190800000000000000
-      internalID: -7950695377637790347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fin..._1
-      rect:
-        serializedVersion: 2
-        x: 221
-        y: 110
-        width: 24
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e02aab403cacd70c0800000000000000
-      internalID: -4576278707391782386
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fin..._2
-      rect:
-        serializedVersion: 2
-        x: 172
-        y: 20
-        width: 75
-        height: 82
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 86c8ecd39558440f0800000000000000
-      internalID: -1133634587854992280
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fin..._3
-      rect:
-        serializedVersion: 2
-        x: 236
-        y: 22
-        width: 126
-        height: 87
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 85ec011911495d810800000000000000
-      internalID: 1789499230118792792
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fin..._4
-      rect:
-        serializedVersion: 2
-        x: 383
-        y: 22
-        width: 23
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 16bc9643b8544d1a0800000000000000
-      internalID: -6785722274358375583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fin..._5
-      rect:
-        serializedVersion: 2
-        x: 453
-        y: 22
-        width: 23
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2812b54bef4e57150800000000000000
-      internalID: 5869849471946006914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fin..._6
-      rect:
-        serializedVersion: 2
-        x: 522
-        y: 22
-        width: 23
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3bf21e3baaf0bb510800000000000000
-      internalID: 1565862521278115763
+      spriteID: 3db7c208a07295a30800000000000000
+      internalID: 4204434653180623827
       vertices: []
       indices: 
       edges: []
@@ -314,7 +289,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f77517ffb1cdb4d67b48eb86541deaf0
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -324,13 +299,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fin..._0: -7950695377637790347
-      fin..._1: -4576278707391782386
-      fin..._2: -1133634587854992280
-      fin..._3: 1789499230118792792
-      fin..._4: -6785722274358375583
-      fin..._5: 5869849471946006914
-      fin..._6: 1565862521278115763
+      Fiction_0: -8730901024615626352
+      Fiction_1: -6914507923153236674
+      Fiction_2: 1774415677259988201
+      Fiction_3: 7984448495439180955
+      Fiction_4: -8836458421425858497
+      Fiction_5: 4204434653180623827
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

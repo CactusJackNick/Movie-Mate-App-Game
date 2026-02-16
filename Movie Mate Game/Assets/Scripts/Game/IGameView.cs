@@ -15,6 +15,7 @@ namespace DefaultNamespace.Game
         void DisplayClues(List<ClueData> clues);
         void UnlockClue(int index);
         void ClearGuessesItems();
+        void ClearFeedbackItems();
         void ShowFeedbackResult(GuessResultModel result);
         void SetInputStatus(bool isEnabled);
     }

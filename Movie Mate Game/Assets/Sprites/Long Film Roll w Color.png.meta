@@ -1,0 +1,1144 @@
+fileFormatVersion: 2
+guid: 32af4670e4bb44f2a8d806412b935d27
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4206532739405316708
+    second: Long Film Roll w Color_0
+  - first:
+      213: -2313731475743514537
+    second: Long Film Roll w Color_1
+  - first:
+      213: 78630880144216386
+    second: Long Film Roll w Color_2
+  - first:
+      213: 5803452046988185968
+    second: Long Film Roll w Color_3
+  - first:
+      213: -4634339324322512499
+    second: Long Film Roll w Color_4
+  - first:
+      213: -1332143356960659394
+    second: Long Film Roll w Color_5
+  - first:
+      213: -4277442679823661476
+    second: Long Film Roll w Color_6
+  - first:
+      213: -6299112848264930506
+    second: Long Film Roll w Color_7
+  - first:
+      213: -8009757184043795817
+    second: Long Film Roll w Color_8
+  - first:
+      213: 2124492743100098544
+    second: Long Film Roll w Color_9
+  - first:
+      213: 2490392561840923008
+    second: Long Film Roll w Color_10
+  - first:
+      213: -2180103555366007156
+    second: Long Film Roll w Color_11
+  - first:
+      213: 8238731995511190289
+    second: Long Film Roll w Color_12
+  - first:
+      213: -9067908748214589918
+    second: Long Film Roll w Color_13
+  - first:
+      213: -1356525122276574392
+    second: Long Film Roll w Color_14
+  - first:
+      213: -965965930497636881
+    second: Long Film Roll w Color_15
+  - first:
+      213: -3557375533214708950
+    second: Long Film Roll w Color_16
+  - first:
+      213: 5019741945967749768
+    second: Long Film Roll w Color_17
+  - first:
+      213: 8515853844722741644
+    second: Long Film Roll w Color_18
+  - first:
+      213: 6239873067508604143
+    second: Long Film Roll w Color_19
+  - first:
+      213: 2089874600470598611
+    second: Long Film Roll w Color_20
+  - first:
+      213: 8585933039545252830
+    second: Long Film Roll w Color_21
+  - first:
+      213: 6474930161551844038
+    second: Long Film Roll w Color_22
+  - first:
+      213: -3613232577440173292
+    second: Long Film Roll w Color_23
+  - first:
+      213: -1895105458144560120
+    second: Long Film Roll w Color_24
+  - first:
+      213: 6844031947365793166
+    second: Long Film Roll w Color_25
+  - first:
+      213: 1310011947947767515
+    second: Long Film Roll w Color_26
+  - first:
+      213: -8115547794357872605
+    second: Long Film Roll w Color_27
+  - first:
+      213: -6251509546095467042
+    second: Long Film Roll w Color_28
+  - first:
+      213: 5277442409251802047
+    second: Long Film Roll w Color_29
+  - first:
+      213: 629982592769652222
+    second: Long Film Roll w Color_30
+  - first:
+      213: -3622434675464123582
+    second: Long Film Roll w Color_31
+  - first:
+      213: 3283201528142631464
+    second: Long Film Roll w Color_32
+  - first:
+      213: 3540435878210863840
+    second: Long Film Roll w Color_33
+  - first:
+      213: 8411020206476197486
+    second: Long Film Roll w Color_34
+  - first:
+      213: 2506852970151297817
+    second: Long Film Roll w Color_35
+  - first:
+      213: -3779210829919468368
+    second: Long Film Roll w Color_36
+  - first:
+      213: -1061200494498768474
+    second: Long Film Roll w Color_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Long Film Roll w Color_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 386
+        width: 384
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9df1bbb2c46f95c0800000000000000
+      internalID: -4206532739405316708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 442
+        width: 102
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750eaa24b79f3efd0800000000000000
+      internalID: -2313731475743514537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_2
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 510
+        width: 11
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2415f5f6e5a571100800000000000000
+      internalID: 78630880144216386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 123
+        width: 568
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0719eb383e00a8050800000000000000
+      internalID: 5803452046988185968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 341
+        width: 14
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d81022530f48fafb0800000000000000
+      internalID: -4634339324322512499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 313
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e38a672cca6438de0800000000000000
+      internalID: -1332143356960659394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_6
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 328
+        width: 12
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c56040aab8873a4c0800000000000000
+      internalID: -4277442679823661476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_7
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 312
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63bd1171d3e0598a0800000000000000
+      internalID: -6299112848264930506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 350
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79abfe35740a7d090800000000000000
+      internalID: -8009757184043795817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_9
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 344
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f76060d4e6bb7d10800000000000000
+      internalID: 2124492743100098544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 340
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081adcf17d6af8220800000000000000
+      internalID: 2490392561840923008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_11
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 333
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ec7d8fd57beb1e0800000000000000
+      internalID: -2180103555366007156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_12
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 352
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 113f618691bd55270800000000000000
+      internalID: 8238731995511190289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_13
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 344
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 226230f8901582280800000000000000
+      internalID: -9067908748214589918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_14
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 311
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84bbfc5a697ac2de0800000000000000
+      internalID: -1356525122276574392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_15
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 336
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe50f87aa133892f0800000000000000
+      internalID: -965965930497636881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 312
+        width: 8
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b4212ecc9a1aec0800000000000000
+      internalID: -3557375533214708950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_17
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 298
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88a298144b4b9a540800000000000000
+      internalID: 5019741945967749768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_18
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 328
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81f7dde3f36e2670800000000000000
+      internalID: 8515853844722741644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_19
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 323
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fec9060ae7b789650800000000000000
+      internalID: 6239873067508604143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_20
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 319
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d3592260e9b00d10800000000000000
+      internalID: 2089874600470598611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_21
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 297
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edb7267fb9c572770800000000000000
+      internalID: 8585933039545252830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_22
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 330
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c2a2c02da29bd950800000000000000
+      internalID: 6474930161551844038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_23
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 293
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4133fc25d183bddc0800000000000000
+      internalID: -3613232577440173292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_24
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 276
+        width: 25
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80cb36360ab33b5e0800000000000000
+      internalID: -1895105458144560120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_25
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 314
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8db92e7bc2eafe50800000000000000
+      internalID: 6844031947365793166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_26
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 17
+        width: 141
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd6b1f80de81e2210800000000000000
+      internalID: 1310011947947767515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_27
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 218
+        width: 134
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328189f6748cf5f80800000000000000
+      internalID: -8115547794357872605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_28
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 301
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed52403903d2e39a0800000000000000
+      internalID: -6251509546095467042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_29
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 277
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbb090ef8ed3d3940800000000000000
+      internalID: 5277442409251802047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_30
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 301
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5f6b094d52eb800800000000000000
+      internalID: 629982592769652222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_31
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 290
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24b47eaead68abdc0800000000000000
+      internalID: -3622434675464123582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_32
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 261
+        width: 25
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82216fa0566409d20800000000000000
+      internalID: 3283201528142631464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_33
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 279
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e28ec65ca7222130800000000000000
+      internalID: 3540435878210863840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_34
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 262
+        width: 8
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6e75a57052f9b470800000000000000
+      internalID: 8411020206476197486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_35
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 264
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91340069e712ac220800000000000000
+      internalID: 2506852970151297817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_36
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 121
+        width: 419
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b44757f5cb8d8bc0800000000000000
+      internalID: -3779210829919468368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long Film Roll w Color_37
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 0
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a99ee1d5cbd541f0800000000000000
+      internalID: -1061200494498768474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Long Film Roll w Color_0: -4206532739405316708
+      Long Film Roll w Color_1: -2313731475743514537
+      Long Film Roll w Color_10: 2490392561840923008
+      Long Film Roll w Color_11: -2180103555366007156
+      Long Film Roll w Color_12: 8238731995511190289
+      Long Film Roll w Color_13: -9067908748214589918
+      Long Film Roll w Color_14: -1356525122276574392
+      Long Film Roll w Color_15: -965965930497636881
+      Long Film Roll w Color_16: -3557375533214708950
+      Long Film Roll w Color_17: 5019741945967749768
+      Long Film Roll w Color_18: 8515853844722741644
+      Long Film Roll w Color_19: 6239873067508604143
+      Long Film Roll w Color_2: 78630880144216386
+      Long Film Roll w Color_20: 2089874600470598611
+      Long Film Roll w Color_21: 8585933039545252830
+      Long Film Roll w Color_22: 6474930161551844038
+      Long Film Roll w Color_23: -3613232577440173292
+      Long Film Roll w Color_24: -1895105458144560120
+      Long Film Roll w Color_25: 6844031947365793166
+      Long Film Roll w Color_26: 1310011947947767515
+      Long Film Roll w Color_27: -8115547794357872605
+      Long Film Roll w Color_28: -6251509546095467042
+      Long Film Roll w Color_29: 5277442409251802047
+      Long Film Roll w Color_3: 5803452046988185968
+      Long Film Roll w Color_30: 629982592769652222
+      Long Film Roll w Color_31: -3622434675464123582
+      Long Film Roll w Color_32: 3283201528142631464
+      Long Film Roll w Color_33: 3540435878210863840
+      Long Film Roll w Color_34: 8411020206476197486
+      Long Film Roll w Color_35: 2506852970151297817
+      Long Film Roll w Color_36: -3779210829919468368
+      Long Film Roll w Color_37: -1061200494498768474
+      Long Film Roll w Color_4: -4634339324322512499
+      Long Film Roll w Color_5: -1332143356960659394
+      Long Film Roll w Color_6: -4277442679823661476
+      Long Film Roll w Color_7: -6299112848264930506
+      Long Film Roll w Color_8: -8009757184043795817
+      Long Film Roll w Color_9: 2124492743100098544
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

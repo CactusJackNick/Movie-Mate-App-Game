@@ -66,7 +66,15 @@ namespace DefaultNamespace.Game
 
         private async UniTaskVoid SearchWithDebounce(string query, CancellationToken token)
         {
-            await UniTask.Delay(700, cancellationToken: token);
+            try
+            {
+                await UniTask.Delay(700, cancellationToken: token);
+            }
+            catch (OperationCanceledException)
+            {
+               return;
+            }
+            
             var page = 1;
             
             if (string.IsNullOrEmpty(query)) 
