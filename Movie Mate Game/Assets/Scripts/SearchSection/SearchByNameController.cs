@@ -75,7 +75,21 @@ namespace SearchSection
         private async UniTaskVoid SearchWithDebounce(string query, CancellationToken token)
         {
             const int debounceTime = 500;
-            await UniTask.Delay(debounceTime, cancellationToken: token);
+            
+            try
+            {
+                await UniTask.Delay(debounceTime, cancellationToken: token);
+            }
+            catch (OperationCanceledException)
+            {
+                return;
+            }
+
+            if (query != _currentQuery)
+            {
+                return;
+            }
+            
             var page = 1;
             await PopulateMovies(query, page);
         }

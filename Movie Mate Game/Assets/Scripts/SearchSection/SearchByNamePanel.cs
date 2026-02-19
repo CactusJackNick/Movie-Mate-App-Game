@@ -10,7 +10,7 @@ namespace SearchSection
     {
         [Header("Views")]
         [SerializeField] private SearchByNameView _view;
-        [SerializeField] private MoviesView  _moviesView;
+        [SerializeField] private MoviesView _moviesView;
         
         [Header("Results")]
         [SerializeField] private ScrollRect _scrollRect; 

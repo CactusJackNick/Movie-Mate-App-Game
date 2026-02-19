@@ -13,14 +13,12 @@ namespace Tests
     {
         private IMovieView _view;
         private IApiService _apiService;
-        private ILoadingPanel _loadingPanel;
         
         [SetUp]
         public void SetUp()
         {
             _view = Substitute.For<IMovieView>();
             _apiService = Substitute.For<IApiService>();
-            _loadingPanel = Substitute.For<ILoadingPanel>();
         }
 
         [TearDown]
@@ -28,14 +26,13 @@ namespace Tests
         {
             _view = null;
             _apiService = null;
-            _loadingPanel = null;
         }
 
         [Test]
         public async Task LoadFilteredMovies_WithValidId_ClearsView()
         {
             // Arrange
-            var sut = new MoviesController(_view, _apiService, _loadingPanel);
+            var sut = new MoviesController(_view, _apiService);
             
             // Act
             await sut.LoadFilteredMovies(1);
@@ -49,7 +46,7 @@ namespace Tests
         {
             // Arrange
             const int targetId = 10;
-            var sut = new MoviesController(_view, _apiService, _loadingPanel);
+            var sut = new MoviesController(_view, _apiService);
             
             var mockData = new List<MovieData>
             {
@@ -64,7 +61,7 @@ namespace Tests
                 Results = mockData
             };
 
-            await _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
+            _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
                 .Returns(UniTask.FromResult(response));
 
             // Act
@@ -78,7 +75,7 @@ namespace Tests
         public async Task LoadNextPage_ApiReturnsData_AddsMoviesToExistingList()
         {
             // Arrange
-            var sut = new MoviesController(_view, _apiService, _loadingPanel);
+            var sut = new MoviesController(_view, _apiService);
             var mockData = new List<MovieData>
             { 
                 new()
@@ -88,14 +85,14 @@ namespace Tests
                 
             };
             
-            await _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
-                    .Returns(UniTask.FromResult(
-                        new MovieListResponse
-                        {
-                            Results = mockData
-                        }));
+            _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
+                .Returns(UniTask.FromResult(
+                    new MovieListResponse
+                    {
+                        Results = mockData
+                    }));
 
-            await sut.LoadFilteredMovies(Arg.Any<int>()); 
+            await sut.LoadFilteredMovies(1); 
 
             // Act
             await sut.LoadNextPage();
@@ -108,9 +105,9 @@ namespace Tests
         public async Task LoadFilteredMovies_DuringCall_ShowsAndHidesLoadingPanel()
         {
             // Arrange
-            var sut = new MoviesController(_view, _apiService, _loadingPanel);
+            var sut = new MoviesController(_view, _apiService);
             
-            await _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
+            _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>())
                 .Returns(UniTask.FromResult(new MovieListResponse()));
 
             // Act
@@ -118,10 +115,11 @@ namespace Tests
 
             // Assert
             Received.InOrder(() =>
-            {
-                _loadingPanel.Show();
+            { 
+                _view.SetLoadingSpinnerState(false);
+                _view.SetLoadingSpinnerState(true);
                 _apiService.GetMoviesByGenreAsync(Arg.Any<int>(), Arg.Any<int>());
-                _loadingPanel.Hide();
+                _view.SetLoadingSpinnerState(false);
             });
         }
 
@@ -129,7 +127,7 @@ namespace Tests
         public void OnDetailsRequested_Raises_View_OnDetailsButtonClicked()
         {
             // Arrange
-            var sut  = new MoviesController(_view, _apiService, _loadingPanel);
+            var sut = new MoviesController(_view, _apiService);
             MovieData capturedMovie = null;
             
             var movieObj = new MovieData()
@@ -156,7 +154,7 @@ namespace Tests
         public void OnCloseRequested_View_RaisesOnBackButtonPressed()
         {
             // Arrange
-            var sut  = new MoviesController(_view, _apiService, _loadingPanel);
+            var sut = new MoviesController(_view, _apiService);
             var closeRequestedCalled =  false;
 
             // Act

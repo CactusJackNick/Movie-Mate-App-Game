@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using DefaultNamespace.Models;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
@@ -11,17 +13,16 @@ namespace DefaultNamespace
         
         private readonly IMovieView _movieView;
         private readonly IApiService _apiService;
-        private readonly ILoadingPanel _loadingPanel;
         
         private int _currentGenreId;
         private int _currentPage = 1;
         private bool _isLoading = false;
+        private CancellationTokenSource _loadCts;
         
-        public MoviesController(IMovieView movieView, IApiService apiService, ILoadingPanel loadingPanel)
+        public MoviesController(IMovieView movieView, IApiService apiService)
         {
             _movieView = movieView;
             _apiService = apiService;
-            _loadingPanel = loadingPanel;
 
             _movieView.OnBackButtonPressed += HandleCloseRequested;
             _movieView.DetailsButtonClicked += HandelDetailsClicked;
@@ -32,46 +33,79 @@ namespace DefaultNamespace
 
         public async UniTask LoadFilteredMovies(int targetId)
         {
+            CancelPendingRequests();
+            _loadCts = new CancellationTokenSource();
+            
             _currentGenreId = targetId;
             _currentPage = 1; 
             _isLoading = false;
             
             _movieView.ClearItems();
             
-            await FetchMoviesAsync(isChecking: false);
+            await FetchMoviesAsync(isChecking: false, _loadCts.Token);
         }
         
         public async UniTask LoadNextPage()
         {
-            if (_isLoading)
+            if (_isLoading || _loadCts == null)
             {
                 return;
             }
 
             _currentPage++;
-            await FetchMoviesAsync(isChecking: true);
+            await FetchMoviesAsync(isChecking: true, _loadCts.Token);
         }
         
-        private async UniTask FetchMoviesAsync(bool isChecking)
+        public void CancelPendingRequests()
         {
-            _loadingPanel.Show();
-            _isLoading = true;
-            var response = await _apiService.GetMoviesByGenreAsync(_currentGenreId, _currentPage);
-
-            if (response is { Results: { Count: > 0 } })
-            {
-                if (isChecking)
-                {
-                    _movieView.AddMovies(response.Results);
-                }
-                else
-                {
-                    _movieView.DisplayMovies(response.Results);
-                }
-            }
+            _loadCts?.Cancel();
+            _loadCts?.Dispose();
+            _loadCts = null;
             
             _isLoading = false;
-            _loadingPanel.Hide();
+            _movieView.SetLoadingSpinnerState(false);
+        }
+
+        private async UniTask FetchMoviesAsync(bool isChecking, CancellationToken token)
+        {
+            _movieView.SetLoadingSpinnerState(true);
+            _isLoading = true;
+
+            try
+            {
+                var response = await _apiService.GetMoviesByGenreAsync(_currentGenreId, _currentPage);
+                if (token.IsCancellationRequested)
+                {
+                    return;
+                }
+
+                if (response is { Results: { Count: > 0 } })
+                {
+                    if (isChecking)
+                    {
+                        _movieView.AddMovies(response.Results);
+                    }
+                    else
+                    {
+                        _movieView.DisplayMovies(response.Results);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                if (!token.IsCancellationRequested)
+                {
+                    Debug.LogError(ex.Message);
+                }
+            }
+            finally
+            {
+                if (!token.IsCancellationRequested)
+                {
+                    _isLoading = false;
+                    _movieView.SetLoadingSpinnerState(false);
+                }
+            }
         }
         
         private void HandelDetailsClicked(MovieData data)
@@ -86,6 +120,7 @@ namespace DefaultNamespace
         
         public void Dispose()
         {
+            CancelPendingRequests();
             _movieView.DetailsButtonClicked -= HandelDetailsClicked;
             _movieView.OnBackButtonPressed -= HandleCloseRequested;
         }

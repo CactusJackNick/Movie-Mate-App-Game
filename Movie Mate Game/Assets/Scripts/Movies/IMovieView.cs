@@ -11,6 +11,7 @@ namespace DefaultNamespace
         
         void DisplayMovies(List<MovieData> movies);
         void AddMovies(List<MovieData> movies);
+        void SetLoadingSpinnerState(bool isActive);
         void ClearItems();
     }
 }

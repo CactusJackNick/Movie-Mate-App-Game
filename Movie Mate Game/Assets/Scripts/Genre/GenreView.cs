@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 namespace DefaultNamespace.Genre
 {
-    public class GenreView : MonoBehaviour,  IGenreView
+    public class GenreView : MonoBehaviour, IGenreView
     {
         [Header("Navigation")]
         [SerializeField] private Button _backButton;
 
         [Header("Layout Settings")]
         [SerializeField] private Transform _contentParent;
-        [SerializeField] private GenreButtonItem _itemPrefab; 
+        [SerializeField] private GenreButtonItem _itemPrefab;
 
         private readonly List<GenreButtonItem> _spawnedItems = new();
 
@@ -43,7 +43,7 @@ namespace DefaultNamespace.Genre
                 _spawnedItems.Add(newItem);
             }
         }
-
+        
         private void GenreButtonClicked(int genreId)
         {
             OnGenreClicked?.Invoke(genreId);

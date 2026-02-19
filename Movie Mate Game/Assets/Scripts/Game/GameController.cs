@@ -99,33 +99,42 @@ namespace DefaultNamespace.Game
 
         private async UniTask LoadTargetMovieAsync()
         {
-            _loadingPanel.Show();
-            
-            const int startClueIndex = 0;
-            _currentTier = 0;
-            _guessedIds.Clear();
-            
-            var movie = await _moviePickService.GetValidGameMovieAsync();
-            if (movie == null)
+            _loadingPanel?.Show();
+
+            try
             {
-                return;
+                const int startClueIndex = 0;
+                _currentTier = 0;
+                _guessedIds.Clear();
+                
+                var movie = await _moviePickService.GetValidGameMovieAsync();
+                if (movie == null)
+                {
+                    return;
+                }
+                _targetMovie = movie;
+                
+                var poster = await _apiService.GetMovieImageAsync(movie.PosterPath);
+                var backdrop = await _apiService.GetMovieImageAsync(movie.BackdropPath);
+                
+                var clues = _clueFactory.AssignDataToClues
+                (
+                    movie: movie,
+                    backdrop: backdrop,
+                    poster: poster
+                );
+               
+                _view.DisplayClues(clues);
+                _view.UnlockClue(startClueIndex);
             }
-            _targetMovie = movie;
-            
-            var poster = await _apiService.GetMovieImageAsync(movie.PosterPath);
-            var backdrop = await _apiService.GetMovieImageAsync(movie.BackdropPath);
-            
-            var clues = _clueFactory.AssignDataToClues
-            (
-                movie: movie,
-                backdrop: backdrop,
-                poster: poster
-            );
-           
-            _view.DisplayClues(clues);
-            _view.UnlockClue(startClueIndex);
-            
-            _loadingPanel.Hide();
+            catch (Exception ex)
+            {
+                Debug.LogError(ex.Message);
+            }
+            finally
+            {
+                _loadingPanel?.Hide();
+            }
         }
 
         private void RestartGame()

@@ -23,7 +23,7 @@ namespace DefaultNamespace.Game
             _clueFactory = new ClueFactory();
             _feedbackService = new FeedbackService();
             _searchGameController = new SearchGameController(_view, ApiService.Instance);
-            _moviePickingService = new MoviePickingService(ApiService.Instance);
+            _moviePickingService = new MoviePickingService(ApiService.Instance, LoadingPanel.Instance);
             _controller = new GameController
             (
                 view: _view,

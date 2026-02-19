@@ -8,16 +8,17 @@ namespace DefaultNamespace.Game
     public class MoviePickingService : IMoviePickService
     {
         private readonly IApiService _apiService;
+        private readonly ILoadingPanel _loadingPanel;
 
-        public MoviePickingService(IApiService apiService)
+        public MoviePickingService(IApiService apiService, ILoadingPanel loadingPanel)
         {
             _apiService = apiService;
+            _loadingPanel = loadingPanel;
         }
-        
+
         public async UniTask<DetailsSuperlistModel> GetValidGameMovieAsync()
         {
-            LoadingPanel.Instance.Show();
-            
+            _loadingPanel?.Show();
             const int maxPageSize = 100;
             var maxAttempts = 10;
             var attempts = 0;
@@ -34,7 +35,7 @@ namespace DefaultNamespace.Game
                 }
                 
                 var candidates = ShuffleListRandomly(listResponse.Results);
-
+                    
                 foreach (var candidate in candidates)
                 {
                     if (string.IsNullOrEmpty(candidate.Backdrop_Path))
@@ -61,8 +62,8 @@ namespace DefaultNamespace.Game
                     }
                 }
             }
-            
-            LoadingPanel.Instance.Hide();
+
+            _loadingPanel?.Hide();
             return null;
         }
         

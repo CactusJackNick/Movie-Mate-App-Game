@@ -15,6 +15,10 @@ namespace Settings
         private readonly IApiService _apiService;
         private readonly ILocalizationService _localizationService;
         
+        private bool _isLanguageSubscribed;
+        private bool _isResolutionSubscribed;
+        private bool _isResolutionViewSetup;
+        
         public SettingsController(ISettingsView view, ILanguageToggle languageToggle,
             IResolutionSelector resolutionSelector, IApiService apiService, ILocalizationService localizationService )
         {
@@ -39,7 +43,14 @@ namespace Settings
             var currentLang = _localizationService.CurrentLanguage;
             
             _languageToggle.Setup(currentLang);
+
+            if (_isLanguageSubscribed)
+            {
+                return;
+            }
+
             _languageToggle.OnLanguageChanged += SwitchLanguageSelected;
+            _isLanguageSubscribed = true;
         }
 
         private void SwitchLanguageSelected(LocalizationLanguage language)
@@ -52,13 +63,21 @@ namespace Settings
 
         private void InitResolution()
         {
-            _resolutionSelector.SetupView();
+            if (!_isResolutionViewSetup)
+            {
+                _resolutionSelector.SetupView();
+                _isResolutionViewSetup = true;
+            }
+
+            if (!_isResolutionSubscribed)
+            {
+                _resolutionSelector.OnResolutionChanged += ApplyResolutionSettings;
+                _isResolutionSubscribed = true;
+            }
             
             var savedIndex = PlayerPrefs.GetInt(PrefResolutionIndex, 0);
         
             _resolutionSelector.SelectButtonAtIndex(savedIndex);
-
-            _resolutionSelector.OnResolutionChanged += ApplyResolutionSettings;
         }
         
         private void ApplyResolutionSettings(int index)
@@ -105,13 +124,23 @@ namespace Settings
             {
                 return;
             }
-            _languageToggle.OnLanguageChanged -= SwitchLanguageSelected;
+            
+            if (_isLanguageSubscribed)
+            {
+                _languageToggle.OnLanguageChanged -= SwitchLanguageSelected;
+                _isLanguageSubscribed = false;
+            }
 
             if (_resolutionSelector is null)
             {
                 return;
             }
-            _resolutionSelector.OnResolutionChanged -= ApplyResolutionSettings;
+            
+            if (_isResolutionSubscribed)
+            {
+                _resolutionSelector.OnResolutionChanged -= ApplyResolutionSettings;
+                _isResolutionSubscribed = false;
+            }
         }
     }
 }

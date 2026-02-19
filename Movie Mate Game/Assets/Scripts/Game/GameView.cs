@@ -229,6 +229,7 @@ namespace DefaultNamespace.Game
             _debug.onClick.RemoveListener(DebugUnlockNext);
             _clearSearchButton.onClick.RemoveListener(OnClearSearch);
             _inputField.onValueChanged.RemoveListener(OnInputChanged);
+            _leaveGamePopup.OnConfirmLeave -= HandleConfirmLeaveGame;
         }
     }
 }

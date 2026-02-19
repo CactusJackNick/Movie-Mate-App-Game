@@ -13,6 +13,7 @@ namespace DefaultNamespace
         [Header("Movie Settings")]
         [SerializeField] private Transform _contentParent;
         [SerializeField] private MovieItemView _itemPrefab;
+        [SerializeField] private Image _loadingSpinner;
         
         private readonly List<MovieItemView> _items = new();
         
@@ -45,15 +46,31 @@ namespace DefaultNamespace
                 item.OnClick += OpenMovieDetailsPanel;
             }
         }
+        
+        public void SetLoadingSpinnerState(bool isActive)
+        {
+            _loadingSpinner.gameObject.SetActive(isActive);
+        }
 
         public void ClearItems()
         {
             foreach (var item in _items)
             {
+                if (item == null)
+                {
+                    continue;
+                }
+
+                item.OnClick -= OpenMovieDetailsPanel;
                 Destroy(item.gameObject);
             }
             
             _items.Clear();
+
+            for (var i = _contentParent.childCount - 1; i >= 0; i--)
+            {
+                Destroy(_contentParent.GetChild(i).gameObject);
+            }
         }
         
         private void GoBackToMain()

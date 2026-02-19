@@ -13,12 +13,14 @@ namespace DefaultNamespace
         [SerializeField] private ScrollRect _scrollRect;
         
         private MoviesController _controller;
+        private bool _isReturningFromDetails;
+        private bool _isNavigatingAway;
 
         public override void Awake()
         {
             base.Awake();
             
-            _controller = new MoviesController(_view, ApiService.Instance, LoadingPanel.Instance);
+            _controller = new MoviesController(_view, ApiService.Instance);
             
             _controller.OnCloseButtonRequested += ReturnToGenresScreen;
             _controller.OnDetailsRequested += OpenDetails;
@@ -28,7 +30,13 @@ namespace DefaultNamespace
         public override void Show()
         {
             base.Show();
+            _isNavigatingAway = false;
             
+            if (_isReturningFromDetails)
+            {
+                _isReturningFromDetails = false;
+                return;
+            }
             _scrollRect.verticalNormalizedPosition = 1f;
             
             var idsToLoad = GenrePanel.SelectedGenreId;
@@ -38,7 +46,12 @@ namespace DefaultNamespace
         
         private void OnScroll(Vector2 pos)
         {
-            if (pos.y < 0.1)
+            if (_isNavigatingAway)
+            {
+                return;
+            }
+            
+            if (pos.y < 0.3)
             {
                 _controller.LoadNextPage().Forget();
             }
@@ -46,6 +59,8 @@ namespace DefaultNamespace
         
         private void ReturnToGenresScreen()
         {
+            _isNavigatingAway = true;
+            _controller.CancelPendingRequests();
             _controller.filteredList.Clear();
             _view.ClearItems();
             UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.Genre);
@@ -53,9 +68,13 @@ namespace DefaultNamespace
         
         private void OpenDetails(MovieData data)
         {
+            _isNavigatingAway = true;
+            _controller.CancelPendingRequests();
+            
             MovieDetailsPanel.TargetMovieId = data.Id;
             MovieDetailsPanel.PreviousPanel = Panels.Movies;
             
+            _isReturningFromDetails =  true;
             UINavigationMediator.Instance.ReplacePanel(_panelId, Panels.DetailsPanel);
         }
 
@@ -67,6 +86,7 @@ namespace DefaultNamespace
             }
             _controller.OnCloseButtonRequested -= ReturnToGenresScreen;
             _controller.OnDetailsRequested -= OpenDetails;
+            _scrollRect.onValueChanged.RemoveListener(OnScroll);
             _controller.Dispose();
         }
     }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
@@ -27,7 +28,7 @@ namespace DefaultNamespace
 
         private async UniTask LoadDetailsAsync(int movieId)
         {
-            _loadingPanel.Show();
+            _loadingPanel?.Show();
 
             try
             {
@@ -72,12 +73,13 @@ namespace DefaultNamespace
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);;
+                Debug.LogError(ex.Message);
+                return;
             }
 
             finally
             {
-                _loadingPanel.Hide();
+                _loadingPanel?.Hide();
             }
         }
 
