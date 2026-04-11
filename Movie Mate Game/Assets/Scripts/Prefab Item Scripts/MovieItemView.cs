@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using DefaultNamespace.Models;
 using TMPro;
@@ -20,6 +21,7 @@ namespace DefaultNamespace
         [SerializeField] private RectTransform _ratingMask;
 
         private MovieData _data;
+        private CancellationTokenSource _posterCts;
         
         public event Action<MovieData> OnClick;
 
@@ -30,14 +32,19 @@ namespace DefaultNamespace
 
         public void Setup(MovieData data)
         {
+            _posterCts?.Cancel();
+            _posterCts?.Dispose();
+            _posterCts = new CancellationTokenSource();
+            
             _data = data;
             _title.text = data.Title;
             _overview.text = data.Overview;
+            _poster.sprite = null;
             SetupStarsRating(data.Vote_average);
-            GetPosterAsync(data.Poster_path).Forget();
+            GetPosterAsync(data.Poster_path, _posterCts.Token).Forget();
         }
 
-        private async UniTaskVoid GetPosterAsync(string path)
+        private async UniTaskVoid GetPosterAsync(string path, CancellationToken token)
         {
             if (string.IsNullOrEmpty(path))
             {
@@ -46,7 +53,7 @@ namespace DefaultNamespace
             
             var downloadedSprite = await ApiService.Instance.GetMovieImageAsync(path);
             
-            if (this == null || transform == null) 
+            if (token.IsCancellationRequested || this == null || transform == null) 
             {
                 return; 
             }
@@ -74,6 +81,8 @@ namespace DefaultNamespace
 
         private void OnDestroy()
         {
+            _posterCts?.Cancel();
+            _posterCts?.Dispose();
             _button.onClick.RemoveListener(OpenOnClick);
         }
     }
